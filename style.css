@@ -33,6 +33,24 @@ svg:hover #big {
     transition: all 1s ease;
 }
 
+/* TEXT */
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+p { 
+    text-align: justify;
+}
+
 /* BODY */
 
 body {
@@ -83,9 +101,19 @@ body {
 }
 
 section {
-    margin: 5rem;
+    margin-left: 16%;
+    margin-right: 16%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     padding: 1rem;
 }
+
+
+
+img {
+    display: inline-block;
+    width: 100%;
+    box-shadow: 5px 5px 10px 1px #000;}
 
 footer {
     background-color: var(--bg-blue);
@@ -101,7 +129,7 @@ footer {
 
  }
  
-.box {
+.footerbox {
     width: 30%;
     height: 15rem;
     padding: 1rem;
