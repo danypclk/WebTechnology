@@ -2,7 +2,8 @@
     --bg-blue: #0082ca;
     --bg-white: #f8f9f8;
     --dark-color: #565761;
-   
+    margin: 0;
+    padding: 0;
 }
 
 /* LOGO SVG */
@@ -54,66 +55,126 @@ p {
 /* BODY */
 
 body {
-    
+    margin: 0;
+    padding: 0;
     font-size: 16px;
     font-family: 'Archivo', sans-serif;
-    margin: 0;
+    
     background-image: url(images/tile_background.png);
     background-repeat: repeat-y;   
 }
 
-.navbar {
+/* -------------- NAV BAR ------------- */
+
+nav {
     background-color: var(--bg-blue);
     margin: 0;
     padding: 0;
     width: 100%;
     height: 120px;
-    position:static;   
-    display: flex;    
-    justify-content: space-evenly;
-    align-items: center;
   }
 
-.navitem {
-    flex:1;
-    list-style: none;
-    padding: 16px;
-  }
-
-.navlogo {
-    flex: 2;
-    list-style: none;
-    margin-left:5rem;
-        }
-
-.navitem a {
-    text-decoration: none;
+.pnav {
     color: var(--bg-white);
-    padding: 2rem;
+    font-size: 2rem;
+    line-height: 100px;
+    float: left;
+    padding: 5px 20px;
 }
 
-.navitem:hover {
+nav ul {
+    float: left;
+}
+
+nav ul li {
+    float: left;
+    list-style: none;
+    position: relative;
+}
+
+nav ul li a {
+    color: var(--bg-white);
+    font-size: 1.5rem;
+    padding: 40px 14px;
+    display: block;
+    text-decoration: none;
+   }
+
+
+nav ul li ul {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    position: absolute;
+    background-color: var(--bg-blue);
+    padding: 5px;
+    border-radius: 0px 0px 4px 4px ;
+}
+nav ul li:hover ul  {
+    visibility: visible;
+    opacity: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+}
+nav ul li ul li {
+    width: 100%;
+    border-radius: 4px;
     
-    background-color: var(--dark-color);
-    border-radius: 10px;
-    transition: 0.5s ease;
+}
+nav ul li ul li a {
+    padding: 10px 20px;
+}
+nav ul li ul li a:hover {
+    background-color: rgba(249, 249, 248, 0.25);
+    border-radius: 4px;
+    transition: all 0.4s ease;
+}
+
+
+
+/* CONTENT */
+
+.section {
+    margin: auto;
+    width: 1200px;
+    display: flex;
     
 }
 
-section {
-    margin-left: 16%;
-    margin-right: 16%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding: 1rem;
+
+
+/* Drucksysteme */
+
+.box1000{
+    margin: 1rem;
+    width: 100%;
+    height: 200px;
 }
 
+.box500 {
+    margin: 1rem;
+    width: 50%;
+    height: 450px;
+}
 
-
-img {
+.images {
     display: inline-block;
     width: 100%;
-    box-shadow: 5px 5px 10px 1px #000;}
+}
+
+.h1content {
+    margin: 1rem;
+}
+.h2content {
+    margin: 1rem;
+}
+
+.pcontent {
+    margin: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* FOOTER */
 
 footer {
     background-color: var(--bg-blue);
@@ -126,8 +187,8 @@ footer {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-
  }
+  
  
 .footerbox {
     width: 30%;
