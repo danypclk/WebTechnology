@@ -130,22 +130,11 @@ nav ul li ul li a:hover {
     transition: all 0.4s ease;
 }
 
-
-
 /* CONTENT */
 
-.section {
-    margin: auto;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    
-}
+/*  ----------- Drucksysteme ----------------- */
 
-
-
-/* Drucksysteme */
-
+/* Ausrichtung und Responsive für die einzelnen Boxen */
 .content {
     width: 100%;
     display: flex;
@@ -156,15 +145,21 @@ nav ul li ul li a:hover {
 
 .mainright {
     width: 10%;
-   
 }
 
 .maincenter {
     width: 10%;
     width: 80%;
-    
 }
 
+.section {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Box Größen */
 
 .box1000{
     width: 100%;
@@ -177,6 +172,8 @@ nav ul li ul li a:hover {
     min-width: 300px;
     margin: 1rem 0rem;
 }
+
+/* Formatierung der Inhalter (Bilder, Schriften) */
 
 .images {
     display: inline-block;
