@@ -360,12 +360,12 @@ footer {
     background-color: var(--bg-blue);
     margin: 0;
     padding: 3rem;
-    width: 100%;
     min-height: 10rem;
     color: var(--bg-white);
     align-items: center;
  }
   
+
 /* 
 .footerbox {
     width: 30%;
