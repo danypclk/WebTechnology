@@ -98,6 +98,9 @@ nav ul li a {
     padding: 40px 14px;
     display: block;
     text-decoration: none;
+
+    font-size: max(14px, calc(10px + 1vw));     /*change*/
+    padding: 40px max(calc(2px + 1vw), 7px);    /*change*/
    }
 
 
