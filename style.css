@@ -74,13 +74,20 @@ nav {
     height: 120px;
   }
 
+
 .pnav {
     color: var(--bg-white);
     font-size: 2rem;
     line-height: 100px;
     float: left;
-    padding: 5px 20px;
+    padding: 5px 5px;
 }
+
+@media screen and (max-width: 414px) {
+    .pnav{
+         display: none;
+    }
+ }
 
 nav ul {
     float: left;
