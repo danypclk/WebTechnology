@@ -106,7 +106,7 @@ nav ul li a {
     display: block;
     text-decoration: none;
 
-    font-size: max(14px, calc(10px + 1vw));     /*change*/
+    font-size: max(calc(10px + 1vw), 14px);     /*change*/
     padding: 40px max(calc(2px + 1vw), 7px);    /*change*/
    }
 
@@ -251,6 +251,13 @@ nav ul li ul li a:hover {
     width: 100%;
     height: 100%;
 }
+.imagesshadow {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    box-shadow: 10px 10px 5px grey;
+}
+
 
 .h1content {
     margin: 1rem;
