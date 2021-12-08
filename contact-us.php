@@ -30,6 +30,8 @@ $mail->AltBody = 'HTML messaging not supported';
 if(!$mail->send()){
 	echo $worker;
     echo "Mailer Error: " . $mail->ErrorInfo;
+    
+
 }else{
     echo "<script>window.location.assign('../contact-us.html')</script>";
 }
