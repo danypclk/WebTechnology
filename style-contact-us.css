@@ -251,6 +251,17 @@ nav ul li ul li a:hover {
 	color:#fff;
 }
 
+.form #user_error, .form #pass_error
+{
+	color: red;
+	font-size: 15px;
+	visibility: hidden;
+}
+
+.form #name_p
+{
+	padding-top: 10px;
+}
 
 
 /* CONTENT */
