@@ -47,6 +47,6 @@ if(!$mail->send()){
 	echo $worker;
     echo "Mailer Error: " . $mail->ErrorInfo;
 }else{
-    echo "<script>window.location.assign('../admin-files/business.html')</script>";
+    echo "<script>window.location.assign('admin-page-html')</script>";
 }
 ?>
