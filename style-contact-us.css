@@ -387,6 +387,27 @@ nav ul li ul li a:hover {
 	display: none;
 }
 
+.register_list
+{
+	display: none;
+}
+
+/*  ----------- register list ----------------- */
+
+.register_list
+{
+	position:absolute;
+	left: 250px;
+	top: 150px;
+}
+
+.register_list iframe
+{
+	height:300px;
+	width:800px;
+}
+
+
 /* CONTENT */
 
 /*  ----------- Drucksysteme ----------------- */
