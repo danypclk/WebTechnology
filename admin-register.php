@@ -18,7 +18,7 @@
 		}
 		else
 		{
-			$myfile = fopen("register-folder/", "w");
+			$myfile = fopen("../register-folder/", "w");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
