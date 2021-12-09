@@ -263,7 +263,7 @@ nav ul li ul li a:hover {
 	background: 0;
 	color: #5798C2;
 	cursor: pointer;
-	transition: all .3s;
+	transition: .3s;
 }
 
 .form button:hover, #services_button:hover
