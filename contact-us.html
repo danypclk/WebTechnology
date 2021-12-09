@@ -77,12 +77,15 @@
 
 	<!--    Content Anfang -->
 
-	<form class="form" method="post" action="contact-us.php">
-		<h2>CONTACT US</h2>
-			<p type="Name:"><input placeholder="Write your name here.." name="name"></input></p>
-			<p type="Email:"><input placeholder="Let us know how to contact you back.." name="email"></input></p>
-			<p type="Message:"><input placeholder="What would you like to tell us.." name="message"></input></p>
-		<button>Send Message</button>
+	<form class="form" method="post" id="form_contact" autocomplete="off">
+		<h2 id="form_title">CONTACT US</h2>
+			<p type="Name:" ><input placeholder="Write your name here.." id="contact_name" name="name"></input></p>
+			<small id="contact_name_error">Name kann nicht leer sein.</small>
+			<p type="Email:"><input placeholder="Let us know how to contact you back.." id="contact_email" name="email"></input></p>
+			<small id="contact_email_error">Email kann nicht leer sein.</small>
+			<p type="Message:"><input placeholder="What would you like to tell us.." id="contact_message" name="message"></input></p>
+			<small id="contact_message_error">Message kann nicht leer sein.</small>
+		<button id="contact_button"><b>Send Message</b></button>
 	</form>
 
     <!-- content Ende  -->
