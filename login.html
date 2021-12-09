@@ -77,11 +77,14 @@
 
 	<!--    Content Anfang -->
 
-	<form class="form" method="post" action="login.php">
+	<form class="form" method="post" id="form_login" autocomplete="off" action="login.php">
 		<h2>Login</h2>
-		<p type="Name:"><input name="username"></input></p>
-		<p type="Password:"><input type="password" name="password"></input></p>
-		<button><b>Login</b></button>
+		<p type="Name:" id="name_p"><input name="username" id="username"></input></p>
+		<small id="user_error">Username kann nicht leer sein.</small>
+		<p type="Password:"><input type="password" name="password" id="password"></input></p>
+		<small id="pass_error">"Password kann nicht leer sein."</small>
+		<button id="login_button"><b>Login</b></button>
+		<script src="login.js"></script>
 	</form>
 
 	<!--    Content Ende -->
