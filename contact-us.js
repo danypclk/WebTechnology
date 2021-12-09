@@ -45,6 +45,6 @@ function checkInputs()
 	if(nameValue != '' && emailValue != '' && messageValue != '')
 	{
 		alert('Erfolgreich gesendet');
-		window.location.href="php/contact-us.php";
+		window.location.href="contact-us.php";
 	}
 }
