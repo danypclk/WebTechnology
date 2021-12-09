@@ -6,9 +6,9 @@
 	
 	if($jobtitle == "partner")
 	{
-		if(file_exists("admin-file.txt"))
+		if(file_exists("partner-file.txt"))
 		{
-			$myfile = fopen("admin-file.txt", "a");
+			$myfile = fopen("partner-file.txt", "a");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
@@ -18,7 +18,7 @@
 		}
 		else
 		{
-			$myfile = fopen("admin-file.txt", "w");
+			$myfile = fopen("partner-file.txt", "w");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
