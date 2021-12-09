@@ -1,4 +1,4 @@
-const form = document.getElementById('form');
+const form = document.getElementById('form_login');
 const username = document.getElementById('username');
 const pass_word = document.getElementById('password');
 
@@ -33,5 +33,10 @@ function checkInputs()
 	{
 		alert('Erfolgreich eingeloggt');
 		window.location.href="admin-site.html";
+	}
+	else if(usernameValue != 'admin' && usernameValue != '' && pass_wordValue != 'loGGin' && pass_wordValue != '')
+	{
+		alert('Falscher Username oder Passwort');
+		window.location.href="login.html";
 	}
 }
