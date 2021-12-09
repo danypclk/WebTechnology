@@ -3,7 +3,7 @@
 $fn = fopen("partner-file.txt","r") or die("fail to open file");
 $fn1 = fopen("employee-file.txt","r") or die("fail to open file");
 $fn2 = fopen("intern-file.txt","r") or die("fail to open file");
-$fn3 = fopen("clients-file.txt","r") or die("fail to open file");
+$fn3 = fopen("client-file.txt","r") or die("fail to open file");
 
 $register_file_name = "register_list.html";
 
