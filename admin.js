@@ -1,5 +1,6 @@
 const admin_register = document.getElementById('admin_register');
 const admin_services = document.getElementById('admin_services');
+const admin_register_list = document.getElementById('admin_register_list');
 
 admin_register.addEventListener('click', (e) => {
 	e.preventDefault();
@@ -9,6 +10,7 @@ admin_register.addEventListener('click', (e) => {
 
 function displayFunctionregister()
 {
+	document.getElementById("register_list").style.display = "none";
 	document.getElementById("services").style.display = "none";
 	document.getElementById("register").style.display = "block";
 }
@@ -21,6 +23,20 @@ admin_services.addEventListener('click', (e) => {
 
 function displayFunctionservices()
 {
-	document.getElementById("services").style.display = "block";
+	document.getElementById("register_list").style.display = "none";
 	document.getElementById("register").style.display = "none";
+	document.getElementById("services").style.display = "block";
+}
+
+admin_register_list.addEventListener('click', (e) => {
+	e.preventDefault();
+	
+	displayFunctionregister_list();
+});
+
+function displayFunctionregister_list()
+{
+	document.getElementById("register").style.display = "none";
+	document.getElementById("services").style.display = "none";
+	document.getElementById("register_list").style.display = "block";
 }
