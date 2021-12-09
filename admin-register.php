@@ -6,9 +6,9 @@
 	
 	if($jobtitle == "partner")
 	{
-		if(file_exists("../register-folder/partner-file.txt"))
+		if(file_exists("register-folder/partner-file.txt"))
 		{
-			$myfile = fopen("../register-folder/partner-file.txt", "a");
+			$myfile = fopen("register-folder/partner-file.txt", "a");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
@@ -18,7 +18,7 @@
 		}
 		else
 		{
-			$myfile = fopen("../register-folder/", "w");
+			$myfile = fopen("register-folder/", "w");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
@@ -41,7 +41,7 @@
 		}
 		else
 		{
-			$myfile = fopen("register-folder/employee-file.txt", "w");
+			$myfile = fopen("register-folder/", "w");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
@@ -64,7 +64,7 @@
 		}
 		else
 		{
-			$myfile = fopen("register-folder/intern-file.txt", "w");
+			$myfile = fopen("register-folder/", "w");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
@@ -87,7 +87,7 @@
 		}
 		else
 		{
-			$myfile = fopen("register-folder/client-file.txt", "w");
+			$myfile = fopen("register-folder/", "w");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
