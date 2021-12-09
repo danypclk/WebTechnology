@@ -32,7 +32,7 @@ function checkInputs()
 	if(usernameValue === 'admin' && pass_wordValue === 'loGGin')
 	{
 		alert('Erfolgreich eingeloggt');
-		window.location.href="admin-site.html";
+		window.location.href="index.html";
 	}
 	else if(usernameValue != 'admin' && usernameValue != '' && pass_wordValue != 'loGGin' && pass_wordValue != '')
 	{
