@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style-admin.css">
+	<link rel="stylesheet" href="style-contact-us.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -45,7 +45,7 @@
                 </defs>
                 </svg></a></p>
         <ul class="navbar">
-            <li class="navitem"><a href="#">Welcome to the Adminstration Page</a></li>
+            <li class="navitem"><a href="">Welcome to the Adminstration Page</a></li>
 			<li class="navitem"><a href="index.html">Logout</a></li>
         </ul>
 
@@ -58,8 +58,8 @@
       <h2><b>Tasks</b></h2>
       <ul class="nav">
         <li>
-          <a href="#">
-            <span>Admin-register</span>
+          <a href="">
+            <span id="admin_register">Admin-register</span>
           </a>
         </li>
         <li>
@@ -80,8 +80,30 @@
       </ul>
     </div>
 </section>
-	<!--    Content Ende -->
 
+	<section class="register" id="register">
+		<form class="form" method="post" id="form_registry" autocomplete="off" action="admin-register.php">
+			<h2>Registry</h2>
+				<p type="Name: "> <input name="username_register" id="username_register"></input></p>
+					<small id="register_name_error">Name kann nicht leer sein.</small>
+				<p type="Password: "> <input name="password_register" id="password_register"></input></p>
+					<small id="register_password_error">Password kann nicht leer sein.</small>
+				<p type="Email: "> <input name="email_register" id="email_register"></input></p>
+					<small id="register_email_error">Email kann nicht leer sein.</small>
+				<p type="Function in the business: "> 
+			<br />
+				<select name="business_function" id="business_function">
+					<option value="partner">Partner</option>
+					<option value="employee">Employee</option>
+					<option value="intern">Intern</option>
+					<option value="client">Client</option>
+				</select></p>
+			<small id="function_of_busniess_error">Funktion kann nicht leer sein.</small>
+			<button id="register_button"><b>Register</b></button>
+			<script src="admin-register.js"></script>
+		</form>
+	</section>
+	<!--    Content Ende -->
+	<script src="admin.js"></script>
 </body>
 </html>
-	
