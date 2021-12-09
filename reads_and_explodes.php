@@ -1,9 +1,9 @@
 <?php
 
-$fn = fopen("partner-file.txt","r") or die("fail to open file");
-$fn1 = fopen("employee-file.txt","r") or die("fail to open file");
-$fn2 = fopen("intern-file.txt","r") or die("fail to open file");
-$fn3 = fopen("client-file.txt","r") or die("fail to open file");
+$fn = fopen("register-folder/partner-file.txt","r") or die("fail to open file");
+$fn1 = fopen("register-folder/employee-file.txt","r") or die("fail to open file");
+$fn2 = fopen("register-folder/intern-file.txt","r") or die("fail to open file");
+$fn3 = fopen("register-folder/client-file.txt","r") or die("fail to open file");
 
 $register_file_name = "register_list.html";
 
