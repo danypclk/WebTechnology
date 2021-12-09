@@ -12,7 +12,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, $jobtitle . "\n");
 			fclose($myfile);
-			echo "<script>window.location.assign('admin-registry.html')</script>";
+			echo "<script>window.location.assign('admin-page.html')</script>";
 	}
 	else
 	{
@@ -22,6 +22,6 @@
 		fwrite($myfile, $email . ":");
 		fwrite($myfile, $jobtitle . "\n");
 		fclose($myfile);
-		echo "<script>window.location.assign('admin-registry.html')</script>";
+		echo "<script>window.location.assign('admin-page.html')</script>";
 	}
 ?>
