@@ -14,7 +14,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "partner" . "\n");
 			fclose($myfile);
-			echo "<script>window.location.assign('admin-page.html')</script>";
+			echo "<script>window.location.assign('reads_and_explodes.php')</script>";
 		}
 		else
 		{
@@ -24,7 +24,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "partner" . "\n");
 			fclose($myfile);
-			echo "<script>window.location.assign('admin-page.html')</script>";
+			echo "<script>window.location.assign('reads_and_explodes.php')</script>";
 		}
 	}
 	else if($jobtitle == "employee")
@@ -37,7 +37,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "employee" . "\n");
 			fclose($myfile);
-			echo "<script>window.location.assign('admin-page.html')</script>";
+			echo "<script>window.location.assign('reads_and_explodes.php')</script>";
 		}
 		else
 		{
@@ -47,7 +47,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "employee" . "\n");
 			fclose($myfile);
-			echo "<script>window.location.assign('admin-page.html')</script>";
+			echo "<script>window.location.assign('reads_and_explodes.php')</script>";
 		}
 	}
 	else if($jobtitle == "intern")
@@ -60,7 +60,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "intern" . "\n");
 			fclose($myfile);
-			echo "<script>window.location.assign('admin-page.html')</script>";
+			echo "<script>window.location.assign('reads_and_explodes.php')</script>";
 		}
 		else
 		{
@@ -70,7 +70,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "intern" . "\n");
 			fclose($myfile);
-			echo "<script>window.location.assign('admin-page.html')</script>";
+			echo "<script>window.location.assign('reads_and_explodes.php')</script>";
 		}
 	}
 	else if($jobtitle == "client")
@@ -83,7 +83,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "client" . "\n");
 			fclose($myfile);
-			echo "<script>window.location.assign('admin-page.html')</script>";
+			echo "<script>window.location.assign('reads_and_explodes.php')</script>";
 		}
 		else
 		{
@@ -93,7 +93,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "client" . "\n");
 			fclose($myfile);
-			echo "<script>window.location.assign('admin-page.html')</script>";
+			echo "<script>window.location.assign('reads_and_explodes.php')</script>";
 		}
 	}
 ?>
