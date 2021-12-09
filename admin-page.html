@@ -53,6 +53,9 @@
 </header>
 
 	<!--    Content Anfang -->
+	
+	
+	<!--    Sidebar -->
 <section>
 <div class="sidebar">
       <h2><b>Tasks</b></h2>
@@ -64,7 +67,7 @@
         </li>
         <li>
           <a href="#">
-            <span>Services</span>
+            <span id="admin_services">Services</span>
           </a>
         </li>
         <li>
@@ -80,6 +83,8 @@
       </ul>
     </div>
 </section>
+
+		<!--   Admin Register -->
 
 	<section class="register" id="register">
 		<form class="form" method="post" id="form_registry" autocomplete="off" action="admin-register.php">
@@ -103,7 +108,31 @@
 			<script src="admin-register.js"></script>
 		</form>
 	</section>
+	
+		<!--  services  -->
+	<section class="services" id="services">
+	<form method="post" autocomplete="off" action="business.php">
+				<h2>Client details:</h2>
+					<p type="Client name:"> <input name="name"><p>
+				<p type="Email Of client:"> <input name="email"></p>
+				<p type="Employee given the task:"></p>
+				<select name="referrer" id="referrer">
+					<option value="r1">Employee_1</option>
+					<option value="r2">Employee_2</option>
+				</select>
+				<p type="What servies do you have to do?"></p>
+						<p type="Cleaning"><input type="radio" name="notiz" value="Cleaning" /></p>
+						<p type="Repair"><input type="radio" name="notiz" value="Repair" /></p>
+						<p type="Replacement"><input type="radio" name="notiz" value="Replacement" /></p>
+						<p type="Sonstiges"><input type="radio" name="notiz" value="Sonstiges" /></p>
+				<p type="Address:"> <input name="address"></p>
+				<p type="Special requests from client:"></p>
+					<textarea rows="5" cols="50" name="request" id="request"></textarea>
+					<button id="services_button">Send Service<button>
+		</form>
+	
 	<!--    Content Ende -->
 	<script src="admin.js"></script>
 </body>
 </html>
+	

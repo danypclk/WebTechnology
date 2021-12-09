@@ -203,6 +203,7 @@ nav ul li ul li a:hover {
 	font-family: 'Montserrat',sans-serif;
 }
 
+
 #form_registry
 {
 	height: 530px;
@@ -218,7 +219,7 @@ nav ul li ul li a:hover {
 	height: 400px;
 }
 
-.form h2
+.form h2, .services h2
 {
 	margin: 10px 0;
 	padding-bottom: 10px;
@@ -226,7 +227,7 @@ nav ul li ul li a:hover {
 	border-bottom: 3px solid #877277;
 }
 
-.form input
+.form input, .services input
 {
 	width: 100%;
 	padding: 10px;
@@ -238,13 +239,13 @@ nav ul li ul li a:hover {
 	border-bottom: 2px solid #bebed2;
 }
 
-.form input:focus
+.form input:focus, .services input:focus
 {
 	border-bottom: 2px solid #877277;
 	transition: 0.8s;
 }
 
-.form p:before
+.form p:before, .services p:before
 { 
 	content: attr(type); 
 	display: block;
@@ -265,7 +266,7 @@ nav ul li ul li a:hover {
 	transition: all .3s;
 }
 
-.form button:hover
+.form button:hover, #services_button:hover
 {
 	background:#5798C2;
 	color:#fff;
@@ -303,6 +304,36 @@ nav ul li ul li a:hover {
 {
 	margin: 25px 0 0;
 }
+
+/*  ----------- form for services ----------------- */
+
+
+.services
+{
+	position:absolute;
+	left: 100px;
+	width: 550px;
+	background: #e6e6e6;
+	border-radius: 8px;
+	margin: 20px 150px; 
+	box-sizing: border-box;
+	font-family: 'Montserrat',sans-serif;
+}
+
+
+#services_button
+{
+	float: right;
+	padding: 8px 12px;
+	font-family: 'Montserrat',sans-serif;
+	border: 2px solid #5798C2;
+	background: 0;
+	color: #5798C2;
+	cursor: pointer;
+	transition: all .3s;	
+}
+
+
 
 /*  ----------- admin-page ----------------- */
 
@@ -348,6 +379,11 @@ nav ul li ul li a:hover {
 }
 
 .register
+{
+	display: none;
+}
+
+.services
 {
 	display: none;
 }
