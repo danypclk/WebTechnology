@@ -6,9 +6,9 @@
 	
 	if($jobtitle == "partner")
 	{
-		if(file_exists("register-folder\partner-file.txt"))
+		if(file_exists("register-folder/partner-file.txt"))
 		{
-			$myfile = fopen("register-folder\partner-file.txt", "a");
+			$myfile = fopen("register-folder/partner-file.txt", "a");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
@@ -18,7 +18,7 @@
 		}
 		else
 		{
-			$myfile = fopen("register-folder\partner-file.txt", "w");
+			$myfile = fopen("register-folder/", "w");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
