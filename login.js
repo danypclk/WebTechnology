@@ -32,7 +32,7 @@ function checkInputs()
 	if(usernameValue === 'admin' && pass_wordValue === 'loGGin')
 	{
 		alert('Erfolgreich eingeloggt');
-		window.location.href="index.html";
+		window.location.href="amdin-page.html";
 	}
 	else if(usernameValue != 'admin' && usernameValue != '' && pass_wordValue != 'loGGin' && pass_wordValue != '')
 	{
