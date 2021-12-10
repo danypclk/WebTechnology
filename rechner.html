@@ -83,23 +83,26 @@
 <div class="maincenter">
 <section class="section">
 
-  
+<!-- SCRIPT ANFANG -->  
 <h1 class="h1content">Stromkostenrechner</h1>
 <hr>
 <br>
 <div class="box1000">
 
-<!-- SCRIPT ANFANG -->
+<p class="prechner">Hier bitte Strompreis in Cent eingeben :</p>
+<input type="number" name="strompreis" id="strompreis" class="inputrechner" placeholder="30 Cent/KWH">
+<p class="prechner">Hier bitte Betriebszeit in Stunden eingeben :</p>
+<input type="number" name="betriebzeit" id="betriebszeit" class="inputrechner" placeholder="300 Stunden">
+<p class="prechner">Hier bitte Stromverbrauch in Watt eingeben :</p>
+<input type="number" name="watt" id="watt" class="inputrechner" placeholder="900 Watt">
+<button class="buttonrechner" id="mybutton">Berechnen</button>
 
-<script src="rechner.js"></script>
+
+
 <script>
-let strompreis = prompt("Bitte Strompreis eingeben (pro KwH in Cent)");
-let betriebszeit = prompt("Bitte Betriebszeit in Stunden eingeben");
-let watt = prompt("Bite Stromverbauch in Watt angeben");
 
-stromkosten = stromkosten(strompreis, betriebszeit, watt);
 
-document.write("Stromkosten = " + stromkosten + " €");
+
 
 </script>
 </div> 

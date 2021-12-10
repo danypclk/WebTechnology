@@ -246,7 +246,30 @@ nav ul li ul li a:hover {
 
 /* Rechner */
 
+.inputrechner {
+    height: 2rem;
+    min-width: 300px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    display: flex; 
+}
 
+.prechner {
+    margin-top: 1rem;
+}
+
+.buttonrechner {
+    height: 30px;
+    width: 200px;
+    margin-left: 50px;
+    margin-top: 1rem;
+    background-color: var(--bg-blue);
+    border-radius: 1rem;
+    border: none;
+    color: var(--bg-white);
+    font-size: 1.5rem;
+}
 
 /* Formatierung der Inhalter (Bilder, Schriften) */
 
@@ -394,9 +417,5 @@ footer {
     padding: 1rem;
     background-color: rgba(249, 249, 248, 0.15);
     border-radius: 10px;
-<<<<<<< HEAD
-    }
-=======
     }
     */
->>>>>>> d8d2d41dc58f13542f8c3d3f73b0f195f8941999

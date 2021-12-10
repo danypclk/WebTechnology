@@ -1,5 +1,11 @@
 "use strict";
 
+let stromkosten = document.querySelector("#stromkosten");
+let betriebszeit = document.querySelector("#betriebszeit");
+let watt = document.querySelector("#watt");
+
+
+
 
 function stromkosten(strompreis, betriebszeit, watt){
     
