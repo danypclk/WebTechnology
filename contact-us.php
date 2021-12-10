@@ -1,4 +1,35 @@
 <?php
+
+$name_1 = $_POST['name'];
+$email_1 = $_POST['email'];
+$message_1 =$_POST['message'];
+
+
+		if(file_exists("Data/Contact_Us/contact.txt"))
+		{
+			$myfile = fopen("Data/Contact_Us/contact.txt", "a");
+			fwrite($myfile, $name_1 . ":");
+			fwrite($myfile, $email_1 . ":");
+			fwrite($myfile, $email_1 . "\n");
+			fclose($myfile);
+			echo "<script>window.location.assign('reads_and_explodes_contact.php')</script>";
+		}
+		else
+		{
+			$myfile = fopen("Data/Contact_Us/contact.txt", "w");
+			fwrite($myfile, $name_1 . ":");
+			fwrite($myfile, $email_1 . ":");
+			fwrite($myfile, $email_1 . "\n");
+			fclose($myfile);
+			echo "<script>window.location.assign('reads_and_explodes_contact.php')</script>";
+		}
+
+
+
+
+
+/*   Only useful if used with PHPMAILER and extension=openssl.dll
+
 $name = "Client Name: ".$_POST['name']."\n";
 $email = "Client Email: ".$_POST['email']."\n";
 $message = "Message: " . $_POST['message']."\n";
@@ -34,5 +65,5 @@ if(!$mail->send()){
 
 }else{
     echo "<script>window.location.assign('../contact-us.html')</script>";
-}
+}*/
 ?>
