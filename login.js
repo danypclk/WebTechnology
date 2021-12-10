@@ -29,14 +29,9 @@ function checkInputs()
 	{
 		document.getElementById("pass_error").style.visibility = "hidden";
 	}
-	if(usernameValue === 'admin' && pass_wordValue === 'loGGin')
+	
+	if(usernameValue != '' && usernameValue != '' && pass_wordValue != '' && pass_wordValue != '')
 	{
-		alert('Erfolgreich eingeloggt');
-		window.location.href="admin-page.html";
-	}
-	else if(usernameValue != 'admin' && usernameValue != '' && pass_wordValue != 'loGGin' && pass_wordValue != '')
-	{
-		alert('Falscher Username oder Passwort');
-		window.location.href="login.html";
+		document.getElementById("form_login").submit();
 	}
 }
