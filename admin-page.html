@@ -111,10 +111,12 @@
 	
 		<!--  services  -->
 	<section class="services" id="services">
-	<form method="post" autocomplete="off" action="business.php">
+	<form method="post" id="form_services" autocomplete="off" action="business.php">
 				<h2>Client details:</h2>
-					<p type="Client name:"> <input name="name"><p>
-				<p type="Email Of client:"> <input name="email"></p>
+				<p type="Client name:"> <input name="name" id="client_name_services"><p>
+					<small id="client_name_error">Name kann nicht leer sein.</small>
+				<p type="Email Of client:"> <input name="email" id="client_email_services"></p>
+					<small id="client_email_error">Email kann nicht leer sein.</small>
 				<p type="Employee given the task:"></p>
 				<select name="referrer" id="referrer">
 					<option value="r1">Employee_1</option>
@@ -125,11 +127,14 @@
 						<p type="Repair"><input type="radio" name="notiz" value="Repair" /></p>
 						<p type="Replacement"><input type="radio" name="notiz" value="Replacement" /></p>
 						<p type="Sonstiges"><input type="radio" name="notiz" value="Sonstiges" /></p>
-				<p type="Address:"> <input name="address"></p>
+							<small id="radio_button_error">Zuweisung muss ausgewählt werden.</small>
+				<p type="Address:"> <input id="client_address_service" name="address"></p>
+					<small id="client_address_error">Addresse kann nicht leer sein..</small>
 				<p type="Special requests from client:"></p>
 					<textarea rows="5" cols="50" name="request" id="request"></textarea>
 					<button id="services_button">Send Service<button>
-		</form>
+					<script src="admin-services.js"></script>
+	</form>
   </section>
 
   <!--  List of people on the webpage  -->
