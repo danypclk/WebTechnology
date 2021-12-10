@@ -18,7 +18,7 @@
 		}
 		else
 		{
-			$myfile = fopen("register-folder/", "w");
+			$myfile = fopen("register-folder/partner-file.txt", "w");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
@@ -41,7 +41,7 @@
 		}
 		else
 		{
-			$myfile = fopen("register-folder/", "w");
+			$myfile = fopen("register-folder/employee-file.txt", "w");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
@@ -64,7 +64,7 @@
 		}
 		else
 		{
-			$myfile = fopen("register-folder/", "w");
+			$myfile = fopen("register-folder/intern-file.txt", "w");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
@@ -87,7 +87,7 @@
 		}
 		else
 		{
-			$myfile = fopen("register-folder/", "w");
+			$myfile = fopen("register-folder/client-file.txt", "w");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");

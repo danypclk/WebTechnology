@@ -1,9 +1,45 @@
 <?php
 
-$fn = fopen("register-folder/partner-file.txt","r") or die("fail to open file");
-$fn1 = fopen("register-folder/employee-file.txt","r") or die("fail to open file");
-$fn2 = fopen("register-folder/intern-file.txt","r") or die("fail to open file");
-$fn3 = fopen("register-folder/client-file.txt","r") or die("fail to open file");
+$file = "register-folder/partner-file.txt";
+$file_1 = "register-folder/employee-file.txt";
+$file_2 = "register-folder/intern-file.txt";
+$file_3 = "register-folder/client-file.txt";
+
+if(file_exists($file))
+{
+	$fn = fopen("register-folder/partner-file.txt","r");
+}
+else
+{
+	$fn = fopen("register-folder/partner-file.txt", "w");
+}
+
+if(file_exists($file_1))
+{
+	$fn1 = fopen("register-folder/employee-file.txt","r");
+}
+else
+{
+	$fn1 = fopen("register-folder/employee-file.txt", "w");
+}
+
+if(file_exists($file_2))
+{
+	$fn2 = fopen("register-folder/intern-file.txt","r");
+}
+else
+{
+	$fn2 = fopen("register-folder/intern-file.txt", "w");
+}
+
+if(file_exists($file_3))
+{
+	$fn3 = fopen("register-folder/client-file.txt","r");
+}
+else
+{
+	$fn3 = fopen("register-folder/client-file.txt", "w");
+}
 
 $register_file_name = "register_list.html";
 
