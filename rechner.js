@@ -5,9 +5,10 @@
 function berechnen(){
     setErgebnis(stromkosten() + " €");
 }
+
 /* Setzt den Wert von Ergebnis und gibt ihn aus*/
 function setErgebnis(ergebnis){
-    document.getElementById('ergebnis').innerHTML = ergebnis;
+    document.getElementById("ergebnis").innerHTML = ergebnis;
 }
 
 /* bekommt den Wert von Input Feld Strompreis */
@@ -30,4 +31,10 @@ function getWatt(){
 function stromkosten(){
     stromkosten = getStrompreis() / 100  * getBetriebszeit() * getWatt() /1000;
     return stromkosten;
+}
+
+function reset(){
+    /* Funktion überarbeiten!
+    document.getElementById("form").reset;
+    */
 }

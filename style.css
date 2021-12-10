@@ -262,9 +262,21 @@ nav ul li ul li a:hover {
 .buttonrechner {
     height: 30px;
     width: 200px;
-    margin-left: 50px;
+    margin-left: 10px;
     margin-top: 1rem;
     background-color: var(--bg-blue);
+    border-radius: 1rem;
+    border: none;
+    color: var(--bg-white);
+    font-size: 1.5rem;
+}
+
+.buttonreset {
+    height: 30px;
+    width: 80px;
+    margin-left: 1px;
+    margin-top: 1rem;
+    background-color: red;
     border-radius: 1rem;
     border: none;
     color: var(--bg-white);
@@ -275,13 +287,11 @@ nav ul li ul li a:hover {
     height: 2rem;
     max-width: 300px;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 2rem;
     text-align: center;
-    display: flex; 
     background-color: var(--bg-white);
-    border: solid;
-    border-color: var(--bg-blue);
-    margin-top: 1rem;
+    border:5px solid var(--bg-blue);
+    margin-top: 0.5rem;
     padding: 5px;
 }
 
