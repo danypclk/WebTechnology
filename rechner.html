@@ -86,16 +86,15 @@
 
 <!-- SCRIPT ANFANG -->  
 <h1 class="h1content">Stromkostenrechner</h1>
-<hr>
 <br>
 <div class="box1000">
 
 <p class="prechner">Hier bitte Strompreis in Cent eingeben :</p>
-<input type="number" name="strompreis" id="strompreis" class="inputrechner" placeholder="30 Cent/KWH">
+<input type="number" name="strompreis" id="strompreis" class="inputrechner" placeholder="30 Cent/KWH" min="1">
 <p class="prechner">Hier bitte Betriebszeit in Stunden eingeben :</p>
-<input type="number" name="betriebzeit" id="betriebszeit" class="inputrechner" placeholder="300 Stunden">
+<input type="number" name="betriebzeit" id="betriebszeit" class="inputrechner" placeholder="300 Stunden" min="1">
 <p class="prechner">Hier bitte Stromverbrauch in Watt eingeben :</p>
-<input type="number" name="watt" id="watt" class="inputrechner" placeholder="900 Watt">
+<input type="number" name="watt" id="watt" class="inputrechner" placeholder="900 Watt" min="1">
 <button class="buttonrechner" id="mybutton" onclick="berechnen()">Berechnen</button>
 
 <p class="prechner">Stromkosten = </p>

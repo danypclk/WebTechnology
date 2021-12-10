@@ -280,6 +280,7 @@ nav ul li ul li a:hover {
     display: flex; 
     background-color: var(--bg-white);
     border: solid;
+    border-color: var(--bg-blue);
     margin-top: 1rem;
     padding: 5px;
 }
