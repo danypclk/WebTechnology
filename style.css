@@ -248,7 +248,7 @@ nav ul li ul li a:hover {
 
 .inputrechner {
     height: 2rem;
-    min-width: 300px;
+    width: 300px;
     border-radius: 5px;
     font-size: 1rem;
     text-align: center;
@@ -269,6 +269,19 @@ nav ul li ul li a:hover {
     border: none;
     color: var(--bg-white);
     font-size: 1.5rem;
+}
+
+.divergebnis {
+    height: 2rem;
+    max-width: 300px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    display: flex; 
+    background-color: var(--bg-white);
+    border: solid;
+    margin-top: 1rem;
+    padding: 5px;
 }
 
 /* Formatierung der Inhalter (Bilder, Schriften) */

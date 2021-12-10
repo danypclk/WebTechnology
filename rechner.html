@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" media="screen">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
+    <script src="rechner.js"></script>
 </head>
 
 <body>
@@ -95,16 +96,12 @@
 <input type="number" name="betriebzeit" id="betriebszeit" class="inputrechner" placeholder="300 Stunden">
 <p class="prechner">Hier bitte Stromverbrauch in Watt eingeben :</p>
 <input type="number" name="watt" id="watt" class="inputrechner" placeholder="900 Watt">
-<button class="buttonrechner" id="mybutton">Berechnen</button>
+<button class="buttonrechner" id="mybutton" onclick="berechnen()">Berechnen</button>
+
+<p class="prechner">Stromkosten = </p>
+<div class="divergebnis" id="ergebnis"></div>
 
 
-
-<script>
-
-
-
-
-</script>
 </div> 
 
 
