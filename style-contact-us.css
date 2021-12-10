@@ -378,12 +378,12 @@ nav ul li ul li a:hover {
     transition: 0.35s;
 }
 
-.register, .register_list, .services, .register_list, .order_list, .feedback_list
+.register, .register_list, .services, .register_list, .order_list, .feedback_list, .client_messages_list
 {
 	display: none;
 }
 
-/*  ----------- register list, order-list, feedback-list ----------------- */
+/*  ----------- register list, order-list, feedback-list, client-message-list ----------------- */
 
 .register_list
 {
@@ -405,11 +405,26 @@ nav ul li ul li a:hover {
 	top: 150px;
 }
 
+.client_messages_list
+{
+	position:absolute;
+	left: 250px;
+	top: 150px;
+}
+
+.client_messages_list iframe
+{
+	height:600px;
+	width:800px;
+}
+
 .order_list iframe
 {
 	height:300px;
 	width:800px;
 }
+
+
 
 .feedback-list
 {

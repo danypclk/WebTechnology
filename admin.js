@@ -1,6 +1,7 @@
 const admin_register = document.getElementById('admin_register');
 const admin_services = document.getElementById('admin_services');
 const admin_register_list = document.getElementById('admin_register_list');
+const admin_contact_list = document.getElementById('admin_contact_list');
 
 admin_register.addEventListener('click', (e) => {
 	e.preventDefault();
@@ -12,6 +13,7 @@ function displayFunctionregister()
 {
 	document.getElementById("register_list").style.display = "none";
 	document.getElementById("services").style.display = "none";
+	document.getElementById("client_messages_list").style.display = "none";
 	document.getElementById("register").style.display = "block";
 }
 
@@ -25,6 +27,7 @@ function displayFunctionservices()
 {
 	document.getElementById("register_list").style.display = "none";
 	document.getElementById("register").style.display = "none";
+	document.getElementById("client_messages_list").style.display = "none";
 	document.getElementById("services").style.display = "block";
 }
 
@@ -38,5 +41,20 @@ function displayFunctionregister_list()
 {
 	document.getElementById("register").style.display = "none";
 	document.getElementById("services").style.display = "none";
+	document.getElementById("client_messages_list").style.display = "none";
 	document.getElementById("register_list").style.display = "block";
+}
+
+admin_contact_list.addEventListener('click', (e) => {
+	e.preventDefault();
+	
+	displayFunctioncontact_list();
+});
+
+function displayFunctioncontact_list()
+{
+	document.getElementById("register").style.display = "none";
+	document.getElementById("services").style.display = "none";
+	document.getElementById("register_list").style.display = "none";
+	document.getElementById("client_messages_list").style.display = "block";
 }
