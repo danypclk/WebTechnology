@@ -335,7 +335,7 @@ nav ul li ul li a:hover {
 
 
 
-/*  ----------- admin-page ----------------- */
+/*  ----------- admin-page, employee-page ----------------- */
 
 /*  ----------- sidebar ----------------- */
 
@@ -378,22 +378,12 @@ nav ul li ul li a:hover {
     transition: 0.35s;
 }
 
-.register
+.register, .register_list, .services, .register_list, .order_list, .feedback_list
 {
 	display: none;
 }
 
-.services
-{
-	display: none;
-}
-
-.register_list
-{
-	display: none;
-}
-
-/*  ----------- register list ----------------- */
+/*  ----------- register list, order-list, feedback-list ----------------- */
 
 .register_list
 {
@@ -405,6 +395,32 @@ nav ul li ul li a:hover {
 .register_list iframe
 {
 	height:300px;
+	width:800px;
+}
+
+.order-list
+{
+	position:absolute;
+	left: 250px;
+	top: 150px;
+}
+
+.order_list iframe
+{
+	height:300px;
+	width:800px;
+}
+
+.feedback-list
+{
+	position:absolute;
+	left: 250px;
+	top: 150px;
+}
+
+.feedback_list iframe
+{
+	height:600px;
 	width:800px;
 }
 
