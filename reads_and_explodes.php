@@ -49,22 +49,25 @@ $register_file_name = "register_list.html";
 		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
 		fwrite($register_list,"<p>Name: ". $Name . ", Password: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 	}
+	fclose($fn);
 	fwrite($register_list,"<h2>Employees</h2>");
 	while($row = fgets($fn1)) {
 		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
 		fwrite($register_list,"<p>Name: ". $Name . ", Password: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 	}
+	fclose($fn1);
 	fwrite($register_list,"<h2>Interns</h2>");
 	while($row = fgets($fn2)) {
 		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
 		fwrite($register_list,"<p>Name: ". $Name . ", Password: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 	}
+	fclose($fn2);
 	fwrite($register_list,"<h2>Clients</h2>");
 	while($row = fgets($fn3)) {
 		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
 		fwrite($register_list,"<p>Name: ". $Name . ", Password: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 	}
-	fclose( $fn );
+	fclose($fn3);
 
 echo "<script>window.location.assign('admin-page.html')</script>";
 ?>
