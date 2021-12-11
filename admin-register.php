@@ -18,12 +18,18 @@
 	
 	$array = array($see_partner_duplicate, $see_partner_duplicate_1, $see_partner_duplicate_2, $see_partner_duplicate_3);
 	
+if($name == "admin")
+{
+	echo "<script>alert('Name existiert schon, setzen sie einen anderen.')</script>";
+	echo "<script>window.location.assign('admin-page.html')</script>";
+}
+
 foreach($array as $v)
 {
 	while($row = fgets($v)) 
 	{
 		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
-		if($name == $Name || $name == "admin")
+		if($name == $Name)
 		{
 			fclose($see_partner_duplicate);
 			fclose($see_partner_duplicate_1);
