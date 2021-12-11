@@ -49,8 +49,14 @@ else
 		{
 			if($password == $Pass)
 			{
+				echo "<script>alert('Erfolgreich eingeloggt')</script>";
 				echo "<script>window.location.assign('admin-page.html')</script>";
 			}
+		}
+		else
+		{
+			echo "<script>alert('Falscher Username oder Passwort')</script>";
+			echo "<script>window.location.assign('login.html')</script>";
 		}
 	}
 	fclose($fn);
@@ -61,8 +67,14 @@ else
 		{
 			if($password == $Pass)
 			{
+				echo "<script>alert('Erfolgreich eingeloggt')</script>";
 				echo "<script>window.location.assign('employee-page.html')</script>";
 			}
+		}
+		else
+		{
+			echo "<script>alert('Falscher Username oder Passwort')</script>";
+			echo "<script>window.location.assign('login.html')</script>";
 		}
 	}
 	fclose($fn1);
@@ -73,8 +85,14 @@ else
 		{
 			if($password == $Pass)
 			{
+				echo "<script>alert('Erfolgreich eingeloggt')</script>";
 				echo "<script>window.location.assign('admin-page.html')</script>";
 			}
+		}
+		else
+		{
+			echo "<script>alert('Falscher Username oder Passwort')</script>";
+			echo "<script>window.location.assign('login.html')</script>";
 		}
 	}
 	fclose($fn2);
@@ -85,9 +103,15 @@ else
 		{
 			if($password == $Pass)
 			{
+				echo "<script>alert('Erfolgreich eingeloggt')</script>";
 				echo "<script>window.location.assign('admin-page.html')</script>";
 			}
 		}	
+		else
+		{
+			echo "<script>alert('Falscher Username oder Passwort')</script>";
+			echo "<script>window.location.assign('login.html')</script>";
+		}
 	}
 	fclose($fn3);
 

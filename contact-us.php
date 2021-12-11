@@ -10,7 +10,7 @@ $message_1 =$_POST['message'];
 			$myfile = fopen("Data/Contact_Us/contact.txt", "a");
 			fwrite($myfile, $name_1 . ":");
 			fwrite($myfile, $email_1 . ":");
-			fwrite($myfile, $email_1 . "\n");
+			fwrite($myfile, $message_1 . "\n");
 			fclose($myfile);
 			echo "<script>window.location.assign('reads_and_explodes_contact.php')</script>";
 		}
@@ -19,7 +19,7 @@ $message_1 =$_POST['message'];
 			$myfile = fopen("Data/Contact_Us/contact.txt", "w");
 			fwrite($myfile, $name_1 . ":");
 			fwrite($myfile, $email_1 . ":");
-			fwrite($myfile, $email_1 . "\n");
+			fwrite($myfile, $message_1 . "\n");
 			fclose($myfile);
 			echo "<script>window.location.assign('reads_and_explodes_contact.php')</script>";
 		}
