@@ -4,11 +4,18 @@
 	$email = $_POST['email_register'];
 	$jobtitle = $_POST['business_function'];
 	
+	
+	$file_partner = "register-folder/partner-file.txt";
+	$file_employee = "register-folder/employee-file.txt";
+	$file_intern = "register-folder/intern-file.txt";
+	$file_client = "register-folder/client-file.txt";
+	
+	
 	if($jobtitle == "partner")
 	{
-		if(file_exists("register-folder/partner-file.txt"))
+		if(file_exists($file_partner))
 		{
-			$myfile = fopen("register-folder/partner-file.txt", "a");
+			$myfile = fopen($file_partner, "a");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
@@ -18,7 +25,7 @@
 		}
 		else
 		{
-			$myfile = fopen("register-folder/partner-file.txt", "w");
+			$myfile = fopen($file_partner, "w");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
@@ -29,9 +36,9 @@
 	}
 	else if($jobtitle == "employee")
 	{
-		if(file_exists("register-folder/employee-file.txt"))
+		if(file_exists($file_employee))
 		{
-			$myfile = fopen("register-folder/employee-file.txt", "a");
+			$myfile = fopen($file_employee, "a");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
@@ -41,7 +48,7 @@
 		}
 		else
 		{
-			$myfile = fopen("register-folder/employee-file.txt", "w");
+			$myfile = fopen($file_employee, "w");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
@@ -52,9 +59,9 @@
 	}
 	else if($jobtitle == "intern")
 	{
-		if(file_exists("register-folder/intern-file.txt"))
+		if(file_exists($file_intern))
 		{
-			$myfile = fopen("register-folder/intern-file.txt", "a");
+			$myfile = fopen($file_intern, "a");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
@@ -64,7 +71,7 @@
 		}
 		else
 		{
-			$myfile = fopen("register-folder/intern-file.txt", "w");
+			$myfile = fopen($file_intern, "w");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
@@ -75,7 +82,7 @@
 	}
 	else if($jobtitle == "client")
 	{
-		if(file_exists("register-folder/client-file.txt"))
+		if(file_exists($file_client))
 		{
 			$myfile = fopen("register-folder/client-file.txt", "a");
 			fwrite($myfile, $name . ":");
@@ -87,7 +94,7 @@
 		}
 		else
 		{
-			$myfile = fopen("register-folder/client-file.txt", "w");
+			$myfile = fopen($file_client, "w");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
