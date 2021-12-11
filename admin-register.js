@@ -43,7 +43,6 @@ function checkInputs()
 	}
 	if(nameValue != '' && pass_wordValue != '' && emailValue != '')
 	{
-		alert('Successfully added a new user!');
 		document.getElementById("form_registry").submit();
 	}
 }

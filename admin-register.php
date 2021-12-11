@@ -11,6 +11,32 @@
 	$file_client = "register-folder/client-file.txt";
 	
 	
+	$see_partner_duplicate = fopen($file_partner, "r");
+	$see_partner_duplicate_1 = fopen($file_employee, "r");
+	$see_partner_duplicate_2 = fopen($file_intern, "r");
+	$see_partner_duplicate_3 = fopen($file_client, "r");
+	
+	$array = array($see_partner_duplicate, $see_partner_duplicate_1, $see_partner_duplicate_2, $see_partner_duplicate_3);
+	
+foreach($array as $v)
+{
+	while($row = fgets($v)) 
+	{
+		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
+		if($name == $Name || $name == "admin")
+		{
+			fclose($see_partner_duplicate);
+			fclose($see_partner_duplicate_1);
+			fclose($see_partner_duplicate_2);
+			fclose($see_partner_duplicate_3);
+			echo "<script>alert('Name existiert schon, setzen sie einen anderen.')</script>";
+			echo "<script>window.location.assign('admin-page.html')</script>";
+		}
+	}
+}
+	
+	
+	
 	if($jobtitle == "partner")
 	{
 		if(file_exists($file_partner))
@@ -21,6 +47,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "partner" . "\n");
 			fclose($myfile);
+			echo "<script>alert('Successfully added a new user!')</script>";
 			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
 		}
 		else
@@ -31,6 +58,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "partner" . "\n");
 			fclose($myfile);
+			echo "<script>alert('Successfully added a new user!')</script>";
 			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
 		}
 	}
@@ -44,6 +72,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "employee" . "\n");
 			fclose($myfile);
+			echo "<script>alert('Successfully added a new user!')</script>";
 			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
 		}
 		else
@@ -54,6 +83,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "employee" . "\n");
 			fclose($myfile);
+			echo "<script>alert('Successfully added a new user!')</script>";
 			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
 		}
 	}
@@ -67,6 +97,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "intern" . "\n");
 			fclose($myfile);
+			echo "<script>alert('Successfully added a new user!')</script>";
 			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
 		}
 		else
@@ -77,6 +108,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "intern" . "\n");
 			fclose($myfile);
+			echo "<script>alert('Successfully added a new user!')</script>";
 			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
 		}
 	}
@@ -90,6 +122,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "client" . "\n");
 			fclose($myfile);
+			echo "<script>alert('Successfully added a new user!')</script>";
 			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
 		}
 		else
@@ -100,6 +133,7 @@
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "client" . "\n");
 			fclose($myfile);
+			echo "<script>alert('Successfully added a new user!')</script>";
 			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
 		}
 	}
