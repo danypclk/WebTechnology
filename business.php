@@ -44,6 +44,7 @@ $worker_file_name = "iframe-folder/worker_list.html";
 	fwrite($worker_order_list,"<h2>Orders:</h2>");
 	while($row = fgets($workers_new_file)) {
 		list( $Name, $Email, $Date, $Task, $Address, $Request ) = explode( ":", $row );
+		fwrite($worker_order_list,"<p>Arbeiter: ". $worker_1 . "</p>");
 		fwrite($worker_order_list,"<p>Date: ". $Date . "</p>");
 		fwrite($worker_order_list,"<p>Name: ". $Name . "</p>");
 		fwrite($worker_order_list,"<p>Email: ". $Email . "</p>");

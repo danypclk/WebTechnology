@@ -79,7 +79,7 @@ foreach($array as $v)
 			fwrite($myfile, "employee" . "\n");
 			fclose($myfile);
 			echo "<script>alert('Successfully added a new user!')</script>";
-			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
+			echo "<script>window.location.assign('admin_services_employee_selector.php')</script>";
 		}
 		else
 		{
@@ -90,7 +90,7 @@ foreach($array as $v)
 			fwrite($myfile, "employee" . "\n");
 			fclose($myfile);
 			echo "<script>alert('Successfully added a new user!')</script>";
-			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
+			echo "<script>window.location.assign('admin_services_employee_selector.php')</script>";
 		}
 	}
 	else if($jobtitle == "intern")
