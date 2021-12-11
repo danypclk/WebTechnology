@@ -1,4 +1,64 @@
 <?php
+
+
+$name_1 = $_POST['name'];
+$email_1 = $_POST['email'];
+$worker_1 = $_POST['referrer'];
+$task_1 = $_POST['notiz'];
+$address_1 = $_POST['address'];
+$request_1 = $_POST['request'];
+
+$date = date("Y.m.d");
+
+$worker_file = "Data/Work_orders/" . $worker_1 . ".txt";
+
+		if(file_exists($worker_file))
+		{
+			$myfile = fopen($worker_file, "a");
+			fwrite($myfile, $name_1 . ":");
+			fwrite($myfile, $email_1 . ":");
+			fwrite($myfile, $date . ":");
+			fwrite($myfile, $task_1 . ":");
+			fwrite($myfile, $address_1 . ":");
+			fwrite($myfile, $request_1 . "\n");
+			fclose($myfile);
+		}
+		else
+		{
+			$myfile = fopen($worker_file, "w");
+			fwrite($myfile, $name_1 . ":");
+			fwrite($myfile, $email_1 . ":");
+			fwrite($myfile, $date . ":");
+			fwrite($myfile, $task_1 . ":");
+			fwrite($myfile, $address_1 . ":");
+			fwrite($myfile, $request_1 . "\n");
+			fclose($myfile);
+		}
+
+
+$workers_new_file = fopen($worker_file, "r");
+
+$worker_file_name = "iframe-folder/worker_list.html";
+
+	$worker_order_list = fopen($worker_file_name, "w");
+	fwrite($worker_order_list,"<h2>Orders:</h2>");
+	while($row = fgets($workers_new_file)) {
+		list( $Name, $Email, $Date, $Task, $Address, $Request ) = explode( ":", $row );
+		fwrite($worker_order_list,"<p>Date: ". $Date . "</p>");
+		fwrite($worker_order_list,"<p>Name: ". $Name . "</p>");
+		fwrite($worker_order_list,"<p>Email: ". $Email . "</p>");
+		fwrite($worker_order_list,"<p>Task: ". $Task . "</p>");
+		fwrite($worker_order_list,"<p>Address: ". $Address . "</p>");
+		fwrite($worker_order_list,"<p>Request: ". $Request . "</p>");
+	}
+	fclose($worker_order_list);
+fclose($workers_new_file);
+
+echo "<script>window.location.assign('admin-page.html')</script>";
+
+/*   Only useful if used with PHPMAILER and extension=openssl.dll
+
+
 $name = "Client Name: ".$_POST['name']."\n";
 $email = "Client Email: ".$_POST['email']."\n";
 $worker = $_POST['referrer'];
@@ -48,5 +108,5 @@ if(!$mail->send()){
     echo "Mailer Error: " . $mail->ErrorInfo;
 }else{
     echo "<script>window.location.assign('admin-page.html')</script>";
-}
+}*/
 ?>
