@@ -11,7 +11,7 @@ else
 	$file_contact_us = fopen("Data/Contact_Us/contact.txt", "w");
 }
 
-$contact_us_html_file = "contact_us_list.html";
+$contact_us_html_file = "iframe-folder/contact_us_list.html";
 
 	$contact_us_file = fopen($contact_us_html_file, "w");
 	fwrite($contact_us_file,"<h2>Clients Messages</h2>");

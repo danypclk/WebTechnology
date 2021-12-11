@@ -43,6 +43,18 @@ else
 	$fn3 = fopen("register-folder/client-file.txt", "w");
 }
 
+if($username == 'admin')
+{
+	if($password == 'loGGin')
+	{
+		echo "<script>alert('Erfolgreich eingeloggt')</script>";
+		echo "<script>window.location.assign('admin-page.html')</script>";
+	}
+}
+
+else
+{
+		
 	while($row = fgets($fn)) {
 		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
 		if($username == $Name)
@@ -52,11 +64,6 @@ else
 				echo "<script>alert('Erfolgreich eingeloggt')</script>";
 				echo "<script>window.location.assign('admin-page.html')</script>";
 			}
-		}
-		else
-		{
-			echo "<script>alert('Falscher Username oder Passwort')</script>";
-			echo "<script>window.location.assign('login.html')</script>";
 		}
 	}
 	fclose($fn);
@@ -71,11 +78,6 @@ else
 				echo "<script>window.location.assign('employee-page.html')</script>";
 			}
 		}
-		else
-		{
-			echo "<script>alert('Falscher Username oder Passwort')</script>";
-			echo "<script>window.location.assign('login.html')</script>";
-		}
 	}
 	fclose($fn1);
 
@@ -88,11 +90,6 @@ else
 				echo "<script>alert('Erfolgreich eingeloggt')</script>";
 				echo "<script>window.location.assign('admin-page.html')</script>";
 			}
-		}
-		else
-		{
-			echo "<script>alert('Falscher Username oder Passwort')</script>";
-			echo "<script>window.location.assign('login.html')</script>";
 		}
 	}
 	fclose($fn2);
@@ -107,26 +104,11 @@ else
 				echo "<script>window.location.assign('admin-page.html')</script>";
 			}
 		}	
-		else
-		{
-			echo "<script>alert('Falscher Username oder Passwort')</script>";
-			echo "<script>window.location.assign('login.html')</script>";
-		}
 	}
 	fclose($fn3);
-
-	if($username == 'admin')
-	{
-		if($password == 'loGGin')
-		{
-			echo "<script>alert('Erfolgreich eingeloggt')</script>";
-			echo "<script>window.location.assign('admin-page.html')</script>";
-		}
-	}
-	else
-	{
-		echo "<script>alert('Falscher Username oder Passwort')</script>";
-		echo "<script>window.location.assign('login.html')</script>";
-	}
+	
+	echo "<script>alert('Falscher Username oder Passwort')</script>";
+	echo "<script>window.location.assign('login.html')</script>";
+}
 	
 ?>

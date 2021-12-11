@@ -41,7 +41,7 @@ else
 	$fn3 = fopen("register-folder/client-file.txt", "w");
 }
 
-$register_file_name = "register_list.html";
+$register_file_name = "iframe-folder/register_list.html";
 
 	$register_list = fopen($register_file_name, "w");
 	fwrite($register_list,"<h2>Partners</h2>");
