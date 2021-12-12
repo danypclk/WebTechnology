@@ -15,6 +15,7 @@ if(!file_exists("Data/Contact_Us/contact.txt"))
 if(!file_exists("iframe-folder/contact_us_list.html"))
 {
 	$contact_us_iframe = fopen("iframe-folder/contact_us_list.html", "w");
+	fwrite($contact_us_iframe,"<h2>No Messages</h2>");
 	fclose($contact_us_iframe);
 }
 if(file_exists($file))
@@ -59,6 +60,11 @@ if($username == 'admin')
 	{
 		echo "<script>alert('Erfolgreich eingeloggt')</script>";
 		echo "<script>window.location.assign('admin-page.html')</script>";
+	}
+	else
+	{
+		echo "<script>alert('Falscher Username oder Passwort')</script>";
+		echo "<script>window.location.assign('login.html')</script>";
 	}
 }
 
