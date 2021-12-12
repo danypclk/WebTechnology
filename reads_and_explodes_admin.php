@@ -69,5 +69,7 @@ $register_file_name = "iframe-folder/register_list.html";
 	}
 	fclose($fn3);
 
+header('Location: admin-page.html');
+
 echo "<script>window.location.assign('admin-page.html')</script>";
 ?>
