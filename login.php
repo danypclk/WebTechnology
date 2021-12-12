@@ -7,6 +7,16 @@ $file_1 = "register-folder/employee-file.txt";
 $file_2 = "register-folder/intern-file.txt";
 $file_3 = "register-folder/client-file.txt";
 
+if(!file_exists("Data/Contact_Us/contact.txt"))
+{
+	$contact_us_text_file = fopen("Data/Contact_Us/contact.txt", "w");
+	fclose($contact_us_text_file);
+}
+if(!file_exists("iframe-folder/contact_us_list.html"))
+{
+	$contact_us_iframe = fopen("iframe-folder/contact_us_list.html", "w");
+	fclose($contact_us_iframe);
+}
 if(file_exists($file))
 {
 	$fn = fopen("register-folder/partner-file.txt","r");
