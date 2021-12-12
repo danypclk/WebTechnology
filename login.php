@@ -17,19 +17,25 @@ if(!file_exists("Data/Contact_Us/contact.txt"))
 	$contact_us_text_file = fopen("Data/Contact_Us/contact.txt", "w");
 	fclose($contact_us_text_file);
 }
+if(!file_exists("iframe-folder/register_list.html"))
+{
+	$contact_us_iframe = fopen("iframe-folder/register_list.html", "w");
+	fclose($contact_us_iframe);
+}
 
 if(!file_exists("iframe-folder/contact_us_list.html"))
 {
 	$contact_us_iframe = fopen("iframe-folder/contact_us_list.html", "w");
 	fclose($contact_us_iframe);
 }
-
-if(filesize("Data/Contact_Us/contact.txt") == 0)
+else
 {
-	$contact_us_iframe = fopen("iframe-folder/contact_us_list.html", "w");
-	fwrite($contact_us_iframe,"<h2>No Messages</h2>");
+	if(filesize("Data/Contact_Us/contact.txt") == 0)
+	{
+		$contact_us_iframe = fopen("iframe-folder/contact_us_list.html", "w");
+		fwrite($contact_us_iframe,"<h2>No Messages</h2>");
+	}
 }
-
 
 if(file_exists($file))
 {
