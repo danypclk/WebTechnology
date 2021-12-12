@@ -4,10 +4,12 @@ $name_1 = $_POST['name'];
 $email_1 = $_POST['email'];
 $message_1 =$_POST['message'];
 
+$date = date("Y.m.d");
 
 		if(file_exists("Data/Contact_Us/contact.txt"))
 		{
 			$myfile = fopen("Data/Contact_Us/contact.txt", "a");
+			fwrite($myfile, $date . ":");
 			fwrite($myfile, $name_1 . ":");
 			fwrite($myfile, $email_1 . ":");
 			fwrite($myfile, $message_1 . "\n");
@@ -17,6 +19,7 @@ $message_1 =$_POST['message'];
 		else
 		{
 			$myfile = fopen("Data/Contact_Us/contact.txt", "w");
+			fwrite($myfile, $date . ":");
 			fwrite($myfile, $name_1 . ":");
 			fwrite($myfile, $email_1 . ":");
 			fwrite($myfile, $message_1 . "\n");

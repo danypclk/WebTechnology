@@ -42,7 +42,23 @@ function checkInputs()
 		document.getElementById("contact_message_error").style.visibility = "hidden";
 	}
 	
-	if(nameValue != '' && emailValue != '' && messageValue != '')
+	
+	if(nameValue.includes(':'))
+	{
+		alert('Sie können keinen \":\" im Namen Input benutzten!');
+		return false;
+	}
+	else if(emailValue.includes(':'))
+	{
+		alert('Sie können keinen \":\" im Passwort Input benutzten!');
+		return false;
+	}
+	else if(messageValue.includes(':'))
+	{
+		alert('Sie können keinen \":\" im Passwort Input benutzten!');
+		return false;
+	}
+	else if(nameValue != '' && emailValue != '' && messageValue != '')
 	{
 		alert('Erfolgreich gesendet');
 		document.getElementById("form_contact").submit();

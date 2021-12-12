@@ -16,7 +16,8 @@ $contact_us_html_file = "iframe-folder/contact_us_list.html";
 	$contact_us_file = fopen($contact_us_html_file, "w");
 	fwrite($contact_us_file,"<h2>Clients Messages</h2>");
 	while($row = fgets($file_contact_us)) {
-		list( $Name, $Email, $Message ) = explode( ":", $row );
+		list( $Date ,$Name, $Email, $Message ) = explode( ":", $row );
+		fwrite($contact_us_file,"<p>Date: " . $Date . "</p>");
 		fwrite($contact_us_file,"<p>Client: " . $Name . "</p>");
 		fwrite($contact_us_file,"<p>Email: " . $Email . "</p>");
 		fwrite($contact_us_file,"<p>Message: " . $Message . "</p>");
