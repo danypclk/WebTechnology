@@ -3,19 +3,29 @@
 $employee_selector = "Data/Work_orders/employee_selector.html";
 
 
-$employee = "";
+$employees = [];
 
 
 $file_employee = "register-folder/employee-file.txt";
-$data = file($file_employee);
-$line = $data[count($data)-1];
-list($Name, $Pass, $Email ) = explode( ":", $line );
-$employee = $Name;
+$file_employee_open = fopen($file_employee, "r");
+while($row = fgets($file_employee_open))
+{
+	list($Name, $Pass, $Email ) = explode( ":", $row );
+	array_push($employees, $Name);
+}
 
-$file = fopen($employee_selector, "a");
-fwrite($file, "\n<option value=\"" . $employee . "\">" . $employee . "</option>");
+fclose($file_employee_open);
+
+
+$file = fopen($employee_selector, "w");
+foreach($employees as $employee)
+{
+	fwrite($file, "\n<option value=\"" . $employee . "\">" . $employee . "</option>");
+}
+
 fclose($file);
 
-echo "<script>window.location.assign('admin-page.html')</script>";
+
+echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
 
 ?>
