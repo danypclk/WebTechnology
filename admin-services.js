@@ -58,7 +58,7 @@ function checkservices()
 	}
 	else
 	{
-		document.getElementById("client_address_error").style.visibility = "hidden";
+		document.getElementById("selector_error").style.visibility = "hidden";
 	}
 	
 	if(client_name_Value != '' && client_email_Value != '' && client_address_Value != '' && selector.options.length > 0 && (document.querySelectorAll('input[type="radio"][value="Cleaning"]:checked').length === 1 || document.querySelectorAll('input[type="radio"][value="Repair"]:checked').length === 1 || document.querySelectorAll('input[type="radio"][value="Replacement"]:checked').length === 1 || document.querySelectorAll('input[type="radio"][value="Sonstiges"]:checked').length === 1))
