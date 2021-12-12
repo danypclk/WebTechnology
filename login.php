@@ -7,17 +7,31 @@ $file_1 = "register-folder/employee-file.txt";
 $file_2 = "register-folder/intern-file.txt";
 $file_3 = "register-folder/client-file.txt";
 
+if(!file_exists("Data/Work_orders/employee_selector.html"))
+{
+	$employee_selector_file = fopen("Data/Work_orders/employee_selector.html", "w");
+	fclose($employee_selector_file);
+}
 if(!file_exists("Data/Contact_Us/contact.txt"))
 {
 	$contact_us_text_file = fopen("Data/Contact_Us/contact.txt", "w");
 	fclose($contact_us_text_file);
 }
+
 if(!file_exists("iframe-folder/contact_us_list.html"))
 {
 	$contact_us_iframe = fopen("iframe-folder/contact_us_list.html", "w");
-	fwrite($contact_us_iframe,"<h2>No Messages</h2>");
 	fclose($contact_us_iframe);
 }
+else
+{
+	if(filesize("Data/Contact_Us/contact.txt") == 0)
+	{
+		$contact_us_iframe = fopen("iframe-folder/contact_us_list.html", "w");
+		fwrite($contact_us_iframe,"<h2>No Messages</h2>");
+	}
+}
+
 if(file_exists($file))
 {
 	$fn = fopen("register-folder/partner-file.txt","r");
