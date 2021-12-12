@@ -45,19 +45,20 @@ function checkInputs()
 	
 	if(nameValue.includes(':'))
 	{
-		alert('Sie können keinen : im Namen Input benutzten!');
+		alert('Sie können keinen \":\" im Namen Input benutzten!');
+		return false;
 	}
-	if(pass_wordValue.includes(':'))
+	else if(pass_wordValue.includes(':'))
 	{
-		alert('Sie können keinen : im Passwort Input benutzten!');
+		alert('Sie können keinen \":\" im Passwort Input benutzten!');
+		return false;
 	}
-	if(emailValue.includes(':'))
+	else if(emailValue.includes(':'))
 	{
-		alert('Sie können keinen : im Email Input benutzten!');
+		alert('Sie können keinen \":\" im Email Input benutzten!');
+		return false;
 	}
-	
-	
-	if(nameValue != '' && pass_wordValue != '' && emailValue != '')
+	else if(nameValue != '' && pass_wordValue != '' && emailValue != '')
 	{
 		document.getElementById("form_registry").submit();
 	}

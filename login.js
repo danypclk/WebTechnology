@@ -30,7 +30,17 @@ function checkInputs()
 		document.getElementById("pass_error").style.visibility = "hidden";
 	}
 	
-	if(usernameValue != '' && usernameValue != '' && pass_wordValue != '' && pass_wordValue != '')
+	if(usernameValue.includes(':'))
+	{
+		alert('Sie können keinen \":\" im Namen Input benutzten!');
+		return false;
+	}
+	else if(pass_wordValue.includes(':'))
+	{
+		alert('Sie können keinen \":\" im Passwort Input benutzten!');
+		return false;
+	}
+	else if(usernameValue != '' && usernameValue != '' && pass_wordValue != '' && pass_wordValue != '')
 	{
 		document.getElementById("form_login").submit();
 	}
