@@ -41,6 +41,22 @@ function checkInputs()
 	{
 		document.getElementById("register_email_error").style.visibility = "hidden";
 	}
+	
+	
+	if(nameValue.includes(':'))
+	{
+		alert('Sie können keinen : im Namen Input benutzten!');
+	}
+	if(pass_wordValue.includes(':'))
+	{
+		alert('Sie können keinen : im Passwort Input benutzten!');
+	}
+	if(emailValue.includes(':'))
+	{
+		alert('Sie können keinen : im Email Input benutzten!');
+	}
+	
+	
 	if(nameValue != '' && pass_wordValue != '' && emailValue != '')
 	{
 		document.getElementById("form_registry").submit();

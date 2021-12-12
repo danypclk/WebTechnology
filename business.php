@@ -55,6 +55,7 @@ $worker_file_name = "iframe-folder/worker_list.html";
 	fclose($worker_order_list);
 fclose($workers_new_file);
 
+echo "<script>alert('Successfully tasked an employee!')</script>";
 echo "<script>window.location.assign('admin-page.html')</script>";
 
 /*   Only useful if used with PHPMAILER and extension=openssl.dll
