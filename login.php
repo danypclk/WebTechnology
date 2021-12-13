@@ -142,7 +142,7 @@ else
 			if($password == $Pass)
 			{
 				echo "<script>alert('Erfolgreich eingeloggt')</script>";
-				echo "<script>window.location.assign('admin-page.html')</script>";
+				echo "<script>window.location.assign('client-page.html')</script>";
 			}
 		}	
 	}

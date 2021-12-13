@@ -8,5 +8,6 @@ client_feedback.addEventListener('click', (e) => {
 
 function displayFunctionservices()
 {
+	$( "#employee_list" ).load( "Data/Work_orders/employee_selector.html" );
 	document.getElementById("feedback").style.display = "block";
 }
