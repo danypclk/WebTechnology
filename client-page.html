@@ -8,6 +8,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
+	<script src="jquery.js"></script>
 	<link rel="stylesheet" href="style-contact-us.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
 </head>
@@ -48,7 +49,7 @@
                 </defs>
                 </svg></a></p>
         <ul class="navbar">
-            <li class="navitem"><a href="">Welcome to the Employee Page</a></li>
+            <li class="navitem"><a href="">Welcome to the Client Page</a></li>
 			<li class="navitem"><a href="index.html">Logout</a></li>
         </ul>
 
@@ -75,13 +76,13 @@
 	<!--  Feedback -->
 	
 	<section class="feedback" id="feedback">
-		<form class="form" method="post" id="form_registry" autocomplete="off" action="feedback.php">
-			<h2>Registry</h2>
+		<form class="form" method="post" id="form_feedback" autocomplete="off" action="feedback.php">
+			<h2>Feedback</h2>
 				<p type="Name: "> <input name="client_feedback_name" id="client_feedback_name"></input></p>
 					<small id="register_name_error">Name kann nicht leer sein.</small>
-				<p type="Feedback: "> <input name="client_feedback" id="client_feedback"></input></p>
+				<p type="Ihren Feedback: "> <input name="client_feedback" id="client_feedback"></input></p>
 					<small id="register_email_error">Email kann nicht leer sein.</small>
-				<p type="Function in the business: "> 
+				<p type="Mitarbeiter, der für Sie gearbeitet hat: ">
 				<br />
 				<select name="employee_list" id="employee_list">
 					

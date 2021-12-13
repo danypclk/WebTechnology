@@ -203,7 +203,7 @@ nav ul li ul li a:hover {
 	font-family: 'Montserrat',sans-serif;
 }
 
-#form_registry
+#form_registry ,#form_feedback
 {
 	position:absolute;
 	left: 250px;
@@ -302,7 +302,7 @@ nav ul li ul li a:hover {
 	margin: 60px 0 0;
 }
 
-.form #register_button , .form #submit_button
+.form #register_button , .form #submit_button, .form #form_feedback
 {
 	margin: 25px 0 0;
 }
