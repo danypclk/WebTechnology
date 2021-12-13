@@ -40,19 +40,40 @@ $workers_new_file = fopen($worker_file, "r");
 
 $worker_file_name = "iframe-folder/worker_list.html";
 
-	$worker_order_list = fopen($worker_file_name, "w");
-	fwrite($worker_order_list,"<h2>Orders:</h2>");
-	while($row = fgets($workers_new_file)) {
-		list( $Name, $Email, $Date, $Task, $Address, $Request ) = explode( ":", $row );
-		fwrite($worker_order_list,"<p>Arbeiter: ". $worker_1 . "</p>");
-		fwrite($worker_order_list,"<p>Date: ". $Date . "</p>");
-		fwrite($worker_order_list,"<p>Name: ". $Name . "</p>");
-		fwrite($worker_order_list,"<p>Email: ". $Email . "</p>");
-		fwrite($worker_order_list,"<p>Task: ". $Task . "</p>");
-		fwrite($worker_order_list,"<p>Address: ". $Address . "</p>");
-		fwrite($worker_order_list,"<p>Request: ". $Request . "</p>");
+	if(file_exists($worker_file_name))
+	{
+		$worker_order_list = fopen($worker_file_name, "a");
+		while($row = fgets($workers_new_file)) 
+		{
+			list( $Name, $Email, $Date, $Task, $Address, $Request ) = explode( ":", $row );
+			fwrite($worker_order_list,"<p>Arbeiter: ". $worker_1 . "</p>");
+			fwrite($worker_order_list,"<p>Date: ". $Date . "</p>");
+			fwrite($worker_order_list,"<p>Name: ". $Name . "</p>");
+			fwrite($worker_order_list,"<p>Email: ". $Email . "</p>");
+			fwrite($worker_order_list,"<p>Task: ". $Task . "</p>");
+			fwrite($worker_order_list,"<p>Address: ". $Address . "</p>");
+			fwrite($worker_order_list,"<p>Request: ". $Request . "</p>");
+		}
+		fclose($worker_order_list);
 	}
-	fclose($worker_order_list);
+	else
+	{
+		$worker_order_list = fopen($worker_file_name, "a");
+		fwrite($worker_order_list,"<h2>Orders:</h2>");
+		while($row = fgets($workers_new_file)) 
+		{
+			list( $Name, $Email, $Date, $Task, $Address, $Request ) = explode( ":", $row );
+			fwrite($worker_order_list,"<p>Arbeiter: ". $worker_1 . "</p>");
+			fwrite($worker_order_list,"<p>Date: ". $Date . "</p>");
+			fwrite($worker_order_list,"<p>Name: ". $Name . "</p>");
+			fwrite($worker_order_list,"<p>Email: ". $Email . "</p>");
+			fwrite($worker_order_list,"<p>Task: ". $Task . "</p>");
+			fwrite($worker_order_list,"<p>Address: ". $Address . "</p>");
+			fwrite($worker_order_list,"<p>Request: ". $Request . "</p>");
+		}
+		fclose($worker_order_list);
+	}
+
 fclose($workers_new_file);
 
 echo "<script>alert('Successfully tasked an employee!')</script>";
