@@ -71,9 +71,25 @@
 
 	<!--  Feedback -->
 	
-	
+	<section class="feedback" id="feedback">
+		<form class="form" method="post" id="form_registry" autocomplete="off" action="feedback.php">
+			<h2>Registry</h2>
+				<p type="Name: "> <input name="client_feedback_name" id="client_feedback_name"></input></p>
+					<small id="register_name_error">Name kann nicht leer sein.</small>
+				<p type="Feedback: "> <input name="client_feedback" id="client_feedback"></input></p>
+					<small id="register_email_error">Email kann nicht leer sein.</small>
+				<p type="Function in the business: "> 
+				<br />
+				<select name="employee_list" id="employee_list">
+					
+				</select></p>
+					<small id="function_of_busniess_error">Kein Arbeiter im Register!</small>
+			<button id="submit_button"><b>Submit</b></button>
+			<script src="client_feedback.js"></script>
+		</form>
+	</section>
 
 	<!--    Content Ende -->
-	<script src="employee.js"></script>
+	<script src="client.js"></script>
 </body>
 </html>

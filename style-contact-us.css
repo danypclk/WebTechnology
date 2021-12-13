@@ -301,7 +301,7 @@ nav ul li ul li a:hover {
 	margin: 60px 0 0;
 }
 
-.form #register_button
+.form #register_button , .form #submit_button
 {
 	margin: 25px 0 0;
 }
@@ -379,7 +379,8 @@ nav ul li ul li a:hover {
     transition: 0.35s;
 }
 
-.register, .register_list, .services, .register_list, .order_list, .feedback_list, .client_messages_list
+.register, .register_list, .services, .register_list, .order_list, .feedback_list, .client_messages_list,
+.feedback
 {
 	display: none;
 }
