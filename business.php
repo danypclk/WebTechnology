@@ -53,6 +53,8 @@ $worker_file_name = "iframe-folder/worker_list.html";
 			fwrite($worker_order_list,"<p>Task: ". $Task . "</p>");
 			fwrite($worker_order_list,"<p>Address: ". $Address . "</p>");
 			fwrite($worker_order_list,"<p>Request: ". $Request . "</p>");
+			fwrite($worker_order_list,"<hr />");
+			fwrite($worker_order_list,"<br />");
 		}
 		fclose($worker_order_list);
 	}

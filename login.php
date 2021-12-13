@@ -20,6 +20,7 @@ if(!file_exists("Data/Contact_Us/contact.txt"))
 if(!file_exists("iframe-folder/register_list.html"))
 {
 	$register_list_iframe = fopen("iframe-folder/register_list.html", "w");
+	fwrite($register_list_iframe,"<h2>No Registry List</h2>");
 	fclose($register_list_iframe);
 }
 if(!file_exists("iframe-folder/contact_us_list.html"))

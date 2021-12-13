@@ -21,6 +21,7 @@ $contact_us_html_file = "iframe-folder/contact_us_list.html";
 		fwrite($contact_us_file,"<p>Client: " . $Name . "</p>");
 		fwrite($contact_us_file,"<p>Email: " . $Email . "</p>");
 		fwrite($contact_us_file,"<p>Message: " . $Message . "</p>");
+		fwrite($contact_us_file,"<hr />");
 		fwrite($contact_us_file,"<br />");
 	}
 	fclose($file_contact_us);
