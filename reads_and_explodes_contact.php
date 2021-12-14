@@ -24,6 +24,7 @@ $contact_us_html_file = "iframe-folder/contact_us_list.html";
 		fwrite($contact_us_file,"<hr />");
 		fwrite($contact_us_file,"<br />");
 	}
+	fclose($contact_us_file);
 	fclose($file_contact_us);
 
 echo "<script>window.location.assign('contact-us.html')</script>";
