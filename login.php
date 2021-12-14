@@ -7,9 +7,14 @@ $file_1 = "register-folder/employee-file.txt";
 $file_2 = "register-folder/intern-file.txt";
 $file_3 = "register-folder/client-file.txt";
 
-if(!file_exists("Data/Work_orders/employee_selector.html"))
+if(!file_exists("Data/Selector/employee_selector.html"))
 {
-	$employee_selector_file = fopen("Data/Work_orders/employee_selector.html", "w");
+	$employee_selector_file = fopen("Data/Selector/employee_selector.html", "w");
+	fclose($employee_selector_file);
+}
+if(!file_exists("Data/Selector/partner_employee_selector.html"))
+{
+	$employee_selector_file = fopen("Data/Selector/partner_employee_selector.html", "w");
 	fclose($employee_selector_file);
 }
 if(!file_exists("Data/Contact_Us/contact.txt"))
