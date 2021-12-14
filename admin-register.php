@@ -71,7 +71,8 @@ foreach($array as $v)
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
-			fwrite($myfile, "partner" . "\n");
+			fwrite($myfile, "partner");
+			fwrite($myfile, "\n");
 			fclose($myfile);
 			echo "<script>alert('Successfully added a new user!')</script>";
 			echo "<script>window.location.assign('admin_services_partner_selector.php')</script>";
@@ -85,7 +86,8 @@ foreach($array as $v)
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
-			fwrite($myfile, "employee" . "\n");
+			fwrite($myfile, "employee");
+			fwrite($myfile, "\n");
 			fclose($myfile);
 			echo "<script>alert('Successfully added a new user!')</script>";
 			echo "<script>window.location.assign('admin_services_employee_selector.php')</script>";
@@ -96,7 +98,8 @@ foreach($array as $v)
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
-			fwrite($myfile, "employee" . "\n");
+			fwrite($myfile, "employee");
+			fwrite($myfile, "\n");
 			fclose($myfile);
 			echo "<script>alert('Successfully added a new user!')</script>";
 			echo "<script>window.location.assign('admin_services_employee_selector.php')</script>";
@@ -110,7 +113,8 @@ foreach($array as $v)
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
-			fwrite($myfile, "intern" . "\n");
+			fwrite($myfile, "intern");
+			fwrite($myfile, "\n");
 			fclose($myfile);
 			echo "<script>alert('Successfully added a new user!')</script>";
 			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
@@ -121,7 +125,8 @@ foreach($array as $v)
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
-			fwrite($myfile, "intern" . "\n");
+			fwrite($myfile, "intern");
+			fwrite($myfile, "\n");
 			fclose($myfile);
 			echo "<script>alert('Successfully added a new user!')</script>";
 			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
@@ -135,7 +140,8 @@ foreach($array as $v)
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
-			fwrite($myfile, "client" . "\n");
+			fwrite($myfile, "client");
+			fwrite($myfile, "\n");
 			fclose($myfile);
 			echo "<script>alert('Successfully added a new user!')</script>";
 			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
@@ -146,7 +152,8 @@ foreach($array as $v)
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $pass . ":");
 			fwrite($myfile, $email . ":");
-			fwrite($myfile, "client" . "\n");
+			fwrite($myfile, "client");
+			fwrite($myfile, "\n");
 			fclose($myfile);
 			echo "<script>alert('Successfully added a new user!')</script>";
 			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
