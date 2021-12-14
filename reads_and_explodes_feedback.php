@@ -17,7 +17,7 @@ $feedback_html_location = "iframe-folder/feedback.html";
 	$feedback_file_html = fopen($feedback_html_location, "w");
 	fwrite($feedback_file_html,"<h2>Clients Feedback</h2>");
 	while($row = fgets($file_feedback)) {
-		list( $Date, $Name, $Feedback, $Position, $Person ) = explode( ":", $row );
+		list( $Date, $Name, $Feedback, $Person, $Position ) = explode( ":", $row );
 		fwrite($feedback_file_html,"<p>Date: " . $Date . "</p>");
 		fwrite($feedback_file_html,"<p>Client: " . $Name . "</p>");
 		fwrite($feedback_file_html,"<p>Feedback to: " . $Position  . $Person . "</p>");
