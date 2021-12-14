@@ -25,7 +25,7 @@ admin_services.addEventListener('click', (e) => {
 
 function displayFunctionservices()
 {
-	$( "#referrer" ).load( "Data/Work_orders/employee_selector.html" );
+	$( "#referrer" ).load( "Data/Selector/employee_selector.html" );
 	document.getElementById("register_list").style.display = "none";
 	document.getElementById("register").style.display = "none";
 	document.getElementById("client_messages_list").style.display = "none";
