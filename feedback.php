@@ -15,7 +15,7 @@ while($row = fgets($file_partner_open))
 	list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
 	if($Name == $busniess_assosiation_name)
 	{
-		$position = $Position;
+		$position = "Partner";
 		break;
 	}
 }
@@ -26,7 +26,7 @@ if($is_true == false)
 		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
 		if($Name == $busniess_assosiation_name)
 		{
-			$position = $Position;
+			$position = "Arbeiter";
 			break;
 		}	
 	}
@@ -40,8 +40,8 @@ $date = date("Y.m.d");
 			fwrite($myfile, $date . ":");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $feedback . ":");
-			fwrite($myfile, $position . ":");
-			fwrite($myfile, $busniess_assosiation_name);
+			fwrite($myfile, $busniess_assosiation_name. ":");
+			fwrite($myfile, $position);
 			fwrite($myfile, "\n");
 			fclose($myfile);
 			echo "<script>window.location.assign('reads_and_explodes_feedback.php')</script>";
@@ -52,8 +52,8 @@ $date = date("Y.m.d");
 			fwrite($myfile, $date . ":");
 			fwrite($myfile, $name . ":");
 			fwrite($myfile, $feedback . ":");
-			fwrite($myfile, $position . ":");
-			fwrite($myfile, $busniess_assosiation_name);
+			fwrite($myfile, $busniess_assosiation_name. ":");
+			fwrite($myfile, $position);
 			fwrite($myfile, "\n");
 			fclose($myfile);
 			echo "<script>window.location.assign('reads_and_explodes_feedback.php')</script>";
