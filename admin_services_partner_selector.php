@@ -29,16 +29,14 @@ foreach($partners as $partner)
 	fwrite($file, "\n<option value=\"" . $partner . "\">" . $partner . "</option>");
 }
 
-$file_1 = fopen($partner_employee_selector, "a");
-fwrite($file_1, "\n<option value=\"disabled\">--Arbeiter--</option>");
+fwrite($file, "\n<option value=\"disabled\">--Arbeiter--</option>");
 foreach($employees as $employee)
 {
-	fwrite($file_1, "\n<option value=\"" . $employee . "\">" . $employee . "</option>");
+	fwrite($file, "\n<option value=\"" . $employee . "\">" . $employee . "</option>");
 }
 
 
 fclose($file);
-fclose($file_1);
 
 echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
 
