@@ -16,6 +16,7 @@ function checkservices()
 	const client_email_Value = client_email_services.value.trim();
 	const client_address_Value = client_address_service.value.trim();
 	const client_request_Value = client_request_service.value;
+	const selector_value = selector.value;
 	
 	if(client_name_Value === '')
 	{
@@ -54,7 +55,9 @@ function checkservices()
 		document.getElementById("radio_button_error").style.visibility = "hidden";
 	}
 	
-	if(selector.options.length === 0)
+	console.log(selector_value);
+	
+	if(selector.options.length === 0 || selector_value === 'disabled')
 	{
 		document.getElementById("selector_error").style.visibility = "visible";
 	}
@@ -84,7 +87,7 @@ function checkservices()
 		alert('Sie können keinen : im Request Input benutzten!');
 		return false;
 	}
-	else if(client_name_Value != '' && client_email_Value != '' && client_address_Value != '' && selector.options.length > 0 && (document.querySelectorAll('input[type="radio"][value="Cleaning"]:checked').length === 1 || document.querySelectorAll('input[type="radio"][value="Repair"]:checked').length === 1 || document.querySelectorAll('input[type="radio"][value="Replacement"]:checked').length === 1 || document.querySelectorAll('input[type="radio"][value="Sonstiges"]:checked').length === 1))
+	else if(client_name_Value != '' && client_email_Value != '' && client_address_Value != '' && selector.options.length > 0 && selector_value != 'disabled' && (document.querySelectorAll('input[type="radio"][value="Cleaning"]:checked').length === 1 || document.querySelectorAll('input[type="radio"][value="Repair"]:checked').length === 1 || document.querySelectorAll('input[type="radio"][value="Replacement"]:checked').length === 1 || document.querySelectorAll('input[type="radio"][value="Sonstiges"]:checked').length === 1))
 	{
 		document.getElementById("form_services").submit();
 	}

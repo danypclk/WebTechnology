@@ -18,6 +18,7 @@ fclose($file_partner_open);
 
 
 $file = fopen($partner_selector, "w");
+fwrite($file, "\n<option value=\"disabled\">Partners</option>");
 foreach($partners as $partner)
 {
 	fwrite($file, "\n<option value=\"" . $partner . "\">" . $partner . "</option>");

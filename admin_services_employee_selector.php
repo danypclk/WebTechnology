@@ -18,6 +18,7 @@ fclose($file_employee_open);
 
 
 $file = fopen($employee_selector, "w");
+fwrite($file, "\n<option id=\"disabled\" value=\"disabled\">Arbeiter</option>");
 foreach($employees as $employee)
 {
 	fwrite($file, "\n<option value=\"" . $employee . "\">" . $employee . "</option>");
