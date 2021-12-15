@@ -335,6 +335,10 @@ nav ul li ul li a:hover {
 }
 
 /*  ----------- Team ----------------- */
+#h4team {
+    margin: 1rem;
+}
+
 .hideSection {
     opacity: 0;
     /* transition: all 0.8s ease; */
@@ -392,6 +396,10 @@ nav ul li ul li a:hover {
     height: 300px;
     border-radius: 20%;
     transition: 400ms;
+}
+
+.profile img:hover {
+    opacity: 0.8;
 }
 
 .user-name {
