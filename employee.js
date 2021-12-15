@@ -9,8 +9,23 @@ order_list.addEventListener('click', (e) => {
 
 function displayFunctionregister()
 {
-	document.getElementById("feedback_list").style.display = "none";
-	document.getElementById("order_list").style.display = "block";
+	const filename = "iframe-folder/worker_list.html";
+	var response = jQuery.ajax({
+		url: filename,
+		type: 'HEAD',
+		async: false
+		}).status;	
+	
+		if(response != "200") 
+		{
+			alert('Files do not exist, you have to log yourself in first.');
+			return false;
+		}
+		else
+		{
+			document.getElementById("feedback_list").style.display = "none";
+			document.getElementById("order_list").style.display = "block";
+		}
 }
 
 employee_feedback.addEventListener('click', (e) => {
@@ -21,6 +36,21 @@ employee_feedback.addEventListener('click', (e) => {
 
 function displayFunctionservices()
 {
-	document.getElementById("feedback_list").style.display = "block";
-	document.getElementById("order_list").style.display = "none";
+	const filename = "iframe-folder/feedback.html";
+	var response = jQuery.ajax({
+		url: filename,
+		type: 'HEAD',
+		async: false
+		}).status;	
+	
+		if(response != "200") 
+		{
+			alert('Files do not exist, you have to log yourself in first.');
+			return false;
+		}
+		else
+		{
+			document.getElementById("feedback_list").style.display = "block";
+			document.getElementById("order_list").style.display = "none";
+		}
 }

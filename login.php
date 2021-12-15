@@ -28,6 +28,12 @@ if(!file_exists("iframe-folder/register_list.html"))
 	fwrite($register_list_iframe,"<h2>No Registry List</h2>");
 	fclose($register_list_iframe);
 }
+if(!file_exists("iframe-folder/feedback.html"))
+{
+	$feedback_iframe = fopen("iframe-folder/feedback.html", "w");
+	fwrite($feedback_iframe,"<h2>No Feedback</h2>");
+	fclose($feedback_iframe);
+}
 if(!file_exists("iframe-folder/contact_us_list.html"))
 {
 	$contact_us_iframe = fopen("iframe-folder/contact_us_list.html", "w");
