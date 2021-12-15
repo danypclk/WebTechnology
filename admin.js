@@ -1,9 +1,9 @@
-const admin_register = document.getElementById('admin_register');
-const admin_services = document.getElementById('admin_services');
-const admin_register_list = document.getElementById('admin_register_list');
-const admin_contact_list = document.getElementById('admin_contact_list');
+const admin_registry = document.getElementById('admin_register');
+const admin_service = document.getElementById('admin_services');
+const admin_registerlist = document.getElementById('admin_register_list');
+const admin_contactlist = document.getElementById('admin_contact_list');
 
-admin_register.addEventListener('click', (e) => {
+admin_registry.addEventListener('click', (e) => {
 	e.preventDefault();
 	
 	displayFunctionregister();
@@ -11,13 +11,39 @@ admin_register.addEventListener('click', (e) => {
 
 function displayFunctionregister()
 {
-	document.getElementById("register_list").style.display = "none";
-	document.getElementById("services").style.display = "none";
-	document.getElementById("client_messages_list").style.display = "none";
-	document.getElementById("register").style.display = "block";
+	const file_list = ["register-folder/partner-file.txt", "register-folder/employee-file.txt", "register-folder/intern-file.txt", "register-folder/client-file.txt"]
+	var tracker = 0;
+	
+	for(var i in file_list)
+	{
+		filename = file_list[i];
+		var response = jQuery.ajax({
+		url: filename,
+		type: 'HEAD',
+		async: false
+		}).status;	
+	
+		if(response != "200") 
+		{
+			alert('Files do not exist, you have to log yourself in first.');
+			return false;
+		}
+		else
+		{
+			tracker = 1;
+		}
+	}
+
+	if(tracker === 1)
+	{
+		document.getElementById("register_list").style.display = "none";
+		document.getElementById("register").style.display = "block";
+		document.getElementById("client_messages_list").style.display = "none";
+		document.getElementById("services").style.display = "none";
+	}
 }
 
-admin_services.addEventListener('click', (e) => {
+admin_service.addEventListener('click', (e) => {
 	e.preventDefault();
 	
 	displayFunctionservices();
@@ -25,14 +51,41 @@ admin_services.addEventListener('click', (e) => {
 
 function displayFunctionservices()
 {
-	$( "#referrer" ).load( "Data/Selector/employee_selector.html" );
-	document.getElementById("register_list").style.display = "none";
-	document.getElementById("register").style.display = "none";
-	document.getElementById("client_messages_list").style.display = "none";
-	document.getElementById("services").style.display = "block";
+	const file_list = ["register-folder/partner-file.txt", "register-folder/employee-file.txt", "register-folder/intern-file.txt", "register-folder/client-file.txt"]
+	var tracker = 0;
+	
+	for(var i in file_list)
+	{
+		filename = file_list[i];
+		var response = jQuery.ajax({
+		url: filename,
+		type: 'HEAD',
+		async: false
+		}).status;	
+	
+		if(response != "200") 
+		{
+			alert('Files do not exist, you have to log yourself in first.');
+			return false;
+		}
+		else
+		{
+			tracker = 1;
+		}
+	}
+
+	if(tracker === 1)
+	{
+		$( "#referrer" ).load( "Data/Selector/employee_selector.html" );
+		document.getElementById("register_list").style.display = "none";
+		document.getElementById("register").style.display = "none";
+		document.getElementById("client_messages_list").style.display = "none";
+		document.getElementById("services").style.display = "block";
+	}
+	
 }
 
-admin_register_list.addEventListener('click', (e) => {
+admin_registerlist.addEventListener('click', (e) => {
 	e.preventDefault();
 	
 	displayFunctionregister_list();
@@ -40,13 +93,28 @@ admin_register_list.addEventListener('click', (e) => {
 
 function displayFunctionregister_list()
 {
-	document.getElementById("register").style.display = "none";
-	document.getElementById("services").style.display = "none";
-	document.getElementById("client_messages_list").style.display = "none";
-	document.getElementById("register_list").style.display = "block";
+	const filename = "iframe-folder/register_list.html";
+	var response = jQuery.ajax({
+		url: filename,
+		type: 'HEAD',
+		async: false
+		}).status;	
+	
+		if(response != "200") 
+		{
+			alert('Files do not exist, you have to log yourself in first.');
+			return false;
+		}
+		else
+		{
+			document.getElementById("register").style.display = "none";
+			document.getElementById("services").style.display = "none";
+			document.getElementById("client_messages_list").style.display = "none";
+			document.getElementById("register_list").style.display = "block";
+		}
 }
 
-admin_contact_list.addEventListener('click', (e) => {
+admin_contactlist.addEventListener('click', (e) => {
 	e.preventDefault();
 	
 	displayFunctioncontact_list();
@@ -54,8 +122,23 @@ admin_contact_list.addEventListener('click', (e) => {
 
 function displayFunctioncontact_list()
 {
-	document.getElementById("register").style.display = "none";
-	document.getElementById("services").style.display = "none";
-	document.getElementById("register_list").style.display = "none";
-	document.getElementById("client_messages_list").style.display = "block";
+	const filename = "iframe-folder/contact_us_list.html";
+	var response = jQuery.ajax({
+		url: filename,
+		type: 'HEAD',
+		async: false
+		}).status;	
+	
+		if(response != "200") 
+		{
+			alert('Files do not exist, you have to log yourself in first.');
+			return false;
+		}
+		else
+		{
+			document.getElementById("register").style.display = "none";
+			document.getElementById("services").style.display = "none";
+			document.getElementById("register_list").style.display = "none";
+			document.getElementById("client_messages_list").style.display = "block";
+		}
 }

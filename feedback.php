@@ -1,72 +1,62 @@
 <?php
 
-$name_1 = $_POST['name'];
-$email_1 = $_POST['email'];
-$message_1 =$_POST['message'];
+$name = $_POST['client_feedback_name'];
+$feedback =$_POST['client_feedback'];
+$busniess_assosiation_name = $_POST['business_list'];
+$position = "postion";
+
+$file_partner = "register-folder/partner-file.txt";
+$file_employee = "register-folder/employee-file.txt";
+$file_partner_open = fopen($file_partner, "r");
+$file_employee_open = fopen($file_employee, "r");
+$is_true = false;
+while($row = fgets($file_partner_open))
+{
+	list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
+	if($Name == $busniess_assosiation_name)
+	{
+		$position = "Partner";
+		break;
+	}
+}
+if($is_true == false)
+{
+	while($row = fgets($file_employee_open))
+	{
+		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
+		if($Name == $busniess_assosiation_name)
+		{
+			$position = "Arbeiter";
+			break;
+		}	
+	}
+}
 
 $date = date("Y.m.d");
 
-		if(file_exists("Data/Contact_Us/contact.txt"))
+		if(file_exists("Data/Feedback/feedback.txt"))
 		{
-			$myfile = fopen("Data/Contact_Us/contact.txt", "a");
+			$myfile = fopen("Data/Feedback/feedback.txt", "a");
 			fwrite($myfile, $date . ":");
-			fwrite($myfile, $name_1 . ":");
-			fwrite($myfile, $email_1 . ":");
-			fwrite($myfile, $message_1 . "\n");
+			fwrite($myfile, $name . ":");
+			fwrite($myfile, $feedback . ":");
+			fwrite($myfile, $busniess_assosiation_name. ":");
+			fwrite($myfile, $position);
+			fwrite($myfile, "\n");
 			fclose($myfile);
-			echo "<script>window.location.assign('reads_and_explodes_contact.php')</script>";
+			echo "<script>window.location.assign('reads_and_explodes_feedback.php')</script>";
 		}
 		else
 		{
-			$myfile = fopen("Data/Contact_Us/contact.txt", "w");
+			$myfile = fopen("Data/Feedback/feedback.txt", "w");
 			fwrite($myfile, $date . ":");
-			fwrite($myfile, $name_1 . ":");
-			fwrite($myfile, $email_1 . ":");
-			fwrite($myfile, $message_1 . "\n");
+			fwrite($myfile, $name . ":");
+			fwrite($myfile, $feedback . ":");
+			fwrite($myfile, $busniess_assosiation_name. ":");
+			fwrite($myfile, $position);
+			fwrite($myfile, "\n");
 			fclose($myfile);
-			echo "<script>window.location.assign('reads_and_explodes_contact.php')</script>";
+			echo "<script>window.location.assign('reads_and_explodes_feedback.php')</script>";
 		}
 
-
-
-
-
-/*   Only useful if used with PHPMAILER and extension=openssl.dll
-
-$name = "Client Name: ".$_POST['name']."\n";
-$email = "Client Email: ".$_POST['email']."\n";
-$message = "Message: " . $_POST['message']."\n";
-$emadress = "feedbackwebtechnologienws21@outlook.com";
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
-
-$mail = new PHPMailer;
-$mail->isSMTP(); 
-$mail->SMTPDebug = 2;
-$mail->Host = "smtp.gmail.com"; 
-$mail->Port = 587;
-$mail->SMTPSecure = 'tls';
-$mail->SMTPAuth = true;
-$mail->Username = "webtechnologienws21@gmail.com";
-$mail->Password = 'Web21ws21';
-$mail->setFrom('webtechnologienws21@gmail.com', 'Contact-us');
-$mail->addAddress($emadress);
-$mail->Subject = 'Contacted us at the date: '. date("Y/m/d");
-$mail->msgHTML($name . "<br />" . $email . "<br />" . $message);
-$mail->AltBody = 'HTML messaging not supported';
-
-if(!$mail->send()){
-	echo $worker;
-    echo "Mailer Error: " . $mail->ErrorInfo;
-    
-
-}else{
-    echo "<script>window.location.assign('../contact-us.html')</script>";
-}*/
 ?>

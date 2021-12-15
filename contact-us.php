@@ -12,7 +12,8 @@ $date = date("Y.m.d");
 			fwrite($myfile, $date . ":");
 			fwrite($myfile, $name_1 . ":");
 			fwrite($myfile, $email_1 . ":");
-			fwrite($myfile, $message_1 . "\n");
+			fwrite($myfile, $message_1);
+			fwrite($myfile, "\n");
 			fclose($myfile);
 			echo "<script>window.location.assign('reads_and_explodes_contact.php')</script>";
 		}
@@ -22,7 +23,8 @@ $date = date("Y.m.d");
 			fwrite($myfile, $date . ":");
 			fwrite($myfile, $name_1 . ":");
 			fwrite($myfile, $email_1 . ":");
-			fwrite($myfile, $message_1 . "\n");
+			fwrite($myfile, $message_1);
+			fwrite($myfile, "\n");
 			fclose($myfile);
 			echo "<script>window.location.assign('reads_and_explodes_contact.php')</script>";
 		}

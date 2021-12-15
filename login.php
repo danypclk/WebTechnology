@@ -7,9 +7,14 @@ $file_1 = "register-folder/employee-file.txt";
 $file_2 = "register-folder/intern-file.txt";
 $file_3 = "register-folder/client-file.txt";
 
-if(!file_exists("Data/Work_orders/employee_selector.html"))
+if(!file_exists("Data/Selector/employee_selector.html"))
 {
-	$employee_selector_file = fopen("Data/Work_orders/employee_selector.html", "w");
+	$employee_selector_file = fopen("Data/Selector/employee_selector.html", "w");
+	fclose($employee_selector_file);
+}
+if(!file_exists("Data/Selector/partner_employee_selector.html"))
+{
+	$employee_selector_file = fopen("Data/Selector/partner_employee_selector.html", "w");
 	fclose($employee_selector_file);
 }
 if(!file_exists("Data/Contact_Us/contact.txt"))
@@ -22,6 +27,12 @@ if(!file_exists("iframe-folder/register_list.html"))
 	$register_list_iframe = fopen("iframe-folder/register_list.html", "w");
 	fwrite($register_list_iframe,"<h2>No Registry List</h2>");
 	fclose($register_list_iframe);
+}
+if(!file_exists("iframe-folder/feedback.html"))
+{
+	$feedback_iframe = fopen("iframe-folder/feedback.html", "w");
+	fwrite($feedback_iframe,"<h2>No Feedback</h2>");
+	fclose($feedback_iframe);
 }
 if(!file_exists("iframe-folder/contact_us_list.html"))
 {
