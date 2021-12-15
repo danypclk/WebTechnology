@@ -323,12 +323,47 @@ nav ul li ul li a:hover {
 }
 
 /*  ----------- Team ----------------- */
-.sectionteam {
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding: 1rem;
+.hideSection {
+    opacity: 0;
+    /* transition: all 0.8s ease; */
+    position: fixed;
+    
+}
+
+.showSection{
+    visibility: visible;
+}
+
+.hideProfile {
+    visibility: hidden;
+    position: fixed;
+}
+
+.showProfile {
+    visibility: visible;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.showImage {
+    width: 500;
+    height: 500px;
+    border-radius: 20%;
+}
+
+
+.profileDetails {
+    margin-top: 30px;
+}
+
+.profileDetails h2 {
+    margin-bottom: 10px;
+}
+
+.profileDetails p {
+    margin-bottom: 60px;
 }
 
 .profiles {
@@ -337,7 +372,6 @@ nav ul li ul li a:hover {
 }
 
 .profile {
- 
     padding: 1rem;
 }
 
@@ -352,6 +386,10 @@ nav ul li ul li a:hover {
     margin-top: 30px;
     font-size: 25px;
 
+}
+
+.user:hover {
+    color: red;
 }
 
 .profile h5 {
@@ -369,6 +407,7 @@ nav ul li ul li a:hover {
         align-items: center;
     }
 }
+
 
 /* FOOTER */
 .foot
