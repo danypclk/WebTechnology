@@ -89,7 +89,6 @@
 <br>
 <div class="box1000">
 
-
 <!-- Drei Input Felder um Werte anzugeben. Werden über ID in js identifiziert (getElementByID)-->
 <p class="prechner">Hier bitte Strompreis pro KWH in Cent eingeben :</p>
 <input type="number" name="strompreis" id="strompreis" class="inputrechner" placeholder="30 Cent/KWH" min="1">
@@ -100,13 +99,12 @@
 
 <!-- Button - startet die Funktion berechnen() in rechner.js-->
 <button class="buttonrechner" id="mybutton" onclick="berechnen()">Berechnen</button>
-<button class="buttonreset" onclick="reset()">Reset</button>
+<button type="reset" class="buttonreset">Reset</button>
 
 
 <!-- Ergebnis Feld -->
 <p class="prechner">Stromkosten = </p>
 <div class="divergebnis" id="ergebnis"></div>
-
 
 
 </div> 
