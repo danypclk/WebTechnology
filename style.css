@@ -258,7 +258,54 @@ nav ul li ul li a:hover {
 
 /* Rechner */
 
+.inputrechner {
+    height: 2rem;
+    width: 300px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    display: flex; 
+}
 
+.prechner {
+    margin-top: 1rem;
+}
+
+.buttonrechner {
+    height: 30px;
+    width: 200px;
+    margin-left: 10px;
+    margin-top: 1rem;
+    background-color: var(--bg-blue);
+    border-radius: 1rem;
+    border: none;
+    color: var(--bg-white);
+    font-size: 1.5rem;
+}
+
+.buttonreset {
+    height: 30px;
+    width: 80px;
+    margin-left: 1px;
+    margin-top: 1rem;
+    background-color: red;
+    border-radius: 1rem;
+    border: none;
+    color: var(--bg-white);
+    font-size: 1.5rem;
+}
+
+.divergebnis {
+    height: 2rem;
+    max-width: 300px;
+    border-radius: 5px;
+    font-size: 2rem;
+    text-align: center;
+    background-color: var(--bg-white);
+    border:5px solid var(--bg-blue);
+    margin-top: 0.5rem;
+    padding: 5px;
+}
 
 /* Formatierung der Inhalter (Bilder, Schriften) */
 
@@ -288,12 +335,47 @@ nav ul li ul li a:hover {
 }
 
 /*  ----------- Team ----------------- */
-.sectionteam {
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding: 1rem;
+.hideSection {
+    opacity: 0;
+    /* transition: all 0.8s ease; */
+    position: fixed;
+    
+}
+
+.showSection{
+    visibility: visible;
+}
+
+.hideProfile {
+    visibility: hidden;
+    position: fixed;
+}
+
+.showProfile {
+    visibility: visible;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.showImage {
+    width: 500;
+    height: 500px;
+    border-radius: 20%;
+}
+
+
+.profileDetails {
+    margin-top: 30px;
+}
+
+.profileDetails h2 {
+    margin-bottom: 10px;
+}
+
+.profileDetails p {
+    margin-bottom: 60px;
 }
 
 .profiles {
@@ -302,7 +384,6 @@ nav ul li ul li a:hover {
 }
 
 .profile {
- 
     padding: 1rem;
 }
 
@@ -317,6 +398,10 @@ nav ul li ul li a:hover {
     margin-top: 30px;
     font-size: 25px;
 
+}
+
+.user:hover {
+    color: red;
 }
 
 .profile h5 {
@@ -334,6 +419,7 @@ nav ul li ul li a:hover {
         align-items: center;
     }
 }
+
 
 /* FOOTER */
 .foot
@@ -407,5 +493,4 @@ footer {
     background-color: rgba(249, 249, 248, 0.15);
     border-radius: 10px;
     }
-
     */

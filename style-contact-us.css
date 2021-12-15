@@ -189,29 +189,47 @@ nav ul li ul li a:hover {
     max-height:70px;
 }
 
-/*  ----------- Form ----------------- */
+/*  ----------- Form für AdminRegister, Login, Contact-Us ----------------- */
 
-.form{
+.form
+{
 	width: 340px;
-	height: 440px;
 	background: #e6e6e6;
 	border-radius: 8px;
 	box-shadow: 0 0 40px -10px #000;
-	margin: calc(50vh - 220px) auto; 
+	margin: calc(50vh - 320px) auto; 
 	padding: 20px 30px; 
 	box-sizing: border-box;
 	font-family: 'Montserrat',sans-serif;
 }
 
-.form h2{
+#form_registry ,#form_feedback
+{
+	position:absolute;
+	left: 250px;
+	top: 30px;
+}
+
+#form_contact
+{
+	height: 490px;
+}
+
+#form_login
+{
+	height: 400px;
+}
+
+.form h2, .services h2
+{
 	margin: 10px 0;
 	padding-bottom: 10px;
-	width: 180px;
 	color: #877277;
 	border-bottom: 3px solid #877277;
 }
 
-.form input{
+.form input, .services input
+{
 	width: 100%;
 	padding: 10px;
 	box-sizing: border-box;
@@ -222,35 +240,222 @@ nav ul li ul li a:hover {
 	border-bottom: 2px solid #bebed2;
 }
 
-.form input:focus{
+.form input:focus, .services input:focus
+{
 	border-bottom: 2px solid #877277;
+	transition: 0.8s;
 }
 
-.form p:before{ 
+.form p:before, .services p:before
+{ 
 	content: attr(type); 
 	display: block;
-	margin: 28px 0 0; 
+	margin: 28px 0 0;
 	font-size: 14px;
 	color: #877277;
 }
 
-.form button{
+.form button
+{
 	float: right;
 	padding: 8px 12px;
-	margin: 8px 0 0;
 	font-family: 'Montserrat',sans-serif;
 	border: 2px solid #5798C2;
 	background: 0;
-	color: #5a5a6e;
+	color: #5798C2;
 	cursor: pointer;
-	transition: all .3s;
 }
 
-.form button:hover{
+.form button:hover, #services_button:hover
+{
 	background:#5798C2;
 	color:#fff;
 }
 
+.form #contact_name_error, .form #contact_email_error, .form #contact_message_error, .form #user_error, .form #pass_error,
+.form #register_name_error, .form #register_password_error, .form #register_email_error, .form #function_of_busniess_error,
+.services #client_name_error, .services #client_email_error, .services #client_address_error, .services #radio_button_error,
+.services #selector_error
+{
+	color: red;
+	font-size: 15px;
+	visibility: hidden;
+}
+
+.form #name_p
+{
+	padding-top: 10px;
+}
+
+.form #contact_name
+{
+	padding-top: 10px;
+}
+
+.form #contact_button
+{
+	margin: 50px 0 0;
+}
+
+.form #login_button
+{
+	margin: 60px 0 0;
+}
+
+.form #register_button , .form #submit_button, .form #form_feedback
+{
+	margin: 25px 0 0;
+}
+
+/*  ----------- form for services ----------------- */
+
+
+.services
+{
+	position:absolute;
+	left: 100px;
+	top: 180px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 18px;
+	padding-bottom: 20px;
+	background: #e6e6e6;
+	border-radius: 8px;
+	box-shadow: 0 0 40px -10px #000;
+	margin: 20px 150px; 
+	box-sizing: border-box;
+	font-family: 'Montserrat',sans-serif;
+}
+
+
+#services_button
+{
+	float: right;
+	padding: 8px 12px;
+	font-family: 'Montserrat',sans-serif;
+	border: 2px solid #5798C2;
+	background: 0;
+	color: #5798C2;
+	cursor: pointer;
+	transition: all .3s;	
+}
+
+
+
+/*  ----------- admin-page, employee-page ----------------- */
+
+/*  ----------- sidebar ----------------- */
+
+.sidebar
+{
+    background: #0082ca;
+	width: 200px;
+	bottom: px;
+    left: 0;
+	height: 108vh;
+}
+
+.sidebar h2
+{
+    font-size: 20px;
+    color: #fff;
+    background: #0082ca;
+	padding-top: 15px;
+	padding-bottom: 21px;
+	border-bottom: 2px solid #fff;
+	border-top: 2px solid #fff;
+}
+
+.sidebar #sidebar_title
+{
+	text-align: center;
+}
+
+.sidebar ul li
+{
+    margin: 25px 0;
+}
+
+.sidebar ul li a
+{
+    padding: 0 25px;
+	color: #ffffff;
+}
+.sidebar ul li a:hover
+{
+    color: black;
+    margin-left: 15px;
+    transition: 0.35s;
+}
+
+.register, .register_list, .services, .register_list, .order_list, .feedback_list, .client_messages_list,
+.feedback
+{
+	display: none;
+}
+
+/*  ----------- register list, order-list, feedback-list, client-message-list ----------------- */
+
+.register_list
+{
+	position:absolute;
+	left: 250px;
+	top: 190px;
+}
+
+.register_list iframe
+{
+	height:600px;
+	width:800px;
+}
+
+.order-list
+{
+	position:absolute;
+	left: 250px;
+	top: 150px;
+}
+
+.client_messages_list
+{
+	position:absolute;
+	left: 250px;
+	top: 190px;
+}
+
+.client_messages_list iframe
+{
+	height:600px;
+	width:800px;
+}
+
+.order_list
+{
+	position:absolute;
+	left: 250px;
+	top: 150px;
+}
+
+.order_list iframe
+{
+	height:600px;
+	width:800px;
+}
+
+
+
+.feedback_list
+{
+	position:absolute;
+	left: 250px;
+	top: 150px;
+}
+
+.feedback_list iframe
+{
+	height:600px;
+	width:800px;
+}
 
 
 /* CONTENT */

@@ -5,15 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" media="screen">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" href="style-contact-us.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
 </head>
-
-<!--
-    Test Änderung Branch Test, Marius war hier
--->
-
-
 <body>
 <header>
     <nav >
@@ -51,87 +49,51 @@
                 </defs>
                 </svg></a></p>
         <ul class="navbar">
-            <li class="navitem"><a href="#">Produkte</a>
-            <ul>
-                <li class="dropdown"><a href="drucksysteme.html">Drucksysteme</a></li>
-                <li class="dropdown"><a href="#">Endgeräte</a></li>
-                <li class="dropdown"><a href="rechner.html">Rechner</a></li>
-            </ul>
-        </li>
-        
-            <li class="navitem"><a href="#">Über uns</a>
-                <ul>
-                    <li class="dropdown"><a href="team.html">Team</a></li>
-                    <li class="dropdown"><a href="#">Kontakt</a></li>
-                </ul>
-            </li>
-
-            <li class="navitem"><a href="#">Karriere</a>
-                <ul>
-                    <li class="dropdown"><a href="arbeite_bei_uns.html">Arbeite bei uns</a></li>
-                    <li class="dropdown"><a href="#">Bewerben!</a></li>
-                </ul>
-            </li>
-
-            <li class="navitem"><a href="login.html">Adminstration</a></li>
-            
-
+            <li class="navitem"><a href="">Welcome to the Client Page</a></li>
+			<li class="navitem"><a href="index.html">Logout</a></li>
         </ul>
 
     </nav>
 </header>
 
-<!--    Content Anfang          -->
+	<!--    Content Anfang -->
+	
+	
+	<!--    Sidebar -->
+<section>
+<div class="sidebar">
+      <h2 id="sidebar_title">Module</h2>
+      <ul class="nav">
+        <li>
+          <a href="#">
+            <span id="client_feedback">Feedback</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+</section>
 
-<main>
-    <section class="hero">
-        <h1 class="section-title">Ihre IT ist unsere Hauptaufgabe</h1>
-    </section>
-    <br />
-    <section class="intro">
-        <h2 class="section-title_intro">Was wir tun</h2>
-        <br />
-        <h3>True IT ist ein Team von Problemlösern. Wir können Sie in allen Bereichen der IT kompetent beraten, egal ob sie Privatperson oder ein Unternehmen sind. Unser Hauptziel ist es Ihre Probleme im IT-Bereich zu beheben und die besten Lösungen dazu zu finden. So können Sie sich immer auf Ihre IT-Systeme verlassen und sich auf die wichtigen Bereiche konzentrieren.</h3>
-    </section>
-    <br />
-    <section class="conslting-repair">
-        <header class="consulting_body">
-            <img src="images/strategy.png" width ="100" height="100" alt="strategy" class="icon-image">
-            <h3 class="section-title_beratung small-title">Strategische Beratung</h3>
-            <br />
-            <p>Das Team von True IT kennt durch langjährige Erfahrung alle Probleme mit denen Unternehmen auf dem Weg der Digitalisierung konfrontiert werden. Dazu bieten wir maßgeschneiderte Lösungen, um Geld einzusparen, Prozesse zu optimieren und so den Unternehmenswert zu maximieren.</p>
-        </header>
-        
-        <header class="repair_body">
-            <img src="images/computer-repair.png" width ="100" height="100" alt="repair computer" class="icon-image">
-            <h3 class="section-title_repair small-title">Reparatur/Customize</h3>
-            <br />
-            <p>Unser Hauptziel ist es mit Hilfe der neuesten Technologie die besten Lösungen zu finden, damit Ihr Computer mit optimaler Kapazität und maximaler Zuverlässigkeit arbeitet.</p>
-        </header>
-    </section>
-    <br/>
-    <div class="box1000"></div>
-</main>
+	<!--  Feedback -->
+	
+	<section class="feedback" id="feedback">
+		<form class="form" method="post" id="form_feedback" autocomplete="off" action="feedback.php">
+			<h2>Feedback</h2>
+				<p type="Name: "> <input name="client_feedback_name" id="client_feedback_name"></input></p>
+					<small id="register_name_error">Name kann nicht leer sein.</small>
+				<p type="Ihren Feedback: "> <input name="client_feedback" id="client_feedback"></input></p>
+					<small id="register_email_error">Email kann nicht leer sein.</small>
+				<p type="Partner, der für Sie gearbeitet hat: ">
+				<br />
+				<select name="business_list" id="business_list">
+					
+				</select></p>
+					<small id="function_of_busniess_error">Kein Arbeiter im Register!</small>
+			<button id="submit_button"><b>Submit</b></button>
+			<!--<script src="client_feedback.js"></script>-->
+		</form>
+	</section>
 
-<!--    Content Ende    -->
-
-    <footer>
-        <div class="foot">
-            <ul class="footer-nav">
-               
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Über uns</a></li>
-                    <li><a href="#">Kontakt</a></li>
-                    <li><a href="#">Produkte</a></li>
-                 
-                </ul>
-            <br />
-            <ul class="footer-social">
-                    <li><a href="#"><img src="images/facebook.png" alt="Facebook" class="image"></a></li>
-                    <li><a href="#"><img src="images/twitter.png" alt="Twitter" class="image"></a></li>
-                    <li><a href="#"><img src="images/instagram.png" alt="instagram" class="image"></a></li>
-            </ul>
-        </div>
-    </footer>
+	<!--    Content Ende -->
+	<script src="client.js"></script>
 </body>
 </html>

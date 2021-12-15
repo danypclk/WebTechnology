@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" media="screen">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
+    <script src="rechner.js"></script>
 </head>
 
 <body>
@@ -48,9 +49,9 @@
         <ul class="navbar">
             <li class="navitem"><a href="#">Produkte</a>
             <ul>
-                <li class="dropdown"><a href="#">Drucksysteme</a></li>
+                <li class="dropdown"><a href="drucksysteme.html">Drucksysteme</a></li>
                 <li class="dropdown"><a href="#">Endgeräte</a></li>
-                <li class="dropdown"><a href="#">Rechner</a></li>
+                <li class="dropdown"><a href="rechner.html">Rechner</a></li>
             </ul>
         </li>
         
@@ -83,24 +84,32 @@
 <div class="maincenter">
 <section class="section">
 
-  
+<!-- SCRIPT ANFANG -->  
 <h1 class="h1content">Stromkostenrechner</h1>
-<hr>
 <br>
 <div class="box1000">
-<script src="rechner.js"></script>
-<script>
-let strompreis = prompt("Bitte Strompreis eingeben (pro KwH in Cent)");
-let betriebszeit = prompt("Bitte Betriebszeit in Stunden eingeben");
-let watt = prompt("Bite Stromverbauch in Watt angeben");
 
-stromkosten = stromkosten(strompreis, betriebszeit, watt);
 
-document.write("Stromkosten = " + stromkosten + " €");
+<!-- Drei Input Felder um Werte anzugeben. Werden über ID in js identifiziert (getElementByID)-->
+<p class="prechner">Hier bitte Strompreis pro KWH in Cent eingeben :</p>
+<input type="number" name="strompreis" id="strompreis" class="inputrechner" placeholder="30 Cent/KWH" min="1">
+<p class="prechner">Hier bitte Betriebszeit in Stunden eingeben :</p>
+<input type="number" name="betriebzeit" id="betriebszeit" class="inputrechner" placeholder="300 Stunden" min="1">
+<p class="prechner">Hier bitte Stromverbrauch in Watt eingeben :</p>
+<input type="number" name="watt" id="watt" class="inputrechner" placeholder="900 Watt" min="1">
 
-</script>
+<!-- Button - startet die Funktion berechnen() in rechner.js-->
+<button class="buttonrechner" id="mybutton" onclick="berechnen()">Berechnen</button>
+<button class="buttonreset" onclick="reset()">Reset</button>
+
+
+<!-- Ergebnis Feld -->
+<p class="prechner">Stromkosten = </p>
+<div class="divergebnis" id="ergebnis"></div>
+
+
+
 </div> 
-
 
 
 
