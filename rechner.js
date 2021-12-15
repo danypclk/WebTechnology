@@ -1,6 +1,5 @@
 "use strict";
 
-
 /* button click - startet Berechnung */ 
 function berechnen(){
     setErgebnis(stromkosten() + " €");
@@ -38,3 +37,4 @@ function reset(){
     document.getElementById("form").reset;
     */
 }
+
