@@ -10,7 +10,7 @@ $request_1 = $_POST['request'];
 
 $date = date("Y.m.d");
 
-$worker_file = "Data/Work_orders/" . $worker_1 . ".txt";
+$worker_file = "Data/Work_orders/work_order.txt";
 
 		if(file_exists($worker_file))
 		{
@@ -35,14 +35,12 @@ $worker_file = "Data/Work_orders/" . $worker_1 . ".txt";
 			fclose($myfile);
 		}
 
-
 $workers_new_file = fopen($worker_file, "r");
 
 $worker_file_name = "iframe-folder/worker_list.html";
 
-	if(file_exists($worker_file_name))
-	{
-		$worker_order_list = fopen($worker_file_name, "a");
+		$worker_order_list = fopen($worker_file_name, "w");
+		fwrite($worker_order_list,"<h2>Orders:</h2>");
 		while($row = fgets($workers_new_file)) 
 		{
 			list( $Name, $Email, $Date, $Task, $Address, $Request ) = explode( ":", $row );
@@ -57,24 +55,6 @@ $worker_file_name = "iframe-folder/worker_list.html";
 			fwrite($worker_order_list,"<br />");
 		}
 		fclose($worker_order_list);
-	}
-	else
-	{
-		$worker_order_list = fopen($worker_file_name, "a");
-		fwrite($worker_order_list,"<h2>Orders:</h2>");
-		while($row = fgets($workers_new_file)) 
-		{
-			list( $Name, $Email, $Date, $Task, $Address, $Request ) = explode( ":", $row );
-			fwrite($worker_order_list,"<p>Arbeiter: ". $worker_1 . "</p>");
-			fwrite($worker_order_list,"<p>Date: ". $Date . "</p>");
-			fwrite($worker_order_list,"<p>Name: ". $Name . "</p>");
-			fwrite($worker_order_list,"<p>Email: ". $Email . "</p>");
-			fwrite($worker_order_list,"<p>Task: ". $Task . "</p>");
-			fwrite($worker_order_list,"<p>Address: ". $Address . "</p>");
-			fwrite($worker_order_list,"<p>Request: ". $Request . "</p>");
-		}
-		fclose($worker_order_list);
-	}
 
 fclose($workers_new_file);
 
