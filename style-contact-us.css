@@ -357,7 +357,7 @@ nav ul li ul li a:hover {
 
 
 
-/*  ----------- admin-page, employee-page ----------------- */
+/*  ----------- admin-page, employee-page, client-page ----------------- */
 
 /*  ----------- sidebar ----------------- */
 
@@ -410,6 +410,17 @@ nav ul li ul li a:hover {
 	}
 	
 }
+
+@media screen and (max-width:670px)
+{
+	.sidebar_menu 
+	{
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+}
+
 
 @media screen and (min-width:1182px)
 {
