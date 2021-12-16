@@ -10,6 +10,7 @@
     <meta http-equiv="Expires" content="0" />
     <script src="jquery.js"></script>
 	<link rel="stylesheet" href="style-contact-us.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -60,32 +61,15 @@
 	
 	
 	<!--    Sidebar -->
-<section>
-<div class="sidebar">
-      <h2 id="sidebar_title">Module</h2>
-      <ul class="nav">
-        <li>
-          <a href="">
-            <span id="admin_register">Adding to register</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span id="admin_services">Services</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span id="admin_register_list">Register</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span id="admin_contact_list">Messages</span>
-          </a>
-        </li>
+
+<section class="sidebar_menu">
+      <ul>
+        <li class="sidebar_list"  id="admin_register"><i class="fa fa-id-card-o"></i>Registrierung hinzufügen</li>
+        <li class="sidebar_list" id="admin_services"><i class="fa fa-wrench"></i>Dienstleistung</li>
+        <li class="sidebar_list" id="admin_register_list"><i class="fa fa-address-book"></i>Register</li>
+        <li class="sidebar_list" id="admin_contact_list"><i class="fa fa-envelope"></i>Mitteilungen</li>
+		<li class="sidebar_list" id="admin_feedback"><i class="fa fa-envelope"></i>Feedback</li>
       </ul>
-    </div>
 </section>
 
 		<!--   Admin Register -->

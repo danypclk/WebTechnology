@@ -346,46 +346,49 @@ nav ul li ul li a:hover {
 
 /*  ----------- sidebar ----------------- */
 
-.sidebar
+.sidebar_menu
 {
-    background: #0082ca;
-	width: 200px;
-	bottom: px;
-    left: 0;
-	height: 108vh;
+	position: fixed;
+	left: 0;
+	width:70px;
+	height: 90vh;
+	padding-top:50px;
+	background-color: #fff;
+	border-top-right-radius: 10px;
+	overflow: hidden;
+	white-space: nowrap;
+	box-shadow: 0px 0px 20px #d4d4d4;
+	transition: 0.3s ease;
 }
 
-.sidebar h2
+.sidebar_menu:hover
 {
-    font-size: 20px;
-    color: #fff;
-    background: #0082ca;
-	padding-top: 15px;
-	padding-bottom: 21px;
-	border-bottom: 2px solid #fff;
-	border-top: 2px solid #fff;
+	width: 270px;
 }
 
-.sidebar #sidebar_title
+.sidebar_menu .sidebar_list
 {
-	text-align: center;
+	padding: 10px;
 }
 
-.sidebar ul li
+.sidebar_menu .sidebar_list:hover
 {
-    margin: 25px 0;
+	background-color: #d6d6d6;
+	cursor: pointer;
 }
 
-.sidebar ul li a
+.sidebar_menu .sidebar_list .fa
 {
-    padding: 0 25px;
-	color: #ffffff;
+	font-size: 40px;
+	padding-right: 40px;
+	padding-top: 10px;
+	width: 40px;
+	height: 50px;
 }
-.sidebar ul li a:hover
+
+.sidebar_menu ul
 {
-    color: black;
-    margin-left: 15px;
-    transition: 0.35s;
+	align-items: center;
 }
 
 .register, .register_list, .services, .register_list, .order_list, .feedback_list, .client_messages_list,
