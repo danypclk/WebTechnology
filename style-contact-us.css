@@ -205,9 +205,12 @@ nav ul li ul li a:hover {
 
 #form_registry ,#form_feedback
 {
-	position:absolute;
-	left: 250px;
-	top: 30px;
+	margin: 130px auto; 
+}
+
+#form_registry
+{
+	padding: 20px 30px 60px;
 }
 
 #form_contact
@@ -312,21 +315,33 @@ nav ul li ul li a:hover {
 
 .services
 {
-	position:absolute;
-	left: 100px;
-	top: 180px;
+	margin: 130px auto; 
 	padding-left: 30px;
 	padding-right: 30px;
 	padding-top: 18px;
-	padding-bottom: 20px;
+	padding-bottom: 40px;
+	max-width: 630px;
 	background: #e6e6e6;
 	border-radius: 8px;
 	box-shadow: 0 0 40px -10px #000;
-	margin: 20px 150px; 
 	box-sizing: border-box;
 	font-family: 'Montserrat',sans-serif;
 }
 
+@media screen and (max-width:700px)
+{
+	.services
+	{
+		width: 300px;
+	}
+	
+	#request
+	{
+		width:250px;
+		height:100px;
+	}
+	
+}
 
 #services_button
 {
@@ -349,10 +364,10 @@ nav ul li ul li a:hover {
 .sidebar_menu
 {
 	position: fixed;
+	bottom: 0;
 	left: 0;
-	width:70px;
-	height: 90vh;
-	padding-top:50px;
+	width: 70px;
+	top: 120px;
 	background-color: #fff;
 	border-top-right-radius: 10px;
 	overflow: hidden;
@@ -361,9 +376,47 @@ nav ul li ul li a:hover {
 	transition: 0.3s ease;
 }
 
-.sidebar_menu:hover
+@media only screen and (max-width: 1181px)
 {
-	width: 270px;
+	.sidebar_menu
+	{
+		position: absolute;
+		left: 0;
+		height: 85px;
+		width: 100%;
+		top: 120px;
+		background-color: #fff;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+		text-align: center;
+	}
+	
+	.sidebar_menu ul li span
+	{
+		display: none;
+	}
+	
+	.sidebar_menu .sidebar_list:focus
+	{
+		background-color: #d6d6d6;
+		cursor: pointer;
+	}
+	
+	.sidebar_menu ul
+	{
+		display: flex;
+		justify-content:space-around;
+		list-style-type:none;
+	}
+	
+}
+
+@media screen and (min-width:1182px)
+{
+	.sidebar_menu:hover
+	{
+		width: 270px;
+	}
 }
 
 .sidebar_menu .sidebar_list
@@ -399,67 +452,33 @@ nav ul li ul li a:hover {
 
 /*  ----------- register list, order-list, feedback-list, client-message-list ----------------- */
 
-.register_list
+.iframe
 {
-	position:absolute;
-	left: 250px;
-	top: 190px;
+	margin-top: 130px;
+	text-align: center;
 }
 
-.register_list iframe
+.iframe iframe
 {
-	height:600px;
-	width:800px;
-}
-
-.order-list
-{
-	position:absolute;
-	left: 250px;
-	top: 150px;
-}
-
-.client_messages_list
-{
-	position:absolute;
-	left: 250px;
-	top: 190px;
-}
-
-.client_messages_list iframe
-{
-	height:600px;
-	width:800px;
-}
-
-.order_list
-{
-	position:absolute;
-	left: 250px;
-	top: 150px;
-}
-
-.order_list iframe
-{
-	height:600px;
-	width:800px;
+	width: 600px;
+	height: 500px;
 }
 
 
-
-.feedback_list
+@media only screen and (max-width: 1181px)
 {
-	position:absolute;
-	left: 250px;
-	top: 150px;
-}
+	.iframe
+	{
+		margin-top: 130px;
+		text-align: center;
+	}
 
-.feedback_list iframe
-{
-	height:600px;
-	width:800px;
+	.iframe iframe
+	{
+		width: 300px;
+		height: 400px;
+	}
 }
-
 
 /* CONTENT */
 
