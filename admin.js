@@ -2,6 +2,7 @@ const admin_registry = document.getElementById('admin_register');
 const admin_service = document.getElementById('admin_services');
 const admin_registerlist = document.getElementById('admin_register_list');
 const admin_contactlist = document.getElementById('admin_contact_list');
+const admin_delete_account = document.getElementById('admin_delete');
 
 admin_registry.addEventListener('click', (e) => {
 	e.preventDefault();
@@ -40,6 +41,7 @@ function displayFunctionregister()
 		document.getElementById("register").style.display = "block";
 		document.getElementById("client_messages_list").style.display = "none";
 		document.getElementById("services").style.display = "none";
+		document.getElementById("delete_account").style.display = "none";
 	}
 }
 
@@ -81,6 +83,7 @@ function displayFunctionservices()
 		document.getElementById("register").style.display = "none";
 		document.getElementById("client_messages_list").style.display = "none";
 		document.getElementById("services").style.display = "block";
+		document.getElementById("delete_account").style.display = "none";
 	}
 	
 }
@@ -111,6 +114,7 @@ function displayFunctionregister_list()
 			document.getElementById("services").style.display = "none";
 			document.getElementById("client_messages_list").style.display = "none";
 			document.getElementById("register_list").style.display = "block";
+			document.getElementById("delete_account").style.display = "none";
 		}
 }
 
@@ -140,7 +144,23 @@ function displayFunctioncontact_list()
 			document.getElementById("services").style.display = "none";
 			document.getElementById("register_list").style.display = "none";
 			document.getElementById("client_messages_list").style.display = "block";
+			document.getElementById("delete_account").style.display = "none";
 		}
+}
+
+admin_delete_account.addEventListener('click', (e) => {
+	e.preventDefault();
+	
+	displayFunctiondelete_list();
+});
+
+function displayFunctiondelete_list()
+{
+	document.getElementById("register").style.display = "none";
+	document.getElementById("services").style.display = "none";
+	document.getElementById("register_list").style.display = "none";
+	document.getElementById("client_messages_list").style.display = "none";
+	document.getElementById("delete_account").style.display = "block";
 }
 
 $(document).scroll(function(){
