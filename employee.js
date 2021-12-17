@@ -82,5 +82,4 @@ $(document).scroll(function(){
 				top: 120
 				});
 		   }
-      }); }
       });
