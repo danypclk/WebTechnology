@@ -228,6 +228,11 @@ nav ul li ul li a:hover {
 	height: 250px;
 }
 
+#form_feedback
+{
+	height: 400px;
+}
+
 .form h2, .services h2
 {
 	margin: 10px 0;
