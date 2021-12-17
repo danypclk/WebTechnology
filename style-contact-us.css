@@ -230,7 +230,7 @@ nav ul li ul li a:hover {
 
 #form_feedback
 {
-	height: 440px;
+	height: 470px;
 }
 
 .form h2, .services h2
@@ -288,7 +288,8 @@ nav ul li ul li a:hover {
 .form #contact_name_error, .form #contact_email_error, .form #contact_message_error, .form #user_error, .form #pass_error,
 .form #register_name_error, .form #register_password_error, .form #register_email_error, .form #function_of_busniess_error,
 .services #client_name_error, .services #client_email_error, .services #client_address_error, .services #radio_button_error,
-.services #selector_error, .form #konto_name_error
+.services #selector_error, .form #konto_name_error, .form #feedback_name_error, .form #feedback_message_error_d, 
+.form #partner_employee_feedback_error
 {
 	color: red;
 	font-size: 15px;
@@ -319,6 +320,11 @@ nav ul li ul li a:hover {
 {
 	margin: 25px 0 0;
 }
+
+/*  ----------- form for bewerben ----------------- */
+
+
+
 
 /*  ----------- form for services ----------------- */
 

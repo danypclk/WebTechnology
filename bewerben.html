@@ -8,7 +8,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-	<script src="jquery.js"></script>
+    <script src="jquery.js"></script>
 	<link rel="stylesheet" href="style-contact-us.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@
                 </defs>
                 </svg></a></p>
         <ul class="navbar">
-            <li class="navitem"><a href="">Welcome to the Client Page</a></li>
+            <li class="navitem"><a href="">Welcome to the Adminstration Page</a></li>
 			<li class="navitem"><a href="index.html">Logout</a></li>
         </ul>
 
@@ -58,36 +58,17 @@
 </header>
 
 	<!--    Content Anfang -->
-	
-	
-	<!--    Sidebar -->
-<section class="sidebar_menu">
-      <ul>
-        <li class="sidebar_list" id="client_feedback"><i class="fa fa-bell"></i><span>Feedback</span></li>
-      </ul>
-</section>
-
-	<!--  Feedback -->
-	
-	<section class="feedback" id="feedback">
-		<form class="form" method="post" id="form_feedback" autocomplete="off" action="feedback.php">
-			<h2>Feedback</h2>
-				<p type="Name: "> <input name="client_feedback_name" id="client_feedback_name"></input></p>
-					<small id="feedback_name_error">Name kann nicht leer sein.</small>
-				<p type="Ihren Feedback: "> <input name="client_feedback_message" id="client_feedback_message"></input></p>
-					<small id="feedback_message_error_d">Email kann nicht leer sein.</small>
-				<p type="Partner oder Arbeiter, der für Sie gearbeitet hat: ">
-				<br />
-				<select name="business_list" id="business_list">
-					
-				</select></p>
-					<small id="partner_employee_feedback_error">Kein Partner oder Arbeiter im Register!</small>
-			<button id="submit_button"><b>Submit</b></button>
-			<script src="client_feedback.js"></script>
-		</form>
-	</section>
-
+	<form class="bewerbe_form" id="bewerbe_form" action="bewerbe.php">
+		<h2>Bewerbung</h2>
+		<p>Please complete the form below to apply for a position with us.</p>
+		<hr />
+		<p type="Vollständiger Name:">
+			<input name="first_name" id="first_name"></input>
+			<input name="second_name" id="last_name"></input>
+		</p>
+		
+	</form>
 	<!--    Content Ende -->
-	<script src="client.js"></script>
 </body>
 </html>
+	
