@@ -223,6 +223,11 @@ nav ul li ul li a:hover {
 	height: 400px;
 }
 
+#form_delete
+{
+	height: 250px;
+}
+
 .form h2, .services h2
 {
 	margin: 10px 0;
@@ -278,7 +283,7 @@ nav ul li ul li a:hover {
 .form #contact_name_error, .form #contact_email_error, .form #contact_message_error, .form #user_error, .form #pass_error,
 .form #register_name_error, .form #register_password_error, .form #register_email_error, .form #function_of_busniess_error,
 .services #client_name_error, .services #client_email_error, .services #client_address_error, .services #radio_button_error,
-.services #selector_error
+.services #selector_error, .form #konto_name_error
 {
 	color: red;
 	font-size: 15px;
@@ -305,7 +310,7 @@ nav ul li ul li a:hover {
 	margin: 60px 0 0;
 }
 
-.form #register_button , .form #submit_button, .form #form_feedback
+.form #register_button , .form #submit_button, .form #form_feedback ,.form #delete_button
 {
 	margin: 25px 0 0;
 }
@@ -419,6 +424,11 @@ nav ul li ul li a:hover {
 		overflow-x: auto;
 		white-space: nowrap;
 	}
+	
+	.sidebar_menu
+	{
+		padding-left: 45px;
+	}
 }
 
 
@@ -456,7 +466,7 @@ nav ul li ul li a:hover {
 }
 
 .register, .register_list, .services, .register_list, .order_list, .feedback_list, .client_messages_list,
-.feedback
+.feedback, .delete_account
 {
 	display: none;
 }
