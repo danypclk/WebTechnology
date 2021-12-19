@@ -52,5 +52,7 @@ $feedback_html_location_worker = "iframe-folder/feedback_worker.html";
 		}
 	}
 
+	fclose($file_feedback_worker);
+
 echo "<script>window.location.assign('client-page.html')</script>";
 ?>
