@@ -27,13 +27,14 @@ function checkInputs()
 	if(client_feedback_value === '')
 	{
 		document.getElementById("feedback_message_error_d").style.visibility = "visible";
+		return false;
 	}
 	else
 	{
 		document.getElementById("feedback_message_error_d").style.visibility = "hidden";
 	}
 	
-	if(client_employee === '')
+	if(client_employee.value.trim() === '')
 	{
 		document.getElementById("partner_employee_feedback_error").style.visibility = "visible";
 	}
