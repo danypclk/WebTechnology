@@ -1,12 +1,12 @@
 const form_delete_account = document.getElementById('form_delete');
 const name_konto_input = document.getElementById('name_konto');
 
-form_delete.addEventListener('submit', (e) => {
+form_delete_account.addEventListener('submit', (e) => {
 	e.preventDefault();
-	checkservices();
+	checkdelete();
 });
 
-function checkservices() 
+function checkdelete() 
 {
 	const name_Value = name_konto_input.value.trim();
 	
