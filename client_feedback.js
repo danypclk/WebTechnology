@@ -1,9 +1,9 @@
-const form_feedback = document.getElementById('form_feedback');
+const form_feedback_d = document.getElementById('form_feedback');
 const client_name = document.getElementById('client_feedback_name');
 const client_feedback_m = document.getElementById('client_feedback_message');
 const client_employee = document.getElementById('business_list');
 
-form_feedback.addEventListener('submit', (e) => {
+form_feedback_d.addEventListener('submit', (e) => {
 	e.preventDefault();
 	
 	checkInputs();
@@ -18,7 +18,6 @@ function checkInputs()
 	if(client_name_value === '')
 	{
 		document.getElementById("feedback_name_error").style.visibility = "visible";
-		return false;
 	}
 	else
 	{
@@ -28,7 +27,6 @@ function checkInputs()
 	if(client_feedback_value === '')
 	{
 		document.getElementById("feedback_message_error_d").style.visibility = "visible";
-		return false;
 	}
 	else
 	{
@@ -37,12 +35,11 @@ function checkInputs()
 	
 	if(client_employee === '')
 	{
-		document.getElementById("").style.visibility = "visible";
-		return false;
+		document.getElementById("partner_employee_feedback_error").style.visibility = "visible";
 	}
 	else
 	{
-		document.getElementById("feedback_message_error_d").style.visibility = "hidden";
+		document.getElementById("partner_employee_feedback_error").style.visibility = "hidden";
 	}
 	
 	if(client_name_value.includes(':'))
@@ -55,8 +52,6 @@ function checkInputs()
 		alert('Sie können keinen \":\" im Namen Input benutzten!');
 		return false;
 	}
-	
-	console.log(client_employee_position);
 	
 	if(client_employee_position === 'disabled')
 	{
