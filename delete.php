@@ -11,6 +11,7 @@
 	$array = array($file_partner, $file_employee, $file_intern, $file_client);
 	$row_number = 0;
 	$position = '';
+	$deleted = 0;
 
 foreach($array as $v)
 {
@@ -26,7 +27,7 @@ foreach($array as $v)
 				$file_out = file($v);
 				unset($file_out[$row_number]);
 				file_put_contents($v, implode("", $file_out));
-				
+				$deleted = 1;
 				break;
 			}
 			$row_number = $row_number + 1;
@@ -35,17 +36,25 @@ foreach($array as $v)
 		fclose($file);
 	}
 }
-
-echo "<script>alert('Konot gelöscht')</script>";
-
-if($position == 'employee' || $position == 'partner')
+if($deleted != 0)
 {
-	echo "<script>window.location.assign('admin_services_partner_employee_selector.php')</script>";
+	echo "<script>alert('Konot gelöscht')</script>";
+
+	if($position == 'employee' || $position == 'partner')
+	{
+		echo "<script>window.location.assign('admin_services_partner_employee_selector.php')</script>";
+	}
+		
+	if($position == 'intern' || $position == 'client')
+	{
+		echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
+	}
 }
-
-if($position == 'intern' || $position == 'client')
+else
 {
-	echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
+	echo "<script>alert('Konot nicht gefunden')</script>";
+	
+	echo "<script>window.location.assign('admin-page.html')</script>";
 }
 
 ?>
