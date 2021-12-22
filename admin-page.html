@@ -67,8 +67,20 @@
         <li class="sidebar_list"  id="admin_register"><i class="fa fa-id-card-o"></i><span>Person hinzufügen</span></li>
         <li class="sidebar_list" id="admin_services"><i class="fa fa-wrench"></i><span>Dienstleistung</span></li>
         <li class="sidebar_list" id="admin_register_list"><i class="fa fa-address-book"></i><span>Register</span></li>
-        <li class="sidebar_list" id="admin_contact_list"><i class="fa fa-envelope"></i><span>Mitteilungen</span></li>
-		<li class="sidebar_list" id="admin_feedback"><i class="fa fa-bell"></i><span>Feedback</span></li>
+		<div class="dropdown">
+        <li class="sidebar_list"><i class="fa fa-envelope"></i><span>Mitteilungen</span><i class="fa fa-caret-down" id="arrow_down"></i></li>
+			<div class="dropdown-content">
+				<a href="#" id="narichten">Narichten</a>
+				<a href="#" id="kunden_feedback">Feedback</a>
+			</div>
+		</div>
+		<div class="dropdown">
+		<li class="sidebar_list"><i class="fa fa-bell"></i><span>Kundenservice</span><i class="fa fa-caret-down" id="arrow_down_1"></i></li>
+				<div class="dropdown-content">
+				<a href="#" id="aufgabe">Aufgaben Liste</a>
+				<a href="#" id="rechnung">Rechnungen</a>
+			</div>
+		</div>
 		<li class="sidebar_list" id="admin_delete"><i class="fa fa-user-times"></i><span>Lösche Konto</span></li>
       </ul>
 </section>
@@ -141,6 +153,13 @@
     <iframe src="iframe-folder/feedback.html"></iframe>
   </section>
 </div>
+ <!--  List of orders  -->
+<div class="iframe" id="iframe">
+	<section class="order_list" id="order_list">
+		<iframe src="iframe-folder/worker_list.html"></iframe>
+	</section>
+</div>
+ <!--  List of invoices -->
   <!--  delete form  -->
 <section class="delete_account" id="delete_account">
 		<form class="form" method="post" id="form_delete" autocomplete="off" action="delete.php">

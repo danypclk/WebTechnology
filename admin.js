@@ -1,8 +1,9 @@
 const admin_registry = document.getElementById('admin_register');
 const admin_service = document.getElementById('admin_services');
 const admin_registerlist = document.getElementById('admin_register_list');
-const admin_contactlist = document.getElementById('admin_contact_list');
-const admin_feedback = document.getElementById('admin_feedback');
+const admin_contactlist = document.getElementById('narichten');
+const admin_order_list = document.getElementById('aufgabe');
+const admin_feedback = document.getElementById('kunden_feedback');
 const admin_delete_account = document.getElementById('admin_delete');
 
 admin_registry.addEventListener('click', (e) => {
@@ -41,8 +42,53 @@ function displayFunctionregister()
 		document.getElementById("register_list").style.display = "none";
 		document.getElementById("register").style.display = "block";
 		document.getElementById("client_messages_list").style.display = "none";
+		document.getElementById("client_feedback").style.display = "none";
 		document.getElementById("services").style.display = "none";
 		document.getElementById("delete_account").style.display = "none";
+		document.getElementById("order_list").style.display = "none";
+	}
+}
+
+admin_order_list.addEventListener('click', (e) => {
+	e.preventDefault();
+	
+	displayFunctionorder();
+});
+
+function displayFunctionorder()
+{
+	const file_list = ["iframe-folder/worker_list.html"]
+	var tracker = 0;
+	
+	for(var i in file_list)
+	{
+		filename = file_list[i];
+		var response = jQuery.ajax({
+		url: filename,
+		type: 'HEAD',
+		async: false
+		}).status;	
+	
+		if(response != "200") 
+		{
+			alert('Files do not exist, you have to log yourself in first.');
+			return false;
+		}
+		else
+		{
+			tracker = 1;
+		}
+	}
+
+	if(tracker === 1)
+	{
+		document.getElementById("register_list").style.display = "none";
+		document.getElementById("register").style.display = "none";
+		document.getElementById("client_messages_list").style.display = "none";
+		document.getElementById("services").style.display = "none";
+		document.getElementById("client_feedback").style.display = "none";
+		document.getElementById("delete_account").style.display = "none";
+		document.getElementById("order_list").style.display = "block";
 	}
 }
 
@@ -86,6 +132,7 @@ function displayFunctionservices()
 		document.getElementById("services").style.display = "block";
 		document.getElementById("client_feedback").style.display = "none";
 		document.getElementById("delete_account").style.display = "none";
+		document.getElementById("order_list").style.display = "none";
 	}
 	
 }
@@ -118,6 +165,7 @@ function displayFunctionregister_list()
 			document.getElementById("register_list").style.display = "block";
 			document.getElementById("client_feedback").style.display = "none";
 			document.getElementById("delete_account").style.display = "none";
+			document.getElementById("order_list").style.display = "none";
 		}
 }
 
@@ -149,6 +197,7 @@ function displayFunctioncontact_list()
 			document.getElementById("client_messages_list").style.display = "block";
 			document.getElementById("client_feedback").style.display = "none";
 			document.getElementById("delete_account").style.display = "none";
+			document.getElementById("order_list").style.display = "none";
 		}
 }
 
@@ -176,6 +225,7 @@ function displayFunctionfeedback()
 		{
 			document.getElementById("register").style.display = "none";
 			document.getElementById("services").style.display = "none";
+			document.getElementById("order_list").style.display = "none";
 			document.getElementById("register_list").style.display = "none";
 			document.getElementById("client_messages_list").style.display = "none";
 			document.getElementById("client_feedback").style.display = "block";
@@ -197,6 +247,7 @@ function displayFunctiondelete_list()
 	document.getElementById("client_messages_list").style.display = "none";
 	document.getElementById("client_feedback").style.display = "none";
 	document.getElementById("delete_account").style.display = "block";
+	document.getElementById("order_list").style.display = "none";
 }
 
 $(document).scroll(function(){
