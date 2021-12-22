@@ -45,12 +45,12 @@ $worker_file_name = "iframe-folder/worker_list.html";
 		{
 			list( $Name, $Email, $Date, $Task, $Address, $Request ) = explode( ":", $row );
 			fwrite($worker_order_list,"<p>Arbeiter: ". $worker_1 . "</p>");
-			fwrite($worker_order_list,"<p>Date: ". $Date . "</p>");
+			fwrite($worker_order_list,"<p>Datum: ". $Date . "</p>");
 			fwrite($worker_order_list,"<p>Name: ". $Name . "</p>");
 			fwrite($worker_order_list,"<p>Email: ". $Email . "</p>");
-			fwrite($worker_order_list,"<p>Task: ". $Task . "</p>");
-			fwrite($worker_order_list,"<p>Address: ". $Address . "</p>");
-			fwrite($worker_order_list,"<p>Request: ". $Request . "</p>");
+			fwrite($worker_order_list,"<p>Aufgabe: ". $Task . "</p>");
+			fwrite($worker_order_list,"<p>Adresse: ". $Address . "</p>");
+			fwrite($worker_order_list,"<p>Wunsch: ". $Request . "</p>");
 			fwrite($worker_order_list,"<hr />");
 			fwrite($worker_order_list,"<br />");
 		}
@@ -58,7 +58,7 @@ $worker_file_name = "iframe-folder/worker_list.html";
 
 fclose($workers_new_file);
 
-echo "<script>alert('Successfully tasked an employee!')</script>";
+echo "<script>alert('Mitarbeiter erfolgreich beauftragt!')</script>";
 echo "<script>window.location.assign('admin-page.html')</script>";
 
 /*   Only useful if used with PHPMAILER and extension=openssl.dll
