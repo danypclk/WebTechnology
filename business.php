@@ -10,7 +10,7 @@ $request_1 = $_POST['request'];
 
 $date = date("Y.m.d");
 
-$worker_file = "Data/Work_orders/" . $worker_1 . ".txt";
+$worker_file = "Data/Work_orders/work_order.txt";
 
 		if(file_exists($worker_file))
 		{
@@ -35,50 +35,63 @@ $worker_file = "Data/Work_orders/" . $worker_1 . ".txt";
 			fclose($myfile);
 		}
 
-
 $workers_new_file = fopen($worker_file, "r");
 
 $worker_file_name = "iframe-folder/worker_list.html";
 
-	if(file_exists($worker_file_name))
-	{
-		$worker_order_list = fopen($worker_file_name, "a");
-		while($row = fgets($workers_new_file)) 
-		{
-			list( $Name, $Email, $Date, $Task, $Address, $Request ) = explode( ":", $row );
-			fwrite($worker_order_list,"<p>Arbeiter: ". $worker_1 . "</p>");
-			fwrite($worker_order_list,"<p>Date: ". $Date . "</p>");
-			fwrite($worker_order_list,"<p>Name: ". $Name . "</p>");
-			fwrite($worker_order_list,"<p>Email: ". $Email . "</p>");
-			fwrite($worker_order_list,"<p>Task: ". $Task . "</p>");
-			fwrite($worker_order_list,"<p>Address: ". $Address . "</p>");
-			fwrite($worker_order_list,"<p>Request: ". $Request . "</p>");
-			fwrite($worker_order_list,"<hr />");
-			fwrite($worker_order_list,"<br />");
-		}
-		fclose($worker_order_list);
-	}
-	else
-	{
-		$worker_order_list = fopen($worker_file_name, "a");
+		$worker_order_list = fopen($worker_file_name, "w");
 		fwrite($worker_order_list,"<h2>Orders:</h2>");
 		while($row = fgets($workers_new_file)) 
 		{
 			list( $Name, $Email, $Date, $Task, $Address, $Request ) = explode( ":", $row );
 			fwrite($worker_order_list,"<p>Arbeiter: ". $worker_1 . "</p>");
-			fwrite($worker_order_list,"<p>Date: ". $Date . "</p>");
+			fwrite($worker_order_list,"<p>Datum: ". $Date . "</p>");
 			fwrite($worker_order_list,"<p>Name: ". $Name . "</p>");
 			fwrite($worker_order_list,"<p>Email: ". $Email . "</p>");
-			fwrite($worker_order_list,"<p>Task: ". $Task . "</p>");
-			fwrite($worker_order_list,"<p>Address: ". $Address . "</p>");
-			fwrite($worker_order_list,"<p>Request: ". $Request . "</p>");
+			fwrite($worker_order_list,"<p>Aufgabe: ". $Task . "</p>");
+			fwrite($worker_order_list,"<p>Adresse: ". $Address . "</p>");
+			fwrite($worker_order_list,"<p>Wunsch: ". $Request . "</p>");
+			fwrite($worker_order_list,"<hr />");
+			fwrite($worker_order_list,"<br />");
 		}
 		fclose($worker_order_list);
-	}
 
 fclose($workers_new_file);
 
-echo "<script>alert('Successfully tasked an employee!')</script>";
+require('fpdf/fpdf.php');
+
+$pdf_file = 'Data/Rechnung/' . $name_1 . '.pdf';
+
+$pdf = new FPDF();
+$pdf -> AddPage();
+$pdf -> SetFont('Arial', '', 12);
+
+
+$pdf -> Cell(55, 50, 'Rechnung', 0 , 1 , 'C');
+
+$pdf -> Cell(55, 5, 'Referenzcode', 0 , 0);
+$pdf -> Cell(58, 5, ': 026ETY', 0 , 0);
+$pdf -> Cell(25, 5, 'Datum', 0 , 0);
+$pdf -> Cell(52, 5, ': ' . $date, 1 , 1);
+
+$pdf -> Cell(55, 5, 'Betrag', 0 , 0);
+$pdf -> Cell(58, 5, ': 100$', 0 , 1);
+
+$pdf -> Cell(55, 5, 'Status', 0, 0);
+$pdf -> Cell(58, 5, ': Unvollstaendig', 0, 1);
+
+
+$pdf -> Cell(55, 5, 'Bezahlt von', 0, 0);
+$pdf -> Cell(58, 5, ':', 0, 0);
+
+$pdf -> Line(155,75,270,75);
+$pdf -> Ln(10);
+$pdf -> Cell(140, 5, '', 0 , 0);
+$pdf -> Cell(50, 5, 'Unterschrift', 0, 1, 'C');
+
+$pdf -> Output($pdf_file, 'F');
+
+echo "<script>alert('Mitarbeiter erfolgreich beauftragt!')</script>";
 echo "<script>window.location.assign('admin-page.html')</script>";
 
 /*   Only useful if used with PHPMAILER and extension=openssl.dll

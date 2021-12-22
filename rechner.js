@@ -33,8 +33,10 @@ function stromkosten(){
 }
 
 function reset(){
-    /* Funktion überarbeiten!
-    document.getElementById("form").reset;
-    */
+    document.getElementById('ergebnis').textContent = '';
+	document.getElementById('watt').value = '';
+	document.getElementById('betriebszeit').value = '';
+	document.getElementById('strompreis').value = '';
 }
+
 

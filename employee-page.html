@@ -10,6 +10,7 @@
     <meta http-equiv="Expires" content="0" />
 	<script src="jquery.js"></script>
 	<link rel="stylesheet" href="style-contact-us.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -49,7 +50,7 @@
                 </defs>
                 </svg></a></p>
         <ul class="navbar">
-            <li class="navitem"><a href="">Welcome to the Employee Page</a></li>
+            <li class="navitem"><a href="">Willkommen auf der Mitarbeiterseite</a></li>
 			<li class="navitem"><a href="index.html">Logout</a></li>
         </ul>
 
@@ -60,37 +61,27 @@
 	
 	
 	<!--    Sidebar -->
-<section>
-<div class="sidebar">
-      <h2 id="sidebar_title">Module</h2>
-      <ul class="nav">
-        <li>
-          <a href="">
-            <span id="employee_orders">Orders</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span id="employee_feedback">Feedback</span>
-          </a>
-        </li>
+
+<section class="sidebar_menu">
+      <ul>
+        <li class="sidebar_list"  id="employee_orders"><i class="fa fa-calendar-check-o"></i><span>Serviceruf</span></li>
+        <li class="sidebar_list" id="employee_feedback"><i class="fa fa-bell"></i><span>Feedback</span></li>
       </ul>
-    </div>
 </section>
 
 	<!--  Orders -->
-
+<div class="iframe" id="iframe">
 	<section class="order_list" id="order_list">
 		<iframe src="iframe-folder/worker_list.html" seamless></iframe>
 	</section>
-	
+</div>
 
 	<!--  Feedback -->
-	
+<div class="iframe" id="iframe">
 	<section class="feedback_list" id="feedback_list">
-		<iframe src="iframe-folder/feedback.html" seamless></iframe>
+		<iframe src="iframe-folder/feedback_worker.html" seamless></iframe>
 	</section>
-
+</div>
 	<!--    Content Ende -->
 	<script src="employee.js"></script>
 </body>

@@ -25,13 +25,19 @@ if(!file_exists("Data/Contact_Us/contact.txt"))
 if(!file_exists("iframe-folder/register_list.html"))
 {
 	$register_list_iframe = fopen("iframe-folder/register_list.html", "w");
-	fwrite($register_list_iframe,"<h2>No Registry List</h2>");
+	fwrite($register_list_iframe,"<h2>Keine Konten in der Registrierung</h2>");
 	fclose($register_list_iframe);
 }
 if(!file_exists("iframe-folder/feedback.html"))
 {
 	$feedback_iframe = fopen("iframe-folder/feedback.html", "w");
-	fwrite($feedback_iframe,"<h2>No Feedback</h2>");
+	fwrite($feedback_iframe,"<h2>Kein Feedback</h2>");
+	fclose($feedback_iframe);
+}
+if(!file_exists("iframe-folder/feedback_worker.html"))
+{
+	$feedback_iframe = fopen("iframe-folder/feedback_worker.html", "w");
+	fwrite($feedback_iframe,"<h2>Kein Feedback</h2>");
 	fclose($feedback_iframe);
 }
 if(!file_exists("iframe-folder/contact_us_list.html"))
@@ -43,14 +49,14 @@ if(!file_exists("iframe-folder/contact_us_list.html"))
 if(!file_exists("iframe-folder/worker_list.html"))
 {
 	$worker_iframe = fopen("iframe-folder/worker_list.html", "w");
-	fwrite($worker_iframe,"<h2>No work orders</h2>");
+	fwrite($worker_iframe,"<h2>Keine Arbeitsaufträge</h2>");
 	fclose($worker_iframe);
 }
 
 if(filesize("Data/Contact_Us/contact.txt") == 0)
 {
 	$contact_us_iframe = fopen("iframe-folder/contact_us_list.html", "w");
-	fwrite($contact_us_iframe,"<h2>No Messages</h2>");
+	fwrite($contact_us_iframe,"<h2>Keine Nachrichten</h2>");
 	fclose($contact_us_iframe);
 }
 

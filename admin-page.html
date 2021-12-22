@@ -10,6 +10,7 @@
     <meta http-equiv="Expires" content="0" />
     <script src="jquery.js"></script>
 	<link rel="stylesheet" href="style-contact-us.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -49,7 +50,7 @@
                 </defs>
                 </svg></a></p>
         <ul class="navbar">
-            <li class="navitem"><a href="">Welcome to the Adminstration Page</a></li>
+            <li class="navitem"><a href="">Willkommen auf der Administrationsseite</a></li>
 			<li class="navitem"><a href="index.html">Logout</a></li>
         </ul>
 
@@ -60,100 +61,100 @@
 	
 	
 	<!--    Sidebar -->
-<section>
-<div class="sidebar">
-      <h2 id="sidebar_title">Module</h2>
-      <ul class="nav">
-        <li>
-          <a href="">
-            <span id="admin_register">Adding to register</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span id="admin_services">Services</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span id="admin_register_list">Register</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span id="admin_contact_list">Messages</span>
-          </a>
-        </li>
+
+<section class="sidebar_menu">
+      <ul>
+        <li class="sidebar_list"  id="admin_register"><i class="fa fa-id-card-o"></i><span>Person hinzufügen</span></li>
+        <li class="sidebar_list" id="admin_services"><i class="fa fa-wrench"></i><span>Dienstleistung</span></li>
+        <li class="sidebar_list" id="admin_register_list"><i class="fa fa-address-book"></i><span>Register</span></li>
+        <li class="sidebar_list" id="admin_contact_list"><i class="fa fa-envelope"></i><span>Mitteilungen</span></li>
+		<li class="sidebar_list" id="admin_feedback"><i class="fa fa-bell"></i><span>Feedback</span></li>
+		<li class="sidebar_list" id="admin_delete"><i class="fa fa-user-times"></i><span>Lösche Konto</span></li>
       </ul>
-    </div>
 </section>
 
 		<!--   Admin Register -->
 
 	<section class="register" id="register">
 		<form class="form" method="post" id="form_registry" autocomplete="off" action="admin-register.php">
-			<h2>Registry</h2>
+			<h2>Registrierung</h2>
 				<p type="Name: "> <input name="username_register" id="username_register"></input></p>
 					<small id="register_name_error">Name kann nicht leer sein.</small>
-				<p type="Password: "> <input name="password_register" id="password_register"></input></p>
-					<small id="register_password_error">Password kann nicht leer sein.</small>
-				<p type="Email: "> <input name="email_register" id="email_register"></input></p>
+				<p type="Passwort: "> <input name="password_register" id="password_register"></input></p>
+					<small id="register_password_error">Passwort kann nicht leer sein.</small>
+				<p type="E-mail: "> <input name="email_register" id="email_register"></input></p>
 					<small id="register_email_error">Email kann nicht leer sein.</small>
-				<p type="Function in the business: "> 
+				<p type="Funktion im Geschäft: "> 
 			<br />
 				<select name="business_function" id="business_function">
 					<option value="partner">Partner</option>
-					<option value="employee">Employee</option>
-					<option value="intern">Intern</option>
-					<option value="client">Client</option>
+					<option value="employee">Arbeiter</option>
+					<option value="intern">Pratikanten</option>
+					<option value="client">Kunde</option>
 				</select></p>
 			<small id="function_of_busniess_error">Funktion kann nicht leer sein.</small>
-			<button id="register_button"><b>Register</b></button>
-			<script src="admin-register.js"></script>
+			<button id="register_button"><b>Registrieren</b></button>
 		</form>
 	</section>
 	
 		<!--  services  -->
 	<section class="services" id="services">
 	<form method="post" id="form_services" autocomplete="off" action="business.php">
-				<h2>Client details:</h2>
-				<p type="Client name:"> <input name="name" id="client_name_services"><p>
+				<h2>Kundendaten:</h2>
+				<p type="Kundenname:"> <input name="name" id="client_name_services"></p>
 					<small id="client_name_error">Name kann nicht leer sein.</small>
-				<p type="Email Of client:"> <input name="email" id="client_email_services"></p>
+				<p type="E-Mail des Kunden:"> <input name="email" id="client_email_services"></p>
 					<small id="client_email_error">Email kann nicht leer sein.</small>
-				<p type="Employee given the task:"></p>
+				<p type="Mitarbeiter mit der Aufgabe:"></p>
 				<select name="referrer" id="referrer">
 					
 				</select>
 					<small id="selector_error">Sie müssen ein neuer User mit Employee Position in admin-register wählen</small>
-				<p type="What servies do you have to do?"></p>
-						<p type="Cleaning"><input type="radio" name="notiz" value="Cleaning" /></p>
-						<p type="Repair"><input type="radio" name="notiz" value="Repair" /></p>
-						<p type="Replacement"><input type="radio" name="notiz" value="Replacement" /></p>
+				<p type="Welche Dienste müssen Sie tun??"></p>
+						<p type="Reinigung"><input type="radio" name="notiz" value="Cleaning" /></p>
+						<p type="Reparatur"><input type="radio" name="notiz" value="Repair" /></p>
+						<p type="Ersetzung"><input type="radio" name="notiz" value="Replacement" /></p>
 						<p type="Sonstiges"><input type="radio" name="notiz" value="Sonstiges" /></p>
 							<small id="radio_button_error">Zuweisung muss ausgewählt werden.</small>
-				<p type="Address:"> <input id="client_address_service" name="address"></p>
+				<p type="Adresse:"> <input id="client_address_service" name="address"></p>
 					<small id="client_address_error">Addresse kann nicht leer sein..</small>
-				<p type="Special requests from client:"></p>
-					<textarea rows="5" cols="50" name="request" id="request"></textarea>
-					<button id="services_button">Send Service<button>
-					<script src="admin-services.js"></script>
-	</form>
+				<p type="Sonderwünsche des Kunden:"></p>
+					<textarea id="request" rows="5" cols="50" name="request" id="request"></textarea>
+					<button id="services_button">Dienst senden<button>
+		</form>
   </section>
   <!--  List of people on the webpage  -->
-
+<div class="iframe">
   <section class="register_list" id="register_list">
-    <iframe src="iframe-folder/register_list.html" seamless></iframe>
+    <iframe src="iframe-folder/register_list.html"></iframe>
   </section>
-  
+</div>
   <!--  List of client messages  -->
-  
+<div class="iframe">
   <section class="client_messages_list" id="client_messages_list">
-    <iframe src="iframe-folder/contact_us_list.html" seamless></iframe>
+    <iframe src="iframe-folder/contact_us_list.html"></iframe>
   </section>
-  
+</div>
+  <!--  List of feedback  -->
+<div class="iframe">
+  <section class="client_feedback" id="client_feedback">
+    <iframe src="iframe-folder/feedback.html"></iframe>
+  </section>
+</div>
+  <!--  delete form  -->
+<section class="delete_account" id="delete_account">
+		<form class="form" method="post" id="form_delete" autocomplete="off" action="delete.php">
+			<h2>Konto löschen</h2>
+				<p type="Name: "> <input name="name_konto" id="name_konto"></input></p>
+					<small id="konto_name_error">Name kann nicht leer sein.</small>
+			<button id="delete_button"><b>Löschen</b></button>
+		</form>
+</section>
 	<!--    Content Ende -->
+	<script src="admin-delete.js"></script>
 	<script src="admin.js"></script>
+	<script src="admin-services.js"></script>
+	<script src="admin-register.js"></script>
 </body>
 </html>
 	

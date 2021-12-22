@@ -1,7 +1,9 @@
-const form_feedback = document.getElementById('form_feedback');
-const client_name_services = document.getElementById('client_feedback_name');
+const form_feedback_d = document.getElementById('form_feedback');
+const client_name = document.getElementById('client_feedback_name');
+const client_feedback_m = document.getElementById('client_feedback_message');
+const client_employee = document.getElementById('business_list');
 
-form_feedback.addEventListener('submit', (e) => {
+form_feedback_d.addEventListener('submit', (e) => {
 	e.preventDefault();
 	
 	checkInputs();
@@ -9,54 +11,58 @@ form_feedback.addEventListener('submit', (e) => {
 
 function checkInputs() 
 {
-	const nameValue = client_name_services.value.trim();
-	const addressValue = client_address_services.value.trim();
+	const client_name_value = client_name.value.trim();
+	const client_feedback_value = client_feedback_m.value.trim();
+	const client_employee_position = client_employee.value;
 	
-	if(nameValue === '')
+	if(client_name_value === '')
 	{
-		document.getElementById("register_name_error").style.visibility = "visible";
+		document.getElementById("feedback_name_error").style.visibility = "visible";
 	}
 	else
 	{
-		document.getElementById("register_name_error").style.visibility = "hidden";
+		document.getElementById("feedback_name_error").style.visibility = "hidden";
 	}
 	
-	if(pass_wordValue === '')
+	if(client_feedback_value === '')
 	{
-		document.getElementById("register_password_error").style.visibility = "visible";
+		document.getElementById("feedback_message_error_d").style.visibility = "visible";
+		return false;
 	}
 	else
 	{
-		document.getElementById("register_password_error").style.visibility = "hidden";
+		document.getElementById("feedback_message_error_d").style.visibility = "hidden";
 	}
 	
-	if(emailValue === '')
+	if(client_employee.value.trim() === '')
 	{
-		document.getElementById("register_email_error").style.visibility = "visible";
+		document.getElementById("partner_employee_feedback_error").style.visibility = "visible";
 	}
 	else
 	{
-		document.getElementById("register_email_error").style.visibility = "hidden";
+		document.getElementById("partner_employee_feedback_error").style.visibility = "hidden";
 	}
 	
-	
-	if(nameValue.includes(':'))
+	if(client_name_value.includes(':'))
 	{
 		alert('Sie können keinen \":\" im Namen Input benutzten!');
 		return false;
 	}
-	else if(pass_wordValue.includes(':'))
+	else if(client_feedback_value.includes(':'))
 	{
-		alert('Sie können keinen \":\" im Passwort Input benutzten!');
+		alert('Sie können keinen \":\" im Namen Input benutzten!');
 		return false;
 	}
-	else if(emailValue.includes(':'))
+	
+	if(client_employee_position === 'disabled')
 	{
-		alert('Sie können keinen \":\" im Email Input benutzten!');
+		alert('Sie müssen ein Partner oder Arbeiter wählen!');
 		return false;
 	}
-	else if(nameValue != '' && pass_wordValue != '' && emailValue != '')
+
+	if(client_name_value != '')
 	{
-		document.getElementById("form_registry").submit();
+		alert('Erfolgreich gesendet');
+		document.getElementById("form_feedback").submit();
 	}
 }

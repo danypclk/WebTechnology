@@ -10,6 +10,7 @@
     <meta http-equiv="Expires" content="0" />
 	<script src="jquery.js"></script>
 	<link rel="stylesheet" href="style-contact-us.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -49,7 +50,7 @@
                 </defs>
                 </svg></a></p>
         <ul class="navbar">
-            <li class="navitem"><a href="">Welcome to the Client Page</a></li>
+            <li class="navitem"><a href="">Willkommen auf der Kundenseite</a></li>
 			<li class="navitem"><a href="index.html">Logout</a></li>
         </ul>
 
@@ -60,17 +61,10 @@
 	
 	
 	<!--    Sidebar -->
-<section>
-<div class="sidebar">
-      <h2 id="sidebar_title">Module</h2>
-      <ul class="nav">
-        <li>
-          <a href="#">
-            <span id="client_feedback">Feedback</span>
-          </a>
-        </li>
+<section class="sidebar_menu">
+      <ul>
+        <li class="sidebar_list" id="client_feedback"><i class="fa fa-bell"></i><span>Feedback</span></li>
       </ul>
-    </div>
 </section>
 
 	<!--  Feedback -->
@@ -79,21 +73,21 @@
 		<form class="form" method="post" id="form_feedback" autocomplete="off" action="feedback.php">
 			<h2>Feedback</h2>
 				<p type="Name: "> <input name="client_feedback_name" id="client_feedback_name"></input></p>
-					<small id="register_name_error">Name kann nicht leer sein.</small>
-				<p type="Ihren Feedback: "> <input name="client_feedback" id="client_feedback"></input></p>
-					<small id="register_email_error">Email kann nicht leer sein.</small>
-				<p type="Partner, der für Sie gearbeitet hat: ">
+					<small id="feedback_name_error">Name kann nicht leer sein.</small>
+				<p type="Ihren Feedback: "> <input name="client_feedback_message" id="client_feedback_message"></input></p>
+					<small id="feedback_message_error_d">Email kann nicht leer sein.</small>
+				<p type="Partner oder Arbeiter, der für Sie gearbeitet hat: ">
 				<br />
 				<select name="business_list" id="business_list">
 					
 				</select></p>
-					<small id="function_of_busniess_error">Kein Arbeiter im Register!</small>
-			<button id="submit_button"><b>Submit</b></button>
-			<!--<script src="client_feedback.js"></script>-->
+					<small id="partner_employee_feedback_error">Kein Partner oder Arbeiter im Register!</small>
+			<button id="submit_button"><b>Senden</b></button>
 		</form>
 	</section>
 
 	<!--    Content Ende -->
+	<script src="client_feedback.js"></script>
 	<script src="client.js"></script>
 </body>
 </html>

@@ -1,15 +1,14 @@
 <?php
 
 $name = $_POST['client_feedback_name'];
-$feedback =$_POST['client_feedback'];
+$feedback =$_POST['client_feedback_message'];
 $busniess_assosiation_name = $_POST['business_list'];
-$position = "postion";
+$position = "position";
 
 $file_partner = "register-folder/partner-file.txt";
 $file_employee = "register-folder/employee-file.txt";
 $file_partner_open = fopen($file_partner, "r");
 $file_employee_open = fopen($file_employee, "r");
-$is_true = false;
 while($row = fgets($file_partner_open))
 {
 	list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
@@ -19,18 +18,18 @@ while($row = fgets($file_partner_open))
 		break;
 	}
 }
-if($is_true == false)
+
+while($row = fgets($file_employee_open))
 {
-	while($row = fgets($file_employee_open))
+	list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
+	if($Name == $busniess_assosiation_name)
 	{
-		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
-		if($Name == $busniess_assosiation_name)
-		{
-			$position = "Arbeiter";
-			break;
-		}	
-	}
+		$position = "Arbeiter";
+		break;
+	}	
 }
+
+
 
 $date = date("Y.m.d");
 
