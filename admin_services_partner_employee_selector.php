@@ -23,7 +23,7 @@ while($row = fgets($file_employee_open))
 fclose($file_employee_open);
 
 $file = fopen($partner_employee_selector, "w");
-fwrite($file, "\n<option value=\"disabled\">--Partners--</option>");
+fwrite($file, "\n<option value=\"disabled\">--Partner--</option>");
 foreach($partners as $partner)
 {
 	fwrite($file, "\n<option value=\"" . $partner . "\">" . $partner . "</option>");
