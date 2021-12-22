@@ -39,3 +39,4 @@ function reset(){
 	document.getElementById('strompreis').value = '';
 }
 
+
