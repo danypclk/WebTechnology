@@ -62,7 +62,7 @@ foreach($array as $v)
 			fwrite($myfile, $email . ":");
 			fwrite($myfile, "partner" . "\n");
 			fclose($myfile);
-			echo "<script>alert('Successfully added a new user!')</script>";
+			echo "<script>alert('Neuen Benutzer erfolgreich hinzugefügt!')</script>";
 			echo "<script>window.location.assign('admin_services_partner_employee_selector.php')</script>";
 		}
 		else
@@ -74,7 +74,7 @@ foreach($array as $v)
 			fwrite($myfile, "partner");
 			fwrite($myfile, "\n");
 			fclose($myfile);
-			echo "<script>alert('Successfully added a new user!')</script>";
+			echo "<script>alert('Neuen Benutzer erfolgreich hinzugefügt!')</script>";
 			echo "<script>window.location.assign('admin_services_partner_employee_selector.php')</script>";
 		}
 	}
@@ -89,7 +89,7 @@ foreach($array as $v)
 			fwrite($myfile, "employee");
 			fwrite($myfile, "\n");
 			fclose($myfile);
-			echo "<script>alert('Successfully added a new user!')</script>";
+			echo "<script>alert('Neuen Benutzer erfolgreich hinzugefügt!')</script>";
 			echo "<script>window.location.assign('admin_services_partner_employee_selector.php')</script>";
 		}
 		else
@@ -101,7 +101,7 @@ foreach($array as $v)
 			fwrite($myfile, "employee");
 			fwrite($myfile, "\n");
 			fclose($myfile);
-			echo "<script>alert('Successfully added a new user!')</script>";
+			echo "<script>alert('Neuen Benutzer erfolgreich hinzugefügt!')</script>";
 			echo "<script>window.location.assign('admin_services_partner_employee_selector.php')</script>";
 		}
 	}
@@ -116,7 +116,7 @@ foreach($array as $v)
 			fwrite($myfile, "intern");
 			fwrite($myfile, "\n");
 			fclose($myfile);
-			echo "<script>alert('Successfully added a new user!')</script>";
+			echo "<script>alert('Neuen Benutzer erfolgreich hinzugefügt!')</script>";
 			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
 		}
 		else
@@ -128,7 +128,7 @@ foreach($array as $v)
 			fwrite($myfile, "intern");
 			fwrite($myfile, "\n");
 			fclose($myfile);
-			echo "<script>alert('Successfully added a new user!')</script>";
+			echo "<script>alert('Neuen Benutzer erfolgreich hinzugefügt!')</script>";
 			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
 		}
 	}
@@ -143,7 +143,7 @@ foreach($array as $v)
 			fwrite($myfile, "client");
 			fwrite($myfile, "\n");
 			fclose($myfile);
-			echo "<script>alert('Successfully added a new user!')</script>";
+			echo "<script>alert('Neuen Benutzer erfolgreich hinzugefügt!')</script>";
 			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
 		}
 		else
@@ -155,7 +155,7 @@ foreach($array as $v)
 			fwrite($myfile, "client");
 			fwrite($myfile, "\n");
 			fclose($myfile);
-			echo "<script>alert('Successfully added a new user!')</script>";
+			echo "<script>alert('SNeuen Benutzer erfolgreich hinzugefügt!')</script>";
 			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
 		}
 	}
