@@ -58,6 +58,39 @@ $worker_file_name = "iframe-folder/worker_list.html";
 
 fclose($workers_new_file);
 
+require('fpdf/fpdf.php');
+
+$pdf_file = 'Data/Rechnung/' . $name_1 . '.pdf';
+
+$pdf = new FPDF();
+$pdf -> AddPage();
+$pdf -> SetFont('Arial', '', 12);
+
+
+$pdf -> Cell(55, 50, 'Rechnung', 0 , 1 , 'C');
+
+$pdf -> Cell(55, 5, 'Referenzcode', 0 , 0);
+$pdf -> Cell(58, 5, ': 026ETY', 0 , 0);
+$pdf -> Cell(25, 5, 'Datum', 0 , 0);
+$pdf -> Cell(52, 5, ': ' . $date, 1 , 1);
+
+$pdf -> Cell(55, 5, 'Betrag', 0 , 0);
+$pdf -> Cell(58, 5, ': 100$', 0 , 1);
+
+$pdf -> Cell(55, 5, 'Status', 0, 0);
+$pdf -> Cell(58, 5, ': Unvollstaendig', 0, 1);
+
+
+$pdf -> Cell(55, 5, 'Bezahlt von', 0, 0);
+$pdf -> Cell(58, 5, ':', 0, 0);
+
+$pdf -> Line(155,75,270,75);
+$pdf -> Ln(10);
+$pdf -> Cell(140, 5, '', 0 , 0);
+$pdf -> Cell(50, 5, 'Unterschrift', 0, 1, 'C');
+
+$pdf -> Output($pdf_file, 'F');
+
 echo "<script>alert('Mitarbeiter erfolgreich beauftragt!')</script>";
 echo "<script>window.location.assign('admin-page.html')</script>";
 
