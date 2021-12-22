@@ -343,6 +343,7 @@ nav ul li ul li a:hover {
     opacity: 0;
     /* transition: all 0.8s ease; */
     position: fixed;
+    margin: 100%;
     
 }
 
@@ -367,6 +368,15 @@ nav ul li ul li a:hover {
     width: 500;
     height: 500px;
     border-radius: 20%;
+}
+
+
+#profileDetailsBack {
+    border-radius: 20%;
+    background-color: var(--bg-blue);
+    font-size: 1em;
+    padding: 5px;
+    color: white;
 }
 
 
@@ -426,6 +436,21 @@ nav ul li ul li a:hover {
         flex-direction: column;
         align-items: center;
     }
+
+    .showImage{
+        visibility: hidden;
+        position: fixed;
+    }
+
+    #PictureAndName,#Name,#Status{
+        visibility: hidden;
+    }
+
+    .showProfile {
+        display: flex;
+        justify-content: flex-start;
+    }
+
 }
 
 
