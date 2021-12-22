@@ -41,33 +41,57 @@ else
 	$fn3 = fopen("register-folder/client-file.txt", "w");
 }
 
-$register_file_name = "iframe-folder/register_list.html";
+
+$array = array($file ,$file_1, $file_2, $file_3);
+$empty = true;
+
+foreach($array as $v)
+{
+	if(trim(file_get_contents($v)) != false)
+	{
+		$empty = false;
+	}
+}	
+
+if($empty == false)
+{
+	$register_file_name = "iframe-folder/register_list.html";
 
 	$register_list = fopen($register_file_name, "w");
-	fwrite($register_list,"<h2>Partners</h2>");
+	fwrite($register_list,"<h2>Partner</h2>");
 	while($row = fgets($fn)) {
 		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
-		fwrite($register_list,"<p>Name: ". $Name . ", Password: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+		fwrite($register_list,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 	}
 	fclose($fn);
-	fwrite($register_list,"<h2>Employees</h2>");
+	fwrite($register_list,"<h2>Arbeiter</h2>");
 	while($row = fgets($fn1)) {
 		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
-		fwrite($register_list,"<p>Name: ". $Name . ", Password: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+		fwrite($register_list,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 	}
 	fclose($fn1);
-	fwrite($register_list,"<h2>Interns</h2>");
+	fwrite($register_list,"<h2>Praktikanten</h2>");
 	while($row = fgets($fn2)) {
 		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
-		fwrite($register_list,"<p>Name: ". $Name . ", Password: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+		fwrite($register_list,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 	}
 	fclose($fn2);
-	fwrite($register_list,"<h2>Clients</h2>");
+	fwrite($register_list,"<h2>Kunden</h2>");
 	while($row = fgets($fn3)) {
 		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
-		fwrite($register_list,"<p>Name: ". $Name . ", Password: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+		fwrite($register_list,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 	}
 	fclose($fn3);
+}
+else
+{
+	$register_file_name = "iframe-folder/register_list.html";
+	
+	$register_list = fopen($register_file_name, "w");
+	fwrite($register_list,"<h2>Keine Konten in der Registrierung</h2>");	
+}
+
+fclose($register_list);
 
 header('Location: admin-page.html');
 
