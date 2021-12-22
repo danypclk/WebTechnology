@@ -3,7 +3,7 @@
 $name = $_POST['client_feedback_name'];
 $feedback =$_POST['client_feedback_message'];
 $busniess_assosiation_name = $_POST['business_list'];
-$position = "postion";
+$position = "position";
 
 $file_partner = "register-folder/partner-file.txt";
 $file_employee = "register-folder/employee-file.txt";
