@@ -154,6 +154,34 @@ $worker_file_name = "iframe-folder/worker_list.html";
 
 fclose($workers_new_file);
 
+// create selector for client/admin page to be able to download pdfs
+
+$client_invoice_selector = "Data/Selector/client_invoice.html";
+
+$client_invoice_name = [];
+$client_invoice_id = [];
+$file_invoice_selector = "Data/Invoices/invoices.txt";
+$count_array_size = 0;
+
+$file_invoices_selector_open = fopen($file_invoice_selector, "r");
+while($row = fgets($file_invoices_selector_open))
+{
+	list($Name, $Invoice_ID ) = explode( ":", $row );
+	array_push($client_invoice_name, $Name);
+	array_push($client_invoice_id, $Invoice_ID);
+}
+fclose($file_invoices_selector_open);
+
+$size_of_array = sizeof($client_invoice_name);
+
+$file_selector = fopen($client_invoice_selector, "w");
+while($count_array_size < $size_of_array)
+{
+	fwrite($file, '\n<option value=' . $client_invoice_name . ':' . $client_invoice_id .'>' . $client_invoice_id . '</option>');
+	$count_array_size = $count_array_size + 1;
+}
+fclose($file_selector);
+
 // create and store pdf invoice
 
 require('fpdf/fpdf.php');
