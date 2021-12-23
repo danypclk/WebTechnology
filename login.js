@@ -42,8 +42,10 @@ function checkInputs()
 	}
 	else if(usernameValue != '' && usernameValue != '' && pass_wordValue != '' && pass_wordValue != '')
 	{
-		const name = document.getElementById('username').value;
-		localStorage.setItem("USERNAME", name);
-		document.getElementById("form_login").submit();
+	const name = document.getElementById('username').value;
+	
+	localStorage.setItem("USERNAME", name);
+
+	document.getElementById("form_login").submit();
 	}
 }

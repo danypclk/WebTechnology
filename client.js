@@ -1,7 +1,5 @@
-window.addEventListener('load', () => {
+const name = localStorage.getItem('USERNAME').trim();	
 
-const name = localStorage.getItem('USERNAME');
-	
 const client_feedback = document.getElementById('client_feedback');
 const client_invoice = document.getElementById('client_rechnung');
 
@@ -26,7 +24,7 @@ client_invoice.addEventListener('click', (e) => {
 
 function displayFunctioninvoice()
 {
-	$( "#rechnungen_download_liste" ).load( "Data/Selector/" + name + ".html" );
+	$( "#rechnungen_liste" ).load( "Data/Selector/" + name + ".html" );
 	document.getElementById("feedback").style.display = "none";
 	document.getElementById("rechnungen_download").style.display = "block";
 }
@@ -57,5 +55,4 @@ $(document).scroll(function(){
 				top: 120
 				});
 		   }
-      });
 });
