@@ -1,18 +1,26 @@
-const form_rechnung_d = document.getElementById('form_rechnung');
+const form_rechnung_client = document.getElementById('form_rechnung');
+const selector_rechnung_client = document.getElementById("rechnungen_liste");
 
-form_rechnung_d.addEventListener('submit', (e) => {
+form_rechnung_client.addEventListener('submit', (e) => {
 	e.preventDefault();
 	
-	checkRechnung();
+	checkRechnung_client();
 });
 
-function checkRechnung() 
+function checkRechnung_client() 
 {
-	const client_name_value = client_name.value.trim();
-	const client_feedback_value = client_feedback_m.value.trim();
-	const client_employee_position = client_employee.value;
 
-	if(client_name_value != '')
+	if(selector_rechnung_client.value === '')
+	{
+		document.getElementById("rechnungen_liste_error").style.visibility = "visible";
+		return false;
+	}
+	else
+	{
+		document.getElementById("rechnungen_liste_error").style.visibility = "hidden";
+	}
+
+	if(selector_rechnung_client.value != '')
 	{
 		document.getElementById("form_rechnung").submit();
 	}
