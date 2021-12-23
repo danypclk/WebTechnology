@@ -216,6 +216,8 @@ nav ul li ul li a:hover {
 #form_contact
 {
 	height: 490px;
+	padding-bottom: 500px;
+	width: 400px;
 }
 
 #form_login
