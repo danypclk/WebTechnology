@@ -177,7 +177,7 @@ $size_of_array = sizeof($client_invoice_name);
 $file_selector = fopen($client_invoice_selector, "w");
 while($count_array_size < $size_of_array)
 {
-	fwrite($file, '\n<option value=' . $client_invoice_name . ':' . $client_invoice_id .'>' . $client_invoice_id . '</option>');
+	fwrite($file_selector, "<option value=\"" . $client_invoice_name[$count_array_size] . ":" . $client_invoice_id[$count_array_size] ."\">" . $client_invoice_name[$count_array_size]  . ", Rechnung ID: " . $client_invoice_id[$count_array_size] . "</option>\n");
 	$count_array_size = $count_array_size + 1;
 }
 fclose($file_selector);
@@ -186,7 +186,7 @@ fclose($file_selector);
 
 require('fpdf/fpdf.php');
 
-$pdf_file = 'Data/Rechnung/' . $name_1 . '.pdf';
+$pdf_file = 'Data/Rechnung/' . $name_1 . '_' . $invoice_number . '.pdf';
 
 $pdf = new FPDF();
 $pdf -> AddPage();
