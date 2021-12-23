@@ -64,6 +64,7 @@
 <section class="sidebar_menu">
       <ul>
         <li class="sidebar_list" id="client_feedback"><i class="fa fa-bell"></i><span>Feedback</span></li>
+		<li class="sidebar_list" id="client_rechnung"><i class="fa fa-balance-scale"></i><span>Rechnungen</span></li>
       </ul>
 </section>
 
@@ -86,7 +87,23 @@
 		</form>
 	</section>
 
+	<!--  Rechnung -->
+
+<section class="rechnungen_download" id="rechnungen_download">
+		<form class="form" method="post" id="form_rechnung" autocomplete="off" action="rechnung.php">
+			<h2>Rechnungen Liste</h2>
+				<br />
+				<select name="rechnungen_liste" id="rechnungen_liste">
+					
+				</select></p>
+				<p id="text_this"></p>
+					<small id="rechnungen_liste_error">Keine Rechnungen im Ordner!</small>
+			<button id="submit_button"><b>Download</b></button>
+		</form>
+</section>
+
 	<!--    Content Ende -->
+	<script src="client_rechnung.js"></script>
 	<script src="client_feedback.js"></script>
 	<script src="client.js"></script>
 </body>
