@@ -479,7 +479,7 @@ nav ul li ul li a:hover {
 }
 
 .register, .register_list, .services, .register_list, .order_list, .feedback_list, .client_messages_list,
-.feedback, .delete_account, .client_feedback, .rechnungen_download
+.feedback, .delete_account, .client_feedback, .rechnungen_download, .rechnungen_admin_download
 {
 	display: none;
 }

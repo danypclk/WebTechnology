@@ -160,6 +160,18 @@
 	</section>
 </div>
  <!--  List of invoices -->
+ <section class="rechnungen_admin_download" id="rechnungen_admin_download">
+		<form class="form" method="post" id="form_rechnung" autocomplete="off" action="admin_rechnung_download.php">
+			<h2>Rechnungen Liste</h2>
+				<br />
+				<select name="rechnungen_liste_admin" id="rechnungen_liste_admin">
+					
+				</select></p>
+				<p id="text_this"></p>
+					<small id="rechnungen_liste_error">Keine Rechnungen im Ordner!</small>
+			<button id="submit_button"><b>Download</b></button>
+		</form>
+</section>
   <!--  delete form  -->
 <section class="delete_account" id="delete_account">
 		<form class="form" method="post" id="form_delete" autocomplete="off" action="delete.php">
@@ -170,6 +182,7 @@
 		</form>
 </section>
 	<!--    Content Ende -->
+	<script src="admin_rechnung.js"></script>
 	<script src="admin-delete.js"></script>
 	<script src="admin.js"></script>
 	<script src="admin-services.js"></script>

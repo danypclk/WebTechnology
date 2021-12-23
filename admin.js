@@ -3,6 +3,7 @@ const admin_service = document.getElementById('admin_services');
 const admin_registerlist = document.getElementById('admin_register_list');
 const admin_contactlist = document.getElementById('narichten');
 const admin_order_list = document.getElementById('aufgabe');
+const admin_rechnung_download = document.getElementById('rechnung');
 const admin_feedback = document.getElementById('kunden_feedback');
 const admin_delete_account = document.getElementById('admin_delete');
 
@@ -46,6 +47,7 @@ function displayFunctionregister()
 		document.getElementById("services").style.display = "none";
 		document.getElementById("delete_account").style.display = "none";
 		document.getElementById("order_list").style.display = "none";
+		document.getElementById("rechnungen_admin_download").style.display = "none";
 	}
 }
 
@@ -89,6 +91,7 @@ function displayFunctionorder()
 		document.getElementById("client_feedback").style.display = "none";
 		document.getElementById("delete_account").style.display = "none";
 		document.getElementById("order_list").style.display = "block";
+		document.getElementById("rechnungen_admin_download").style.display = "none";
 	}
 }
 
@@ -133,6 +136,7 @@ function displayFunctionservices()
 		document.getElementById("client_feedback").style.display = "none";
 		document.getElementById("delete_account").style.display = "none";
 		document.getElementById("order_list").style.display = "none";
+		document.getElementById("rechnungen_admin_download").style.display = "none";
 	}
 	
 }
@@ -166,6 +170,7 @@ function displayFunctionregister_list()
 			document.getElementById("client_feedback").style.display = "none";
 			document.getElementById("delete_account").style.display = "none";
 			document.getElementById("order_list").style.display = "none";
+			document.getElementById("rechnungen_admin_download").style.display = "none";
 		}
 }
 
@@ -198,6 +203,7 @@ function displayFunctioncontact_list()
 			document.getElementById("client_feedback").style.display = "none";
 			document.getElementById("delete_account").style.display = "none";
 			document.getElementById("order_list").style.display = "none";
+			document.getElementById("rechnungen_admin_download").style.display = "none";
 		}
 }
 
@@ -230,7 +236,27 @@ function displayFunctionfeedback()
 			document.getElementById("client_messages_list").style.display = "none";
 			document.getElementById("client_feedback").style.display = "block";
 			document.getElementById("delete_account").style.display = "none";
+			document.getElementById("rechnungen_admin_download").style.display = "none";
 		}
+}
+
+admin_rechnung_download.addEventListener('click', (e) => {
+	e.preventDefault();
+	
+	displayFunctioninvoice_list();
+});
+
+function displayFunctioninvoice_list()
+{
+	$( "#rechnungen_liste_admin" ).load( "Data/Selector/client_invoice.html" );
+	document.getElementById("register").style.display = "none";
+	document.getElementById("services").style.display = "none";
+	document.getElementById("register_list").style.display = "none";
+	document.getElementById("client_messages_list").style.display = "none";
+	document.getElementById("client_feedback").style.display = "none";
+	document.getElementById("rechnungen_admin_download").style.display = "block";
+	document.getElementById("delete_account").style.display = "none";
+	document.getElementById("order_list").style.display = "none";
 }
 
 admin_delete_account.addEventListener('click', (e) => {
@@ -248,6 +274,7 @@ function displayFunctiondelete_list()
 	document.getElementById("client_feedback").style.display = "none";
 	document.getElementById("delete_account").style.display = "block";
 	document.getElementById("order_list").style.display = "none";
+	document.getElementById("rechnungen_admin_download").style.display = "none";
 }
 
 $(document).scroll(function(){
