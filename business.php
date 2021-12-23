@@ -162,6 +162,7 @@ $client_invoice_name = [];
 $client_invoice_id = [];
 $file_invoice_selector = "Data/Invoices/invoices.txt";
 $count_array_size = 0;
+$array_of_clients = [];
 
 $file_invoices_selector_open = fopen($file_invoice_selector, "r");
 while($row = fgets($file_invoices_selector_open))
@@ -178,9 +179,30 @@ $file_selector = fopen($client_invoice_selector, "w");
 while($count_array_size < $size_of_array)
 {
 	fwrite($file_selector, "<option value=\"" . $client_invoice_name[$count_array_size] . ":" . $client_invoice_id[$count_array_size] ."\">" . $client_invoice_name[$count_array_size]  . ", Rechnung ID: " . $client_invoice_id[$count_array_size] . "</option>\n");
+	if(!in_array($client_invoice_name[$count_array_size], $array_of_clients, TRUE))
+	{
+		array_push($array_of_clients, $client_invoice_name[$count_array_size]);
+	}
 	$count_array_size = $count_array_size + 1;
 }
 fclose($file_selector);
+
+foreach($array_of_clients as $selector_for_client)
+{
+	$client_invoice_selector_for_clients = "Data/Selector/" . $selector_for_client . ".html";
+	
+	$count_array_size = 0;
+	$client_invoice_selector_c = fopen($client_invoice_selector_for_clients, "w");
+	while($count_array_size < $size_of_array)
+	{
+		if($client_invoice_name[$count_array_size] == $selector_for_client)
+		{
+			fwrite($client_invoice_selector_c, "<option value=\"" . $client_invoice_name[$count_array_size] . ":" . $client_invoice_id[$count_array_size] ."\">" . $client_invoice_name[$count_array_size]  . ", Rechnung ID: " . $client_invoice_id[$count_array_size] . "</option>\n");
+		}
+		$count_array_size = $count_array_size + 1;
+	}
+	fclose($client_invoice_selector_c);
+}
 
 // create and store pdf invoice
 
