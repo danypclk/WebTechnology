@@ -230,6 +230,11 @@ nav ul li ul li a:hover {
 	height: 250px;
 }
 
+#form_rechnung_admin,#form_rechnung
+{
+	padding-bottom: 80px;
+}
+
 #form_feedback
 {
 	height: 470px;
@@ -291,7 +296,7 @@ nav ul li ul li a:hover {
 .form #register_name_error, .form #register_password_error, .form #register_email_error, .form #function_of_busniess_error,
 .services #client_name_error, .services #client_email_error, .services #client_address_error, .services #radio_button_error,
 .services #selector_error, .form #konto_name_error, .form #feedback_name_error, .form #feedback_message_error_d, 
-.form #partner_employee_feedback_error
+.form #partner_employee_feedback_error, .form #rechnungen_liste_error_admin, .form #rechnungen_liste_error
 {
 	color: red;
 	font-size: 15px;
