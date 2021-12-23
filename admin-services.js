@@ -46,7 +46,7 @@ function checkservices()
 	}
 	
 	
-	if(document.querySelectorAll('input[type="radio"][value="Cleaning"]:checked').length === 0 && document.querySelectorAll('input[type="radio"][value="Repair"]:checked').length === 0 && document.querySelectorAll('input[type="radio"][value="Replacement"]:checked').length === 0 && document.querySelectorAll('input[type="radio"][value="Sonstiges"]:checked').length === 0)
+	if(document.querySelectorAll('input[type="radio"][value="Reinigung"]:checked').length === 0 && document.querySelectorAll('input[type="radio"][value="Reparatur"]:checked').length === 0 && document.querySelectorAll('input[type="radio"][value="Ersetzung"]:checked').length === 0 && document.querySelectorAll('input[type="radio"][value="Sonstiges"]:checked').length === 0)
 	{
 		document.getElementById("radio_button_error").style.visibility = "visible";
 	}
