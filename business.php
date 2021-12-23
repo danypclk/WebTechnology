@@ -10,6 +10,38 @@ $request_1 = $_POST['request'];
 
 $date = date("Y.m.d");
 
+// search if client name exists
+
+$client_file = "register-folder/client-file.txt";
+$client_new_file = fopen($client_file, "r");
+$count = false;
+
+if(file_exists($client_file))
+{
+	while($row = fgets($client_new_file)) 
+	{
+		list( $Name_client, $Pass_client, $Date_client, $email_client, $Position_client) = explode( ":", $row );
+		$client_trimed = trim($Name_client);
+		if($client_trimed == $name_1)
+		{
+			$count = true;
+		}
+	}
+}
+else
+{
+	echo "<script>alert('Datei gibt es nicht! Loggen Sie sich als erstes ein!')</script>";
+	echo "<script>window.location.assign('admin-page.html')</script>";
+}
+
+if($count != true)
+{
+	echo "<script>alert('Name nicht gefunden!')</script>";
+	echo "<script>window.location.assign('admin-page.html')</script>";
+}
+
+// create/append to work order text file
+
 $worker_file = "Data/Work_orders/work_order.txt";
 
 		if(file_exists($worker_file))
@@ -37,6 +69,8 @@ $worker_file = "Data/Work_orders/work_order.txt";
 
 $workers_new_file = fopen($worker_file, "r");
 
+// create/rewrite order iframe
+
 $worker_file_name = "iframe-folder/worker_list.html";
 
 		$worker_order_list = fopen($worker_file_name, "w");
@@ -57,6 +91,8 @@ $worker_file_name = "iframe-folder/worker_list.html";
 		fclose($worker_order_list);
 
 fclose($workers_new_file);
+
+// create and store pdf invoice
 
 require('fpdf/fpdf.php');
 
