@@ -17,15 +17,15 @@ $date = date("d/m/Y");
 $payable = 0; // amount to pay for the task
 $tax = 0.15825;
 
-if($task_1 == 'Cleaning')
+if($task_1 == 'Reinigung')
 {
 	$payable = 100;
 }
-else if($task_1 == 'Repair')
+else if($task_1 == 'Reparatur')
 {
 	$payable = 310;
 }
-else if($task_1 == 'Replacement')
+else if($task_1 == 'Ersetzung')
 {
 	$payable = 60;
 }	
