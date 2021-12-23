@@ -1,5 +1,6 @@
 <?php
 
+// data to work with
 
 $name_1 = $_POST['name'];
 $email_1 = $_POST['email'];
@@ -8,7 +9,33 @@ $task_1 = $_POST['notiz'];
 $address_1 = $_POST['address'];
 $request_1 = $_POST['request'];
 
-$date = date("Y.m.d");
+$date = date("d/m/Y");
+
+
+// what to pay for each task and converting it to taxes
+
+$payable = 0; // amount to pay for the task
+$tax = 0.15825;
+
+if($task_1 == 'Cleaning')
+{
+	$payable = 100;
+}
+else if($task_1 == 'Repair')
+{
+	$payable = 310;
+}
+else if($task_1 == 'Replacement')
+{
+	$payable = 60;
+}	
+else
+{
+	$payable = 150;
+}		
+
+$taxable = $payable * $tax;
+$total_due = $taxable + $payable;
 
 // search if client name exists
 
@@ -20,7 +47,7 @@ if(file_exists($client_file))
 {
 	while($row = fgets($client_new_file)) 
 	{
-		list( $Name_client, $Pass_client, $Date_client, $email_client, $Position_client) = explode( ":", $row );
+		list( $Name_client, $Pass_client, $email_client, $Position_client) = explode( ":", $row );
 		$client_trimed = trim($Name_client);
 		if($client_trimed == $name_1)
 		{
@@ -38,6 +65,41 @@ if($count != true)
 {
 	echo "<script>alert('Name nicht gefunden!')</script>";
 	echo "<script>window.location.assign('admin-page.html')</script>";
+}
+
+
+// create/append data to invoice text file and generating a new invoice number
+
+$invoice_file = "Data/invoices/invoices.txt";
+$invoice_number = '0';
+
+if(file_exists($invoice_file))
+{
+	if(trim(file_get_contents($invoice_file)) == false)
+	{
+		$invoice_number = '0';
+	}
+	else
+	{
+		$file_lines = new \SplFileObject($invoice_file, 'r');
+		$file_lines->seek(PHP_INT_MAX);
+		$invoice_number =  strval($file_lines->key());
+	}
+}
+
+if(file_exists($invoice_file))
+{
+	$myfile = fopen($invoice_file, "a");
+	fwrite($myfile, $name_1 . ":");
+	fwrite($myfile, $invoice_number . "\n");
+	fclose($myfile);
+}
+else
+{
+	$myfile = fopen($invoice_file, "w");
+	fwrite($myfile, $name_1 . ":");
+	fwrite($myfile, $invoice_number . "\n");
+	fclose($myfile);
 }
 
 // create/append to work order text file
@@ -67,9 +129,9 @@ $worker_file = "Data/Work_orders/work_order.txt";
 			fclose($myfile);
 		}
 
-$workers_new_file = fopen($worker_file, "r");
-
 // create/rewrite order iframe
+
+$workers_new_file = fopen($worker_file, "r");
 
 $worker_file_name = "iframe-folder/worker_list.html";
 
@@ -100,30 +162,87 @@ $pdf_file = 'Data/Rechnung/' . $name_1 . '.pdf';
 
 $pdf = new FPDF();
 $pdf -> AddPage();
-$pdf -> SetFont('Arial', '', 12);
 
+//set font to arial, bold, 14pt
+$pdf->SetFont('Arial','B',14);
 
-$pdf -> Cell(55, 50, 'Rechnung', 0 , 1 , 'C');
+//Cell(width , height , text , border , end line , [align] )
 
-$pdf -> Cell(55, 5, 'Referenzcode', 0 , 0);
-$pdf -> Cell(58, 5, ': 026ETY', 0 , 0);
-$pdf -> Cell(25, 5, 'Datum', 0 , 0);
-$pdf -> Cell(52, 5, ': ' . $date, 1 , 1);
+$pdf->Cell(130 ,5,'TRUE IT .CO',0,0);
+$pdf->Cell(59 ,5,'RECHNUNG',0,1);//end of line
 
-$pdf -> Cell(55, 5, 'Betrag', 0 , 0);
-$pdf -> Cell(58, 5, ': 100$', 0 , 1);
+//set font to arial, regular, 12pt
+$pdf->SetFont('Arial','',12);
 
-$pdf -> Cell(55, 5, 'Status', 0, 0);
-$pdf -> Cell(58, 5, ': Unvollstaendig', 0, 1);
+$pdf->Cell(130 ,5,'[Schneidershof, 54293]',0,0);
+$pdf->Cell(59 ,5,'',0,1);//end of line
 
+$pdf->Cell(130 ,5,'[Trier, Deutschland]',0,0);
+$pdf->Cell(25 ,5,'Datum',0,0);
+$pdf->Cell(34 ,5,'[' . $date . ']',0,1);//end of line
 
-$pdf -> Cell(55, 5, 'Bezahlt von', 0, 0);
-$pdf -> Cell(58, 5, ':', 0, 0);
+$pdf->Cell(130 ,5,'E-mail [' . $email_1 . ']',0,0);
+$pdf->Cell(25 ,5,'Rechnung',0,0);
+$pdf->Cell(34 ,5,'[#' . $invoice_number . ']',0,1);//end of line
 
-$pdf -> Line(155,75,270,75);
-$pdf -> Ln(10);
-$pdf -> Cell(140, 5, '', 0 , 0);
-$pdf -> Cell(50, 5, 'Unterschrift', 0, 1, 'C');
+$pdf->Cell(130 ,5,'Fax [+12345678]',0,0);
+$pdf->Cell(25 ,5,'Kunden ID',0,0);
+$pdf->Cell(34 ,5,'[' . $name_1 . ']',0,1);//end of line
+
+//make a dummy empty cell as a vertical spacer
+$pdf->Cell(189 ,10,'',0,1);//end of line
+
+//billing address
+$pdf->Cell(100 ,5,'Bezahlen an',0,1);//end of line
+
+//add dummy cell at beginning of each line for indentation
+$pdf->Cell(10 ,5,'',0,0);
+$pdf->Cell(90 ,5,'[Andreas Schmitt]',0,1);
+
+$pdf->Cell(10 ,5,'',0,0);
+$pdf->Cell(90 ,5,'[True IT GmbH]',0,1);
+
+$pdf->Cell(10 ,5,'',0,0);
+$pdf->Cell(90 ,5,'[andreas_schmit@example.com]',0,1);
+
+//make a dummy empty cell as a vertical spacer
+$pdf->Cell(189 ,10,'',0,1);//end of line
+
+//invoice contents
+$pdf->SetFont('Arial','B',12);
+
+$pdf->Cell(130 ,5,'Beschreibung',1,0);
+$pdf->Cell(25 ,5,'Steuer',1,0);
+$pdf->Cell(34 ,5,'Hoehe',1,1);//end of line
+
+$pdf->SetFont('Arial','',12);
+
+//Numbers are right-aligned so we give 'R' after new line parameter
+
+$pdf->Cell(130 ,5,$task_1,1,0);
+$pdf->Cell(25 ,5,$taxable,1,0);
+$pdf->Cell(34 ,5,$payable,1,1,'R');//end of line
+
+//summary
+$pdf->Cell(130 ,5,'',0,0);
+$pdf->Cell(25 ,5,'Ohne Steuer',0,0);
+$pdf->Cell(4 ,5,'$',1,0);
+$pdf->Cell(30 ,5,$payable,1,1,'R');//end of line
+
+$pdf->Cell(130 ,5,'',0,0);
+$pdf->Cell(25 ,5,'Steuer',0,0);
+$pdf->Cell(4 ,5,'$',1,0);
+$pdf->Cell(30 ,5,$taxable,1,1,'R');//end of line
+
+$pdf->Cell(130 ,5,'',0,0);
+$pdf->Cell(25 ,5,'Steuer Rate',0,0);
+$pdf->Cell(4 ,5,'$',1,0);
+$pdf->Cell(30 ,5,'15.825%',1,1,'R');//end of line
+
+$pdf->Cell(130 ,5,'',0,0);
+$pdf->Cell(25 ,5,'Total',0,0);
+$pdf->Cell(4 ,5,'$',1,0);
+$pdf->Cell(30 ,5,$total_due,1,1,'R');//end of line
 
 $pdf -> Output($pdf_file, 'F');
 
