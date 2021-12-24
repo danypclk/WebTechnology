@@ -277,6 +277,128 @@ function displayFunctiondelete_list()
 	document.getElementById("rechnungen_admin_download").style.display = "none";
 }
 
+
+/* toggle switch for mitteilungen */
+
+const admin_mitteilungen = document.getElementById('admin_mitteilung');
+
+function myfunctionToggle(x) 
+{
+	var isOpen = false;
+	
+	function openSection()
+	{
+	document.getElementById("register").style.display = "none";
+	document.getElementById("services").style.display = "none";
+	document.getElementById("order_list").style.display = "none";
+	document.getElementById("register_list").style.display = "none";
+	document.getElementById("client_messages_list").style.display = "none";
+	document.getElementById("client_feedback").style.display = "block";
+	document.getElementById("delete_account").style.display = "none";
+	document.getElementById("rechnungen_admin_download").style.display = "none";
+	isOpen = true;
+	}
+
+	function openotherSection()
+	{
+	document.getElementById("register").style.display = "none";
+	document.getElementById("services").style.display = "none";
+	document.getElementById("order_list").style.display = "none";
+	document.getElementById("register_list").style.display = "none";
+	document.getElementById("client_messages_list").style.display = "block";
+	document.getElementById("client_feedback").style.display = "none";
+	document.getElementById("delete_account").style.display = "none";
+	document.getElementById("rechnungen_admin_download").style.display = "none";
+	isOpen = false;
+	}
+  if (x.matches) 
+  {
+    admin_mitteilungen.addEventListener('click', (e) => {
+		e.preventDefault();
+	
+		displayFunctiontoggle();
+		});
+	
+		function displayFunctiontoggle()
+		{
+			if(isOpen === true)
+			{
+				openotherSection();
+			}
+			else
+			{
+				openSection();
+			}
+		}
+  }
+}
+
+var x = window.matchMedia("(max-width: 1181px)")
+myfunctionToggle(x);
+x.addListener(myfunctionToggle);
+
+
+/* toggle switch for services orders and pdf list */
+
+const admin_service_orders_and_pdfs = document.getElementById('admin_orders_and_pdfs');
+
+
+function myfunctionToggle_services(x) 
+{
+	var isOpeny = false;
+	
+	function openSectiony()
+	{
+	document.getElementById("register").style.display = "none";
+	document.getElementById("services").style.display = "none";
+	document.getElementById("order_list").style.display = "none";
+	document.getElementById("register_list").style.disftzfplay = "none";
+	document.getElementById("client_messages_list").style.display = "none";
+	document.getElementById("client_feedback").style.display = "none";
+	document.getElementById("delete_account").style.display = "none";
+	document.getElementById("rechnungen_admin_download").style.display = "block";
+	isOpeny = true;
+	}
+
+	function openotherSectiony()
+	{
+	document.getElementById("register").style.display = "none";
+	document.getElementById("services").style.display = "none";
+	document.getElementById("order_list").style.display = "block";
+	document.getElementById("register_list").style.display = "none";
+	document.getElementById("client_messages_list").style.display = "none";
+	document.getElementById("client_feedback").style.display = "none";
+	document.getElementById("delete_account").style.display = "none";
+	document.getElementById("rechnungen_admin_download").style.display = "none";
+	isOpeny = false;
+	}
+	
+  if (y.matches) 
+  {
+    admin_service_orders_and_pdfs.addEventListener('click', (e) => {
+		e.preventDefault();
+	
+		displayFunctiontoggle_services();
+		});
+	
+		function displayFunctiontoggle_services()
+		{
+			if(isOpeny === true)
+			{
+				openotherSectiony();
+			}
+			else
+			{
+				openSectiony();
+			}
+		}
+  }
+}
+
+var y = window.matchMedia("(max-width: 1181px)")
+myfunctionToggle_services(y);
+y.addListener(myfunctionToggle_services);
+
 $(document).scroll(function(){
           var scrollAmount = $(window).scrollTop();
           var navHeight = $("nav").height();

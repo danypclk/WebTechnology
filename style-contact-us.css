@@ -411,7 +411,11 @@ nav ul li ul li a:hover {
 		background-color: #fff;
 		border-bottom-right-radius: 10px;
 		border-bottom-left-radius: 10px;
-		text-align: center;
+	}
+	
+	.sidebar_menu ul li 
+	{
+		width: 45px;
 	}
 	
 	.sidebar_menu ul li span
@@ -443,9 +447,9 @@ nav ul li ul li a:hover {
 		white-space: nowrap;
 	}
 	
-	.sidebar_menu
+	.sidebar_menu ul li 
 	{
-		padding-left: 45px;
+		width: 45px;
 	}
 }
 
@@ -534,7 +538,7 @@ nav ul li ul li a:hover {
 
 @media screen and (max-width:1181px)
 {
-	.dropdown .dropdown-content, #arrow_down {
+	.dropdown .dropdown-content, #arrow_down, #arrow_down_1 {
 		display: none;
 	}
 	
