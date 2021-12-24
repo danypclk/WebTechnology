@@ -280,7 +280,7 @@ function displayFunctiondelete_list()
 
 /* toggle switch for mitteilungen */
 
-const admin_mitteilungen = document.getElementById('admin_mitteilung');
+var admin_mitteilungen = document.getElementById('admin_mitteilung');
 
 function myfunctionToggle(x) 
 {
@@ -311,8 +311,6 @@ function myfunctionToggle(x)
 	document.getElementById("rechnungen_admin_download").style.display = "none";
 	isOpen = false;
 	}
-  if (x.matches) 
-  {
     admin_mitteilungen.addEventListener('click', (e) => {
 		e.preventDefault();
 	
@@ -321,16 +319,18 @@ function myfunctionToggle(x)
 	
 		function displayFunctiontoggle()
 		{
-			if(isOpen === true)
+			if(x.matches)
 			{
-				openotherSection();
-			}
-			else
-			{
-				openSection();
+				if(isOpen === true)
+				{
+					openotherSection();
+				}
+				else
+				{
+					openSection();
+				}
 			}
 		}
-  }
 }
 
 var x = window.matchMedia("(max-width: 1181px)")
@@ -373,8 +373,6 @@ function myfunctionToggle_services(x)
 	isOpeny = false;
 	}
 	
-  if (y.matches) 
-  {
     admin_service_orders_and_pdfs.addEventListener('click', (e) => {
 		e.preventDefault();
 	
@@ -383,16 +381,18 @@ function myfunctionToggle_services(x)
 	
 		function displayFunctiontoggle_services()
 		{
-			if(isOpeny === true)
+			if (y.matches) 
 			{
-				openotherSectiony();
-			}
-			else
-			{
-				openSectiony();
+				if(isOpeny === true)
+				{
+					openotherSectiony();
+				}
+				else
+				{
+					openSectiony();
+				}
 			}
 		}
-  }
 }
 
 var y = window.matchMedia("(max-width: 1181px)")
