@@ -29,6 +29,10 @@ function displayFunctioninvoice()
 	document.getElementById("rechnungen_download").style.display = "block";
 }
 
+/* change value so form has client id to send it to php server */
+
+document.getElementById("name_of_client").setAttribute('value', name);
+
 $(document).scroll(function(){
           var scrollAmount = $(window).scrollTop();
           var navHeight = $("nav").height();

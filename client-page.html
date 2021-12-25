@@ -73,12 +73,9 @@
 	<section class="feedback" id="feedback">
 		<form class="form" method="post" id="form_feedback" autocomplete="off" action="feedback.php">
 			<h2>Feedback</h2>
-				<p type="Name: "> <input name="client_feedback_name" id="client_feedback_name"></input></p>
-					<small id="feedback_name_error">Name kann nicht leer sein.</small>
-				<p type="Ihren Feedback: "> <input name="client_feedback_message" id="client_feedback_message"></input></p>
-					<small id="feedback_message_error_d">Email kann nicht leer sein.</small>
+				<p type="Ihren Feedback: "><input name="name_of_client" id="name_of_client" value="none" /> <textarea rows="6" cols="36" name="client_feedback_message" id="client_feedback_message"></textarea></p>
+					<small id="feedback_message_error_d">Feedback Naricht kann nicht leer sein.</small>
 				<p type="Partner oder Arbeiter, der für Sie gearbeitet hat: ">
-				<br />
 				<select name="business_list" id="business_list">
 					
 				</select></p>
