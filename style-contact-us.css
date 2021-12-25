@@ -205,7 +205,7 @@ nav ul li ul li a:hover {
 
 #form_registry ,#form_feedback
 {
-	margin: 130px auto; 
+	margin: 130px auto;
 }
 
 #form_registry
@@ -298,6 +298,7 @@ nav ul li ul li a:hover {
 
 .form button:hover, #services_button:hover
 {
+	transition: 0.5s;
 	background:#5798C2;
 	color:#fff;
 }
