@@ -114,7 +114,8 @@ $worker_file = "Data/Work_orders/work_order.txt";
 			fwrite($myfile, $date . ":");
 			fwrite($myfile, $task_1 . ":");
 			fwrite($myfile, $address_1 . ":");
-			fwrite($myfile, $request_1 . "\n");
+			fwrite($myfile, $request_1 . ":");
+			fwrite($myfile, $worker_1 . "\n");
 			fclose($myfile);
 		}
 		else
@@ -125,7 +126,8 @@ $worker_file = "Data/Work_orders/work_order.txt";
 			fwrite($myfile, $date . ":");
 			fwrite($myfile, $task_1 . ":");
 			fwrite($myfile, $address_1 . ":");
-			fwrite($myfile, $request_1 . "\n");
+			fwrite($myfile, $request_1 . ":");
+			fwrite($myfile, $worker_1 . "\n");
 			fclose($myfile);
 		}
 
@@ -139,8 +141,8 @@ $worker_file_name = "iframe-folder/worker_list.html";
 		fwrite($worker_order_list,"<h2>Orders:</h2>");
 		while($row = fgets($workers_new_file)) 
 		{
-			list( $Name, $Email, $Date, $Task, $Address, $Request ) = explode( ":", $row );
-			fwrite($worker_order_list,"<p>Arbeiter: ". $worker_1 . "</p>");
+			list( $Name, $Email, $Date, $Task, $Address, $Request, $worker) = explode( ":", $row );
+			fwrite($worker_order_list,"<p>Arbeiter: ". $worker . "</p>");
 			fwrite($worker_order_list,"<p>Datum: ". $Date . "</p>");
 			fwrite($worker_order_list,"<p>Name: ". $Name . "</p>");
 			fwrite($worker_order_list,"<p>Email: ". $Email . "</p>");

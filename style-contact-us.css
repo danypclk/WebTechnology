@@ -235,6 +235,11 @@ nav ul li ul li a:hover {
 	padding-bottom: 80px;
 }
 
+#form_admin_reset
+{
+	padding-bottom: 60px;
+}
+
 #form_feedback
 {
 	height: 470px;
@@ -296,7 +301,7 @@ nav ul li ul li a:hover {
 .form #register_name_error, .form #register_password_error, .form #register_email_error, .form #function_of_busniess_error,
 .services #client_name_error, .services #client_email_error, .services #client_address_error, .services #radio_button_error,
 .services #selector_error, .form #konto_name_error, .form #feedback_name_error, .form #feedback_message_error_d, 
-.form #partner_employee_feedback_error, .form #rechnungen_liste_error_admin, .form #rechnungen_liste_error
+.form #partner_employee_feedback_error, .form #rechnungen_liste_error_admin, .form #rechnungen_liste_error, .form #reset_error_admin
 {
 	color: red;
 	font-size: 15px;
@@ -488,7 +493,7 @@ nav ul li ul li a:hover {
 }
 
 .register, .register_list, .services, .register_list, .order_list, .feedback_list, .client_messages_list,
-.feedback, .delete_account, .client_feedback, .rechnungen_download, .rechnungen_admin_download
+.feedback, .delete_account, .client_feedback, .rechnungen_download, .rechnungen_admin_download, .admin_reset
 {
 	display: none;
 }
@@ -526,19 +531,24 @@ nav ul li ul li a:hover {
 
 #arrow_down
 {
-	padding-left: 60px;
+	padding-left: 59px;
 }
 
 #arrow_down_1
 {
-	padding-left: 42px;
+	padding-left: 40px;
+}
+
+#arrow_down_2
+{
+	padding-left: 13px;
 }
 
 }
 
 @media screen and (max-width:1181px)
 {
-	.dropdown .dropdown-content, #arrow_down, #arrow_down_1 {
+	.dropdown .dropdown-content, #arrow_down, #arrow_down_1, #arrow_down_2 {
 		display: none;
 	}
 	

@@ -5,7 +5,8 @@ const admin_contactlist = document.getElementById('narichten');
 const admin_order_list = document.getElementById('aufgabe');
 const admin_rechnung_download = document.getElementById('rechnung');
 const admin_feedback = document.getElementById('kunden_feedback');
-const admin_delete_account = document.getElementById('admin_delete');
+const admin_delete_account = document.getElementById('delete_conto');
+const admin_reset_this = document.getElementById('reset_all_files');
 
 admin_registry.addEventListener('click', (e) => {
 	e.preventDefault();
@@ -48,6 +49,7 @@ function displayFunctionregister()
 		document.getElementById("delete_account").style.display = "none";
 		document.getElementById("order_list").style.display = "none";
 		document.getElementById("rechnungen_admin_download").style.display = "none";
+		document.getElementById("admin_reset").style.display = "none";
 	}
 }
 
@@ -92,6 +94,7 @@ function displayFunctionorder()
 		document.getElementById("delete_account").style.display = "none";
 		document.getElementById("order_list").style.display = "block";
 		document.getElementById("rechnungen_admin_download").style.display = "none";
+		document.getElementById("admin_reset").style.display = "none";
 	}
 }
 
@@ -137,6 +140,7 @@ function displayFunctionservices()
 		document.getElementById("delete_account").style.display = "none";
 		document.getElementById("order_list").style.display = "none";
 		document.getElementById("rechnungen_admin_download").style.display = "none";
+		document.getElementById("admin_reset").style.display = "none";
 	}
 	
 }
@@ -171,6 +175,7 @@ function displayFunctionregister_list()
 			document.getElementById("delete_account").style.display = "none";
 			document.getElementById("order_list").style.display = "none";
 			document.getElementById("rechnungen_admin_download").style.display = "none";
+			document.getElementById("admin_reset").style.display = "none";
 		}
 }
 
@@ -204,6 +209,7 @@ function displayFunctioncontact_list()
 			document.getElementById("delete_account").style.display = "none";
 			document.getElementById("order_list").style.display = "none";
 			document.getElementById("rechnungen_admin_download").style.display = "none";
+			document.getElementById("admin_reset").style.display = "none";
 		}
 }
 
@@ -237,6 +243,7 @@ function displayFunctionfeedback()
 			document.getElementById("client_feedback").style.display = "block";
 			document.getElementById("delete_account").style.display = "none";
 			document.getElementById("rechnungen_admin_download").style.display = "none";
+			document.getElementById("admin_reset").style.display = "none";
 		}
 }
 
@@ -257,6 +264,7 @@ function displayFunctioninvoice_list()
 	document.getElementById("rechnungen_admin_download").style.display = "block";
 	document.getElementById("delete_account").style.display = "none";
 	document.getElementById("order_list").style.display = "none";
+	document.getElementById("admin_reset").style.display = "none";
 }
 
 admin_delete_account.addEventListener('click', (e) => {
@@ -275,7 +283,28 @@ function displayFunctiondelete_list()
 	document.getElementById("delete_account").style.display = "block";
 	document.getElementById("order_list").style.display = "none";
 	document.getElementById("rechnungen_admin_download").style.display = "none";
+	document.getElementById("admin_reset").style.display = "none";
 }
+
+admin_reset_this.addEventListener('click', (e) => {
+	e.preventDefault();
+	
+	displayFunctionreset();
+});
+
+function displayFunctionreset()
+{
+	document.getElementById("register").style.display = "none";
+	document.getElementById("services").style.display = "none";
+	document.getElementById("register_list").style.display = "none";
+	document.getElementById("client_messages_list").style.display = "none";
+	document.getElementById("client_feedback").style.display = "none";
+	document.getElementById("delete_account").style.display = "none";
+	document.getElementById("order_list").style.display = "none";
+	document.getElementById("rechnungen_admin_download").style.display = "none";
+	document.getElementById("admin_reset").style.display = "block";
+}
+
 
 
 /* toggle switch for mitteilungen */
@@ -296,6 +325,7 @@ function myfunctionToggle(x)
 	document.getElementById("client_feedback").style.display = "block";
 	document.getElementById("delete_account").style.display = "none";
 	document.getElementById("rechnungen_admin_download").style.display = "none";
+	document.getElementById("admin_reset").style.display = "none";
 	isOpen = true;
 	}
 
@@ -309,6 +339,7 @@ function myfunctionToggle(x)
 	document.getElementById("client_feedback").style.display = "none";
 	document.getElementById("delete_account").style.display = "none";
 	document.getElementById("rechnungen_admin_download").style.display = "none";
+	document.getElementById("admin_reset").style.display = "none";
 	isOpen = false;
 	}
     admin_mitteilungen.addEventListener('click', (e) => {
@@ -343,7 +374,7 @@ x.addListener(myfunctionToggle);
 const admin_service_orders_and_pdfs = document.getElementById('admin_orders_and_pdfs');
 
 
-function myfunctionToggle_services(x) 
+function myfunctionToggle_services(y) 
 {
 	var isOpeny = false;
 	
@@ -357,6 +388,7 @@ function myfunctionToggle_services(x)
 	document.getElementById("client_feedback").style.display = "none";
 	document.getElementById("delete_account").style.display = "none";
 	document.getElementById("rechnungen_admin_download").style.display = "block";
+	document.getElementById("admin_reset").style.display = "none";
 	isOpeny = true;
 	}
 
@@ -370,6 +402,7 @@ function myfunctionToggle_services(x)
 	document.getElementById("client_feedback").style.display = "none";
 	document.getElementById("delete_account").style.display = "none";
 	document.getElementById("rechnungen_admin_download").style.display = "none";
+	document.getElementById("admin_reset").style.display = "none";
 	isOpeny = false;
 	}
 	
@@ -398,6 +431,69 @@ function myfunctionToggle_services(x)
 var y = window.matchMedia("(max-width: 1181px)")
 myfunctionToggle_services(y);
 y.addListener(myfunctionToggle_services);
+
+/* toggle switch for delete account and reset form */
+
+const admin_delete_reset = document.getElementById('admin_delete');
+
+
+function myfunctionToggle_delete_reset(z) 
+{
+	var isOpenz = false;
+	
+	function openSectionz()
+	{
+	document.getElementById("register").style.display = "none";
+	document.getElementById("services").style.display = "none";
+	document.getElementById("order_list").style.display = "none";
+	document.getElementById("register_list").style.disftzfplay = "none";
+	document.getElementById("client_messages_list").style.display = "none";
+	document.getElementById("client_feedback").style.display = "none";
+	document.getElementById("delete_account").style.display = "block";
+	document.getElementById("rechnungen_admin_download").style.display = "none";
+	document.getElementById("admin_reset").style.display = "none";
+	isOpenz = true;
+	}
+
+	function openotherSectionz()
+	{
+	document.getElementById("register").style.display = "none";
+	document.getElementById("services").style.display = "none";
+	document.getElementById("order_list").style.display = "none";
+	document.getElementById("register_list").style.display = "none";
+	document.getElementById("client_messages_list").style.display = "none";
+	document.getElementById("client_feedback").style.display = "none";
+	document.getElementById("delete_account").style.display = "none";
+	document.getElementById("rechnungen_admin_download").style.display = "none";
+	document.getElementById("admin_reset").style.display = "block";
+	isOpenz = false;
+	}
+	
+    admin_delete_reset.addEventListener('click', (e) => {
+		e.preventDefault();
+	
+		displayFunctiontoggle_delete_reset();
+		});
+	
+		function displayFunctiontoggle_delete_reset()
+		{
+			if (z.matches) 
+			{
+				if(isOpenz === true)
+				{
+					openotherSectionz();
+				}
+				else
+				{
+					openSectionz();
+				}
+			}
+		}
+}
+
+var z = window.matchMedia("(max-width: 1181px)")
+myfunctionToggle_delete_reset(z);
+z.addListener(myfunctionToggle_delete_reset);
 
 $(document).scroll(function(){
           var scrollAmount = $(window).scrollTop();
