@@ -1,10 +1,10 @@
 <?php
 
 $date = date("d_m_Y_H_i_s");
-
+$id_username = $_POST['id_of_admin'];
 
 $reset = "reset";
-$new_name = trim($reset . "_vom_" . $date);
+$new_name = trim($reset . "_vom_" . $date . "_reseted_by_" . $id_username);
 
 require('fpdf/fpdf.php');
 
@@ -110,7 +110,7 @@ $pdf->Cell(130 ,10,'',0,1);
 
 $pdf -> Output($pdf_file, 'F');
 
-// reset all three files
+// reset all files in question
 
 $myfile = fopen("Data/Contact_Us/contact.txt", "w");
 fclose($myfile);

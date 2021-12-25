@@ -2,6 +2,8 @@
 
 // data to work with
 
+
+
 $name_1 = $_POST['name'];
 $email_1 = $_POST['email'];
 $worker_1 = $_POST['referrer'];
@@ -215,39 +217,38 @@ $pdf_file = 'Data/Rechnung/' . $name_1 . '_' . $invoice_number . '.pdf';
 $pdf = new FPDF();
 $pdf -> AddPage();
 
-//set font to arial, bold, 14pt
 $pdf->SetFont('Arial','B',14);
 
 //Cell(width , height , text , border , end line , [align] )
 
 $pdf->Cell(130 ,5,'TRUE IT .CO',0,0);
-$pdf->Cell(59 ,5,'RECHNUNG',0,1);//end of line
+$pdf->Cell(59 ,5,'RECHNUNG',0,1);
 
-//set font to arial, regular, 12pt
+
 $pdf->SetFont('Arial','',12);
 
 $pdf->Cell(130 ,5,'[Schneidershof, 54293]',0,0);
-$pdf->Cell(59 ,5,'',0,1);//end of line
+$pdf->Cell(59 ,5,'',0,1);
 
 $pdf->Cell(130 ,5,'[Trier, Deutschland]',0,0);
 $pdf->Cell(25 ,5,'Datum',0,0);
-$pdf->Cell(34 ,5,'[' . $date . ']',0,1);//end of line
+$pdf->Cell(34 ,5,'[' . $date . ']',0,1);
 
 $pdf->Cell(130 ,5,'E-mail [' . $email_1 . ']',0,0);
 $pdf->Cell(25 ,5,'Rechnung',0,0);
-$pdf->Cell(34 ,5,'[#' . $invoice_number . ']',0,1);//end of line
+$pdf->Cell(34 ,5,'[#' . $invoice_number . ']',0,1);
 
 $pdf->Cell(130 ,5,'Fax [+12345678]',0,0);
 $pdf->Cell(25 ,5,'Kunden ID',0,0);
-$pdf->Cell(34 ,5,'[' . $name_1 . ']',0,1);//end of line
+$pdf->Cell(34 ,5,'[' . $name_1 . ']',0,1);
 
 //make a dummy empty cell as a vertical spacer
-$pdf->Cell(189 ,10,'',0,1);//end of line
+$pdf->Cell(189 ,10,'',0,1);
 
 //billing address
-$pdf->Cell(100 ,5,'Bezahlen an',0,1);//end of line
+$pdf->Cell(100 ,5,'Bezahlen an',0,1);
 
-//add dummy cell at beginning of each line for indentation
+
 $pdf->Cell(10 ,5,'',0,0);
 $pdf->Cell(90 ,5,'[Andreas Schmitt]',0,1);
 
@@ -257,15 +258,15 @@ $pdf->Cell(90 ,5,'[True IT GmbH]',0,1);
 $pdf->Cell(10 ,5,'',0,0);
 $pdf->Cell(90 ,5,'[andreas_schmit@example.com]',0,1);
 
-//make a dummy empty cell as a vertical spacer
-$pdf->Cell(189 ,10,'',0,1);//end of line
+//dummy empty cell as a vertical spacer
+$pdf->Cell(189 ,10,'',0,1);
 
 //invoice contents
 $pdf->SetFont('Arial','B',12);
 
 $pdf->Cell(130 ,5,'Beschreibung',1,0);
 $pdf->Cell(25 ,5,'Steuer',1,0);
-$pdf->Cell(34 ,5,'Hoehe',1,1);//end of line
+$pdf->Cell(34 ,5,'Hoehe',1,1);
 
 $pdf->SetFont('Arial','',12);
 
@@ -273,28 +274,28 @@ $pdf->SetFont('Arial','',12);
 
 $pdf->Cell(130 ,5,$task_1,1,0);
 $pdf->Cell(25 ,5,$taxable,1,0);
-$pdf->Cell(34 ,5,$payable,1,1,'R');//end of line
+$pdf->Cell(34 ,5,$payable,1,1,'R');
 
 //summary
 $pdf->Cell(130 ,5,'',0,0);
 $pdf->Cell(25 ,5,'Ohne Steuer',0,0);
 $pdf->Cell(4 ,5,'$',1,0);
-$pdf->Cell(30 ,5,$payable,1,1,'R');//end of line
+$pdf->Cell(30 ,5,$payable,1,1,'R');
 
 $pdf->Cell(130 ,5,'',0,0);
 $pdf->Cell(25 ,5,'Steuer',0,0);
 $pdf->Cell(4 ,5,'$',1,0);
-$pdf->Cell(30 ,5,$taxable,1,1,'R');//end of line
+$pdf->Cell(30 ,5,$taxable,1,1,'R');
 
 $pdf->Cell(130 ,5,'',0,0);
 $pdf->Cell(25 ,5,'Steuer Rate',0,0);
 $pdf->Cell(4 ,5,'$',1,0);
-$pdf->Cell(30 ,5,'15.825%',1,1,'R');//end of line
+$pdf->Cell(30 ,5,'15.825%',1,1,'R');
 
 $pdf->Cell(130 ,5,'',0,0);
 $pdf->Cell(25 ,5,'Total',0,0);
 $pdf->Cell(4 ,5,'$',1,0);
-$pdf->Cell(30 ,5,$total_due,1,1,'R');//end of line
+$pdf->Cell(30 ,5,$total_due,1,1,'R');
 
 $pdf -> Output($pdf_file, 'F');
 

@@ -22,6 +22,16 @@ if(!file_exists("Data/Contact_Us/contact.txt"))
 	$contact_us_text_file = fopen("Data/Contact_Us/contact.txt", "w");
 	fclose($contact_us_text_file);
 }
+if(!file_exists("Data/Work_orders/contact.txt"))
+{
+	$contact_us_text_file = fopen("Data/Work_orders/work_order.txt", "w");
+	fclose($contact_us_text_file);
+}
+if(!file_exists("Data/Feedback/feedback.txt"))
+{
+	$contact_us_text_file = fopen("Data/Feedback/feedback.txt", "w");
+	fclose($contact_us_text_file);
+}
 if(!file_exists("iframe-folder/register_list.html"))
 {
 	$register_list_iframe = fopen("iframe-folder/register_list.html", "w");

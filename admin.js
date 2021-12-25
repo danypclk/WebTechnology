@@ -1,3 +1,5 @@
+const id_name = localStorage.getItem('USERNAME').trim();
+
 const admin_registry = document.getElementById('admin_register');
 const admin_service = document.getElementById('admin_services');
 const admin_registerlist = document.getElementById('admin_register_list');
@@ -490,6 +492,12 @@ function myfunctionToggle_delete_reset(z)
 			}
 		}
 }
+
+// use localstorage name to put it into span inside reset form to know who had the files reseted
+
+document.getElementById("id_of_admin").setAttribute('value', id_name);
+
+// to make sure sidebar keeps track where navbar is to make itself larger or shorter
 
 var z = window.matchMedia("(max-width: 1181px)")
 myfunctionToggle_delete_reset(z);

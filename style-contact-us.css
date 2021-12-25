@@ -237,7 +237,12 @@ nav ul li ul li a:hover {
 
 #form_admin_reset
 {
-	padding-bottom: 60px;
+	padding-bottom: 80px;
+}
+
+#id_of_admin
+{
+	visibility: hidden;
 }
 
 #form_feedback
