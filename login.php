@@ -22,7 +22,7 @@ if(!file_exists("Data/Contact_Us/contact.txt"))
 	$contact_us_text_file = fopen("Data/Contact_Us/contact.txt", "w");
 	fclose($contact_us_text_file);
 }
-if(!file_exists("Data/Work_orders/contact.txt"))
+if(!file_exists("Data/Work_orders/work_order.txt"))
 {
 	$contact_us_text_file = fopen("Data/Work_orders/work_order.txt", "w");
 	fclose($contact_us_text_file);
