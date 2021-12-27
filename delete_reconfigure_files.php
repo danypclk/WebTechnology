@@ -2,6 +2,8 @@
 
 // delete all pdfs
 
+$date_of_delete = date("d_m_Y_H_i_s");
+
 $dir = scandir("Data/Rechnung/");
 
 foreach ($dir as $file_pointer) // copy files to storage
@@ -11,7 +13,7 @@ foreach ($dir as $file_pointer) // copy files to storage
 		if($file_pointer != "..")
 		{
 			$new_pdf = "Data/Rechnung/" . $file_pointer;
-			$new_location = "Data/Storage/Storage_for_pdfs_invoices/" . $file_pointer;
+			$new_location = "Data/Storage/Storage_for_pdfs_invoices/"  . $date_of_delete . $file_pointer;
 			copy($new_pdf, $new_location);
 		}
 	}
@@ -71,6 +73,8 @@ fclose($myfile);
 $myfile = fopen("iframe-folder/register_list.html", "w");
 fwrite($myfile,"<h2>Keine Konten in der Registrierung</h2>");
 fclose($myfile);
+
+// making iframes into pdfs
 
 $date = date("d_m_Y_H_i_s");
 $id_username = $_POST['id_of_admin_delete'];
