@@ -142,14 +142,15 @@ fclose($myfile);
 
 // download all files that have been reseted
 
+$successful_atreseting = true;
+
 $file_name =  $new_name . ".pdf";
 $file_url = "Data/Storage/Storage_for_iframes/" . $file_name;
 header('Content-Type: application/octet-stream');
 header("Content-Transfer-Encoding: Binary"); 
 header("Content-disposition: attachment; filename=\"".$file_name."\""); 
 readfile($file_url);
+exit;
 
-echo "<script>alert('Dateien umkonfiguriert!')</script>";
-echo "<script>window.location.assign('admin-page.html')</script>";
 
 ?>
