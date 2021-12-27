@@ -530,6 +530,7 @@ function myfunctionToggle_delete_reset(z)
 // use localstorage name to put it into span inside reset form to know who had the files reseted
 
 document.getElementById("id_of_admin").setAttribute('value', id_name);
+document.getElementById("id_of_admin_delete").setAttribute('value', id_name);
 
 // to make sure sidebar keeps track where navbar is to make itself larger or shorter
 

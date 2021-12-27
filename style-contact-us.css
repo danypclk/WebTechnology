@@ -240,7 +240,7 @@ nav ul li ul li a:hover {
 	padding-bottom: 80px;
 }
 
-#id_of_admin, #name_of_client
+#id_of_admin, #name_of_client, #id_of_admin_delete
 {
 	visibility: hidden;
 }
@@ -252,7 +252,7 @@ nav ul li ul li a:hover {
 
 #form_admin_delete_all
 {
-	height: 210px;
+	height: 250px;
 }
 
 .form h2, .services h2

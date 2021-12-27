@@ -11,12 +11,15 @@ foreach ($dir as $file_pointer) // copy files to storage
 		if($file_pointer != "..")
 		{
 			$new_pdf = "Data/Rechnung/" . $file_pointer;
-			copy($new_pdf, "Data/Storage/Storage_for_pdfs_invoices/");
+			$new_location = "Data/Storage/Storage_for_pdfs_invoices/" . $file_pointer;
+			copy($new_pdf, $new_location);
 		}
 	}
 }
 
-foreach ($dir as $file_pointer) // delete files in old directory
+$dir_2 = scandir("Data/Rechnung/");
+
+foreach ($dir_2 as $file_pointer) // delete files in old directory
 {	
 	if($file_pointer != ".")
 	{
@@ -70,8 +73,8 @@ fwrite($myfile,"<h2>Keine Konten in der Registrierung</h2>");
 fclose($myfile);
 
 $date = date("d_m_Y_H_i_s");
-$id_username = $_POST['id_of_admin'];
-
+$id_username = $_POST['id_of_admin_delete'];
+echo $id_username;
 $reset = "reset";
 $new_name = trim($reset . "_vom_" . $date . "_reseted_by_" . $id_username);
 
@@ -191,7 +194,6 @@ $myfile = fopen("Data/Work_orders/work_order.txt", "w");
 fclose($myfile);
 
 
-
 $myfile = fopen("iframe-folder/contact_us_list.html", "w");
 fwrite($myfile,"<h2>Keine Nachrichten</h2>");
 fclose($myfile);
@@ -208,7 +210,7 @@ $myfile = fopen("iframe-folder/worker_list.html", "w");
 fwrite($myfile,"<h2>Keine Arbeitsaufträge</h2>");
 fclose($myfile);
 
-echo "<script>alert('Daten gespeiechert und rekonfiguriert!')</script>";
-echo "<script>window.location.assign('admin-page.html')</script>";
+//echo "<script>alert('Daten gespeiechert und rekonfiguriert!')</script>";
+//echo "<script>window.location.assign('admin-page.html')</script>";
 
 ?>
