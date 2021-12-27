@@ -8,7 +8,7 @@ $new_name = trim($reset . "_vom_" . $date . "_reseted_by_" . $id_username);
 
 require('fpdf/fpdf.php');
 
-$pdf_file = 'Data/Storage/' . $new_name . '.pdf';
+$pdf_file = 'Data/Storage/Storage_for_iframes/' . $new_name . '.pdf';
 $pdf = new FPDF();
 $pdf -> AddPage();
 
@@ -143,7 +143,7 @@ fclose($myfile);
 // download all files that have been reseted
 
 $file_name =  $new_name . ".pdf";
-$file_url = "Data/Storage/" . $file_name;
+$file_url = "Data/Storage/Storage_for_iframes/" . $file_name;
 header('Content-Type: application/octet-stream');
 header("Content-Transfer-Encoding: Binary"); 
 header("Content-disposition: attachment; filename=\"".$file_name."\""); 
