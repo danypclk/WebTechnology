@@ -85,7 +85,8 @@
 		<li class="sidebar_list" id="admin_delete"><i class="fa fa-user-times"></i><span>Löschen/speichern</span><i class="fa fa-caret-down" id="arrow_down_2"></i></li>
 			<div class="dropdown-content">
 				<a href="#" id="delete_conto">Lösche Konto</a>
-				<a href="#" id="reset_all_files">Hauptdateien zurücksetzen</a>
+				<a href="#" id="reset_all_files">Iframes zurücksetzen</a>
+				<a href="#" id="delete_all_files">Alles zurücksetzen</a>
 			</div>
 		</div>
       </ul>
@@ -192,10 +193,18 @@
 		<form class="form" method="post" id="form_admin_reset" autocomplete="off" action="reset_files.php">
 			<h2>Reset-Formular</h2>
 				<br />
-				<p id="text_this"></p>
 					<small id="reset_error_admin">Keine Reset-Dateien im Ordner!</small>
 					<input name="id_of_admin" id="id_of_admin" value="none" />
 			<button id="submit_button"><b>Reset</b></button>
+		</form>
+</section>
+  <!--  delete and reconfigure all form  -->
+<section class="admin_delete_all" id="admin_delete_all">
+		<form class="form" method="post" id="form_admin_delete_all" autocomplete="off" action="delete_reconfigure_files.php">
+			<h2>Alles löschen</h2>
+				<br />
+					<small id="reset_error_admin">Keine Reset-Dateien im Ordner!</small>
+			<button id="submit_button"><b>Initiieren</b></button>
 		</form>
 </section>
 	<!--    Content Ende -->

@@ -1,4 +1,4 @@
-const id_name = localStorage.getItem('USERNAME').trim();
+const id_name = localStorage.getItem('USERNAME');
 
 const admin_registry = document.getElementById('admin_register');
 const admin_service = document.getElementById('admin_services');
@@ -9,6 +9,7 @@ const admin_rechnung_download = document.getElementById('rechnung');
 const admin_feedback = document.getElementById('kunden_feedback');
 const admin_delete_account = document.getElementById('delete_conto');
 const admin_reset_this = document.getElementById('reset_all_files');
+const admin_delete_this = document.getElementById('delete_all_files');
 
 admin_registry.addEventListener('click', (e) => {
 	e.preventDefault();
@@ -32,7 +33,7 @@ function displayFunctionregister()
 	
 		if(response != "200") 
 		{
-			alert('Files do not exist, you have to log yourself in first.');
+			alert('Dateien existieren nicht, sie muessen sich zuerst einloggen.');
 			return false;
 		}
 		else
@@ -52,6 +53,7 @@ function displayFunctionregister()
 		document.getElementById("order_list").style.display = "none";
 		document.getElementById("rechnungen_admin_download").style.display = "none";
 		document.getElementById("admin_reset").style.display = "none";
+		document.getElementById("admin_delete_all").style.display = "none";
 	}
 }
 
@@ -77,7 +79,7 @@ function displayFunctionorder()
 	
 		if(response != "200") 
 		{
-			alert('Files do not exist, you have to log yourself in first.');
+			alert('Dateien existieren nicht, sie muessen sich zuerst einloggen.');
 			return false;
 		}
 		else
@@ -97,6 +99,7 @@ function displayFunctionorder()
 		document.getElementById("order_list").style.display = "block";
 		document.getElementById("rechnungen_admin_download").style.display = "none";
 		document.getElementById("admin_reset").style.display = "none";
+		document.getElementById("admin_delete_all").style.display = "none";
 	}
 }
 
@@ -122,7 +125,7 @@ function displayFunctionservices()
 	
 		if(response != "200") 
 		{
-			alert('Files do not exist, you have to log yourself in first.');
+			alert('Dateien existieren nicht, sie muessen sich zuerst einloggen.');
 			return false;
 		}
 		else
@@ -143,6 +146,7 @@ function displayFunctionservices()
 		document.getElementById("order_list").style.display = "none";
 		document.getElementById("rechnungen_admin_download").style.display = "none";
 		document.getElementById("admin_reset").style.display = "none";
+		document.getElementById("admin_delete_all").style.display = "none";
 	}
 	
 }
@@ -164,7 +168,7 @@ function displayFunctionregister_list()
 	
 		if(response != "200") 
 		{
-			alert('Files do not exist, you have to log yourself in first.');
+			alert('Dateien existieren nicht, sie muessen sich zuerst einloggen.');
 			return false;
 		}
 		else
@@ -178,6 +182,7 @@ function displayFunctionregister_list()
 			document.getElementById("order_list").style.display = "none";
 			document.getElementById("rechnungen_admin_download").style.display = "none";
 			document.getElementById("admin_reset").style.display = "none";
+			document.getElementById("admin_delete_all").style.display = "none";
 		}
 }
 
@@ -198,7 +203,7 @@ function displayFunctioncontact_list()
 	
 		if(response != "200") 
 		{
-			alert('Files do not exist, you have to log yourself in first.');
+			alert('Dateien existieren nicht, sie muessen sich zuerst einloggen.');
 			return false;
 		}
 		else
@@ -212,6 +217,7 @@ function displayFunctioncontact_list()
 			document.getElementById("order_list").style.display = "none";
 			document.getElementById("rechnungen_admin_download").style.display = "none";
 			document.getElementById("admin_reset").style.display = "none";
+			document.getElementById("admin_delete_all").style.display = "none";
 		}
 }
 
@@ -232,7 +238,7 @@ function displayFunctionfeedback()
 	
 		if(response != "200") 
 		{
-			alert('Files do not exist, you have to log yourself in first.');
+			alert('Dateien existieren nicht, sie muessen sich zuerst einloggen.');
 			return false;
 		}
 		else
@@ -246,6 +252,7 @@ function displayFunctionfeedback()
 			document.getElementById("delete_account").style.display = "none";
 			document.getElementById("rechnungen_admin_download").style.display = "none";
 			document.getElementById("admin_reset").style.display = "none";
+			document.getElementById("admin_delete_all").style.display = "none";
 		}
 }
 
@@ -267,6 +274,7 @@ function displayFunctioninvoice_list()
 	document.getElementById("delete_account").style.display = "none";
 	document.getElementById("order_list").style.display = "none";
 	document.getElementById("admin_reset").style.display = "none";
+	document.getElementById("admin_delete_all").style.display = "none";
 }
 
 admin_delete_account.addEventListener('click', (e) => {
@@ -286,6 +294,7 @@ function displayFunctiondelete_list()
 	document.getElementById("order_list").style.display = "none";
 	document.getElementById("rechnungen_admin_download").style.display = "none";
 	document.getElementById("admin_reset").style.display = "none";
+	document.getElementById("admin_delete_all").style.display = "none";
 }
 
 admin_reset_this.addEventListener('click', (e) => {
@@ -305,9 +314,28 @@ function displayFunctionreset()
 	document.getElementById("order_list").style.display = "none";
 	document.getElementById("rechnungen_admin_download").style.display = "none";
 	document.getElementById("admin_reset").style.display = "block";
+	document.getElementById("admin_delete_all").style.display = "none";
 }
 
+admin_delete_this.addEventListener('click', (e) => {
+	e.preventDefault();
+	
+	displayFunctiondelete_this();
+});
 
+function displayFunctiondelete_this()
+{
+	document.getElementById("register").style.display = "none";
+	document.getElementById("services").style.display = "none";
+	document.getElementById("register_list").style.display = "none";
+	document.getElementById("client_messages_list").style.display = "none";
+	document.getElementById("client_feedback").style.display = "none";
+	document.getElementById("delete_account").style.display = "none";
+	document.getElementById("order_list").style.display = "none";
+	document.getElementById("rechnungen_admin_download").style.display = "none";
+	document.getElementById("admin_reset").style.display = "none";
+	document.getElementById("admin_delete_all").style.display = "block";
+}
 
 /* toggle switch for mitteilungen */
 
@@ -328,6 +356,7 @@ function myfunctionToggle(x)
 	document.getElementById("delete_account").style.display = "none";
 	document.getElementById("rechnungen_admin_download").style.display = "none";
 	document.getElementById("admin_reset").style.display = "none";
+	document.getElementById("admin_delete_all").style.display = "none";
 	isOpen = true;
 	}
 
@@ -342,6 +371,7 @@ function myfunctionToggle(x)
 	document.getElementById("delete_account").style.display = "none";
 	document.getElementById("rechnungen_admin_download").style.display = "none";
 	document.getElementById("admin_reset").style.display = "none";
+	document.getElementById("admin_delete_all").style.display = "none";
 	isOpen = false;
 	}
     admin_mitteilungen.addEventListener('click', (e) => {
@@ -391,6 +421,7 @@ function myfunctionToggle_services(y)
 	document.getElementById("delete_account").style.display = "none";
 	document.getElementById("rechnungen_admin_download").style.display = "block";
 	document.getElementById("admin_reset").style.display = "none";
+	document.getElementById("admin_delete_all").style.display = "none";
 	isOpeny = true;
 	}
 
@@ -405,6 +436,7 @@ function myfunctionToggle_services(y)
 	document.getElementById("delete_account").style.display = "none";
 	document.getElementById("rechnungen_admin_download").style.display = "none";
 	document.getElementById("admin_reset").style.display = "none";
+	document.getElementById("admin_delete_all").style.display = "none";
 	isOpeny = false;
 	}
 	
@@ -454,6 +486,7 @@ function myfunctionToggle_delete_reset(z)
 	document.getElementById("delete_account").style.display = "block";
 	document.getElementById("rechnungen_admin_download").style.display = "none";
 	document.getElementById("admin_reset").style.display = "none";
+	document.getElementById("admin_delete_all").style.display = "none";
 	isOpenz = true;
 	}
 
@@ -468,6 +501,7 @@ function myfunctionToggle_delete_reset(z)
 	document.getElementById("delete_account").style.display = "none";
 	document.getElementById("rechnungen_admin_download").style.display = "none";
 	document.getElementById("admin_reset").style.display = "block";
+	document.getElementById("admin_delete_all").style.display = "none";
 	isOpenz = false;
 	}
 	

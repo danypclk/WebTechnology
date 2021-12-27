@@ -250,6 +250,11 @@ nav ul li ul li a:hover {
 	height: 470px;
 }
 
+#form_admin_delete_all
+{
+	height: 210px;
+}
+
 .form h2, .services h2
 {
 	margin: 10px 0;
@@ -506,7 +511,8 @@ nav ul li ul li a:hover {
 }
 
 .register, .register_list, .services, .register_list, .order_list, .feedback_list, .client_messages_list,
-.feedback, .delete_account, .client_feedback, .rechnungen_download, .rechnungen_admin_download, .admin_reset
+.feedback, .delete_account, .client_feedback, .rechnungen_download, .rechnungen_admin_download, .admin_reset,
+.admin_delete_all
 {
 	display: none;
 }
