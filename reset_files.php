@@ -148,6 +148,8 @@ header('Content-Type: application/octet-stream');
 header("Content-Transfer-Encoding: Binary"); 
 header("Content-disposition: attachment; filename=\"".$file_name."\""); 
 readfile($file_url);
-exit;
+
+echo "<script>alert('Dateien umkonfiguriert!')</script>";
+echo "<script>window.location.assign('admin-page.html')</script>";
 
 ?>

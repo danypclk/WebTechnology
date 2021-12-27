@@ -1,34 +1,5 @@
 <?php
 
-// reset all iframes and respective text files
-
-$myfile = fopen("Data/Contact_Us/contact.txt", "w");
-fclose($myfile);
-
-$myfile = fopen("Data/Feedback/feedback.txt", "w");
-fclose($myfile);
-
-$myfile = fopen("Data/Work_orders/work_order.txt", "w");
-fclose($myfile);
-
-
-
-$myfile = fopen("iframe-folder/contact_us_list.html", "w");
-fwrite($myfile,"<h2>Keine Nachrichten</h2>");
-fclose($myfile);
-
-$myfile = fopen("iframe-folder/feedback.html", "w");
-fwrite($myfile,"<h2>Kein Feedback</h2>");
-fclose($myfile);
-
-$myfile = fopen("iframe-folder/feedback_worker.html", "w");
-fwrite($myfile,"<h2>Kein Feedback</h2>");
-fclose($myfile);
-
-$myfile = fopen("iframe-folder/worker_list.html", "w");
-fwrite($myfile,"<h2>Keine Arbeitsaufträge</h2>");
-fclose($myfile);
-
 // delete all pdfs
 
 $dir = scandir("Data/Rechnung/");
@@ -85,8 +56,6 @@ $myfile = fopen("iframe-folder/register_list.html", "w");
 fwrite($myfile,"<h2>Keine Konten in der Registrierung</h2>");
 fclose($myfile);
 
-
-echo "<script>alert('Alles gelöscht und umkonfiguriert!')</script>";
-echo "<script>window.location.assign('admin-page.html')</script>";
+echo "<script>window.location.assign('reset_files.php')</script>";
 
 ?>
