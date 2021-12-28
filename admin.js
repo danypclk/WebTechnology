@@ -11,6 +11,34 @@ const admin_delete_account = document.getElementById('delete_conto');
 const admin_reset_this = document.getElementById('reset_all_files');
 const admin_delete_this = document.getElementById('delete_all_files');
 
+// verify if iframes are stored properly in webserver so they can be shown
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    const file_list = ["iframe-folder/register_list.html", "iframe-folder/feedback.html", "iframe-folder/contact_us_list.html", "iframe-folder/worker_list.html"]
+	var tracker = 0;
+	for(var i in file_list)
+	{
+		filename = file_list[i];
+		var response = jQuery.ajax({
+		url: filename,
+		type: 'HEAD',
+		async: false
+		}).status;	
+	
+		if(response != "200") 
+		{
+			alert('Dateien wurden noch nicht erstellt, sie muessen sich zuerst einloggen.');
+			window.location.assign('login.html');
+		}
+		else
+		{
+			tracker = 1;
+		}
+	}
+});
+
+// eventlistners to be able to select specific section on sidebar
+
 admin_registry.addEventListener('click', (e) => {
 	e.preventDefault();
 	
