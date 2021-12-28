@@ -3,6 +3,9 @@
 /* button click - startet Berechnung */ 
 function berechnen(){
     var preis = getStrompreis() / 100  * getBetriebszeit() * getWatt() /1000;
+    preis *= 100;
+    preis = Math.round(preis);
+    preis /= 100;
     setErgebnis(preis + " €");
 }
 
