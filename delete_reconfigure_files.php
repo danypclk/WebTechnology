@@ -214,7 +214,7 @@ $myfile = fopen("iframe-folder/worker_list.html", "w");
 fwrite($myfile,"<h2>Keine Arbeitsaufträge</h2>");
 fclose($myfile);
 
-//echo "<script>alert('Daten gespeiechert und rekonfiguriert!')</script>";
-//echo "<script>window.location.assign('admin-page.html')</script>";
+echo "<script>alert('Daten gespeiechert und rekonfiguriert!')</script>";
+echo "<script>window.location.assign('admin-page.html')</script>";
 
 ?>
