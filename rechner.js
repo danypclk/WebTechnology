@@ -2,7 +2,8 @@
 
 /* button click - startet Berechnung */ 
 function berechnen(){
-    setErgebnis(stromkosten() + " €");
+    var preis = getStrompreis() / 100  * getBetriebszeit() * getWatt() /1000;
+    setErgebnis(preis + " €");
 }
 
 /* Setzt den Wert von Ergebnis und gibt ihn aus*/
@@ -26,11 +27,7 @@ function getWatt(){
     return watt;
 }
 
-/* führt die Berechnung des Ergebnis durch */
-function stromkosten(){
-    stromkosten = getStrompreis() / 100  * getBetriebszeit() * getWatt() /1000;
-    return stromkosten;
-}
+/* Reset Funktion. Löscht werte aller Felder */
 
 function reset(){
     document.getElementById('ergebnis').textContent = '';
