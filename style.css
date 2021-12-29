@@ -42,8 +42,7 @@ h1 {
 
 .h1dynamic {
     font-size: 3rem;
-    font-size: max(calc(1.5rem + 1vw), 14px);     /*change*/
-   
+    font-size: max(calc(1.5rem + 1vw), 14px);
 }
 
 h2 {
