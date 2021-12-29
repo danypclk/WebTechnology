@@ -205,17 +205,19 @@ nav ul li ul li a:hover {
 
 #form_registry ,#form_feedback
 {
-	margin: 130px auto; 
+	margin: 130px auto;
 }
 
 #form_registry
 {
-	padding: 20px 30px 60px;
+	padding: 20px 30px 85px;
 }
 
 #form_contact
 {
 	height: 490px;
+	padding-bottom: 500px;
+	width: 400px;
 }
 
 #form_login
@@ -228,9 +230,29 @@ nav ul li ul li a:hover {
 	height: 250px;
 }
 
+#form_rechnung_admin,#form_rechnung
+{
+	padding-bottom: 80px;
+}
+
+#form_admin_reset
+{
+	padding-bottom: 80px;
+}
+
+#id_of_admin, #name_of_client, #id_of_admin_delete
+{
+	visibility: hidden;
+}
+
 #form_feedback
 {
 	height: 470px;
+}
+
+#form_admin_delete_all
+{
+	height: 250px;
 }
 
 .form h2, .services h2
@@ -281,6 +303,7 @@ nav ul li ul li a:hover {
 
 .form button:hover, #services_button:hover
 {
+	transition: 0.5s;
 	background:#5798C2;
 	color:#fff;
 }
@@ -288,8 +311,8 @@ nav ul li ul li a:hover {
 .form #contact_name_error, .form #contact_email_error, .form #contact_message_error, .form #user_error, .form #pass_error,
 .form #register_name_error, .form #register_password_error, .form #register_email_error, .form #function_of_busniess_error,
 .services #client_name_error, .services #client_email_error, .services #client_address_error, .services #radio_button_error,
-.services #selector_error, .form #konto_name_error, .form #feedback_name_error, .form #feedback_message_error_d, 
-.form #partner_employee_feedback_error
+.services #selector_error, .form #konto_name_error, .form #feedback_message_error_d, 
+.form #partner_employee_feedback_error, .form #rechnungen_liste_error_admin, .form #rechnungen_liste_error, .form #reset_error_admin
 {
 	color: red;
 	font-size: 15px;
@@ -319,6 +342,13 @@ nav ul li ul li a:hover {
 .form #register_button , .form #submit_button, .form #form_feedback ,.form #delete_button
 {
 	margin: 25px 0 0;
+}
+
+/* feedback textarea */
+
+#client_feedback_message
+{
+	resize: none;
 }
 
 /*  ----------- form for bewerben ----------------- */
@@ -404,7 +434,11 @@ nav ul li ul li a:hover {
 		background-color: #fff;
 		border-bottom-right-radius: 10px;
 		border-bottom-left-radius: 10px;
-		text-align: center;
+	}
+	
+	.sidebar_menu ul li 
+	{
+		width: 45px;
 	}
 	
 	.sidebar_menu ul li span
@@ -436,9 +470,9 @@ nav ul li ul li a:hover {
 		white-space: nowrap;
 	}
 	
-	.sidebar_menu
+	.sidebar_menu ul li 
 	{
-		padding-left: 45px;
+		width: 45px;
 	}
 }
 
@@ -477,9 +511,67 @@ nav ul li ul li a:hover {
 }
 
 .register, .register_list, .services, .register_list, .order_list, .feedback_list, .client_messages_list,
-.feedback, .delete_account, .client_feedback
+.feedback, .delete_account, .client_feedback, .rechnungen_download, .rechnungen_admin_download, .admin_reset,
+.admin_delete_all
 {
 	display: none;
+}
+
+/* Links inside the dropdown */
+
+@media screen and (min-width:1182px)
+{
+
+.dropdown-content {
+  display: none;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#arrow_down
+{
+	padding-left: 59px;
+}
+
+#arrow_down_1
+{
+	padding-left: 40px;
+}
+
+#arrow_down_2
+{
+	padding-left: 13px;
+}
+
+}
+
+@media screen and (max-width:1181px)
+{
+	.dropdown .dropdown-content, #arrow_down, #arrow_down_1, #arrow_down_2 {
+		display: none;
+	}
+	
+	
 }
 
 /*  ----------- register list, order-list, feedback-list, client-message-list ----------------- */

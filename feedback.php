@@ -1,6 +1,6 @@
 <?php
 
-$name = $_POST['client_feedback_name'];
+$name = $_POST['name_of_client'];
 $feedback =$_POST['client_feedback_message'];
 $busniess_assosiation_name = $_POST['business_list'];
 $position = "position";

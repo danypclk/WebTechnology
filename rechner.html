@@ -81,20 +81,21 @@
 <div class="content">
 <div class="mainleft"></div>
 
-<div class="maincenter">
+<div class="maincenter" style="display: flex; flex-wrap: wrap;">
+    <div class="box500">
 <section class="section">
 
 <!-- SCRIPT ANFANG -->  
-<h1 class="h1content">Stromkostenrechner</h1>
+<h1 class="h1dynamic">Stromkostenrechner</h1>
 <br>
 <div class="box1000">
 
 <!-- Drei Input Felder um Werte anzugeben. Werden über ID in js identifiziert (getElementByID)-->
-<p class="prechner">Hier bitte Strompreis pro KWH in Cent eingeben :</p>
+<p class="prechner">Strompreis:</p>
 <input type="number" name="strompreis" id="strompreis" class="inputrechner" placeholder="30 Cent/KWH" min="1">
-<p class="prechner">Hier bitte Betriebszeit in Stunden eingeben :</p>
+<p class="prechner">Betriebszeit:</p>
 <input type="number" name="betriebzeit" id="betriebszeit" class="inputrechner" placeholder="300 Stunden" min="1">
-<p class="prechner">Hier bitte Stromverbrauch in Watt eingeben :</p>
+<p class="prechner">Stromverbrauch:</p>
 <input type="number" name="watt" id="watt" class="inputrechner" placeholder="900 Watt" min="1">
 
 <!-- Button - startet die Funktion berechnen() in rechner.js-->
@@ -106,9 +107,40 @@
 <p class="prechner">Stromkosten = </p>
 <div class="divergebnis" id="ergebnis"></div>
 
-
 </div> 
+</div>
 
+<div class="box500">
+    <table class="tg" style="table-layout: fixed; width: 320px">
+        <colgroup>
+        <col style="width: 160px">
+        <col style="width: 160px">
+        </colgroup>
+        <thead>
+          <tr>
+            <th class="tg-zv4m" colspan="2">Stromverbrauch unserer Drucksysteme</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-hvao">Druckleistung <br>(Seiten pro Minute)</td>
+            <td class="tg-hvao">Stromverbrauch<br>(Watt)</td>
+          </tr>
+          <tr>
+            <td class="tg-zv4m">20</td>
+            <td class="tg-zv4m">ca. 300 Watt</td>
+          </tr>
+          <tr>
+            <td class="tg-zv4m">40</td>
+            <td class="tg-zv4m">ca. 600 Watt</td>
+          </tr>
+          <tr>
+            <td class="tg-zv4m">60</td>
+            <td class="tg-zv4m">ca. 900 Watt</td>
+          </tr>
+        </tbody>
+        </table>
+</div>
 
 
 

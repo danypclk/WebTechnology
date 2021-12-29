@@ -1,16 +1,37 @@
+const name = localStorage.getItem('USERNAME').trim();	
+
 const client_feedback = document.getElementById('client_feedback');
+const client_invoice = document.getElementById('client_rechnung');
 
 client_feedback.addEventListener('click', (e) => {
 	e.preventDefault();
 	
-	displayFunctionservices();
+	displayFunctionfeedback();
 });
 
-function displayFunctionservices()
+function displayFunctionfeedback()
 {
 	$( "#business_list" ).load( "Data/Selector/partner_employee_selector.html" );
 	document.getElementById("feedback").style.display = "block";
+	document.getElementById("rechnungen_download").style.display = "none";
 }
+
+client_invoice.addEventListener('click', (e) => {
+	e.preventDefault();
+	
+	displayFunctioninvoice();
+});
+
+function displayFunctioninvoice()
+{
+	$( "#rechnungen_liste" ).load( "Data/Selector/" + name + ".html" );
+	document.getElementById("feedback").style.display = "none";
+	document.getElementById("rechnungen_download").style.display = "block";
+}
+
+/* change value so form has client id to send it to php server */
+
+document.getElementById("name_of_client").setAttribute('value', name);
 
 $(document).scroll(function(){
           var scrollAmount = $(window).scrollTop();
@@ -38,4 +59,4 @@ $(document).scroll(function(){
 				top: 120
 				});
 		   }
-      });
+});
