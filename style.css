@@ -40,6 +40,12 @@ h1 {
     font-size: 3rem;
 }
 
+.h1dynamic {
+    font-size: 3rem;
+    font-size: max(calc(1.5rem + 1vw), 14px);     /*change*/
+   
+}
+
 h2 {
     font-size: 2rem;
 }
@@ -309,7 +315,45 @@ nav ul li ul li a:hover {
     padding: 5px;
 }
 
+/* Rechner Tabelle */
 
+.tg  {
+    border-collapse:collapse;
+    border-color:var(--dark-color);
+    border-spacing:0;
+}
+
+.tg td{
+    border-color:var(--dark-color);
+    border-style:solid;
+    border-width:0px;
+    color: var(--dark-color);
+    overflow:hidden;
+    padding:10px 5px;
+    word-break:normal;
+}
+
+.tg th{
+    background-color: var(--bg-blue) ;
+    color: var(--bg-white);
+    font-size:14px;
+    font-weight:normal;
+    overflow:hidden;
+    padding:10px 5px;
+    word-break:normal;
+}
+
+.tg .tg-zv4m{
+    border-color:var(--bg-white);
+    text-align:left;
+    vertical-align:top
+}
+
+.tg .tg-hvao{
+    background-color:var(--bg-white);
+    text-align:left;
+    vertical-align:top;
+}
 
 /* Formatierung der Inhalter (Bilder, Schriften) */
 
