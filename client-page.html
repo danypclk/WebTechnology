@@ -64,6 +64,7 @@
 <section class="sidebar_menu">
       <ul>
         <li class="sidebar_list" id="client_feedback"><i class="fa fa-bell"></i><span>Feedback</span></li>
+		<li class="sidebar_list" id="client_rechnung"><i class="fa fa-balance-scale"></i><span>Rechnungen</span></li>
       </ul>
 </section>
 
@@ -72,12 +73,9 @@
 	<section class="feedback" id="feedback">
 		<form class="form" method="post" id="form_feedback" autocomplete="off" action="feedback.php">
 			<h2>Feedback</h2>
-				<p type="Name: "> <input name="client_feedback_name" id="client_feedback_name"></input></p>
-					<small id="feedback_name_error">Name kann nicht leer sein.</small>
-				<p type="Ihren Feedback: "> <input name="client_feedback_message" id="client_feedback_message"></input></p>
-					<small id="feedback_message_error_d">Email kann nicht leer sein.</small>
+				<p type="Ihren Feedback: "><input name="name_of_client" id="name_of_client" value="none" /> <textarea rows="6" cols="36" name="client_feedback_message" id="client_feedback_message"></textarea></p>
+					<small id="feedback_message_error_d">Feedback Naricht kann nicht leer sein.</small>
 				<p type="Partner oder Arbeiter, der für Sie gearbeitet hat: ">
-				<br />
 				<select name="business_list" id="business_list">
 					
 				</select></p>
@@ -86,7 +84,23 @@
 		</form>
 	</section>
 
+	<!--  Rechnung -->
+
+<section class="rechnungen_download" id="rechnungen_download">
+		<form class="form" method="post" id="form_rechnung" autocomplete="off" action="client_rechnung_download.php">
+			<h2>Rechnungen Liste</h2>
+				<br />
+				<select name="rechnungen_liste" id="rechnungen_liste">
+					
+				</select></p>
+				<p id="text_this"></p>
+					<small id="rechnungen_liste_error">Keine Rechnungen im Ordner!</small>
+			<button id="submit_button"><b>Download</b></button>
+		</form>
+</section>
+
 	<!--    Content Ende -->
+	<script src="client_rechnung.js"></script>
 	<script src="client_feedback.js"></script>
 	<script src="client.js"></script>
 </body>
