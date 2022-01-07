@@ -253,6 +253,7 @@ nav ul li ul li a:hover {
 #form_admin_delete_all
 {
 	height: 250px;
+	width: 350px;
 }
 
 .form h2, .services h2
