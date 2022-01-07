@@ -52,7 +52,7 @@ if($deleted != 0)
 }
 else
 {
-	echo "<script>alert('Konot nicht gefunden')</script>";
+	echo "<script>alert('Konto nicht gefunden')</script>";
 	
 	echo "<script>window.location.assign('admin-page.html')</script>";
 }
