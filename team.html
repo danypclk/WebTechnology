@@ -78,88 +78,95 @@
     </nav>
 </header>
     <!--    Content Anfang -->
-    <section id="teamSection" class="showSection">
-        <div class="box1000">
-            <br>
-            <h1 class="h1content">Unser Team </h1>
-            <h4 id="h4team"> Weiter Informationen zu den jeweiligen Mitarbeiter erhalten Sie, wenn Sie auf das jeweilige Bild klicken.</h4>
-            <hr>
-            <p class="pcontent">Unser Mitarbeiter sind bei allen Problemen für Sie da!</p>
+    <div class="content">
+        <div class="mainleft"></div>
+        
+        <div class="maincenter">
+            <section id="teamSection" class="showSection">
+                <div class="box1000">
+                    <br>
+                    <h1 class="h1content">Unser Team </h1>
+                    <h4 id="h4team"> Weiter Informationen zu den jeweiligen Mitarbeiter erhalten Sie, wenn Sie auf das jeweilige Bild klicken.</h4>
+                    <hr>
+                    <p class="pcontent">Unser Mitarbeiter sind bei allen Problemen für Sie da!</p>
+                </div>
+                <div class="profiles">
+                    <div class="profile">
+                        <img src="images/Lukas_Neuerburg_Team_Farbe.png" alt="Profilbild" onclick="profileDetails(0)">
+                        <h3 class="user-name">Lukas Neuerburg</h3>
+                        <h5>Geschäftsführung (CEO)</h5>
+                    </div>
+                    <div class="profile">
+                        <img src="images/Noah_Simonis_Team_Farbe.jpg" alt="Profilbild" onclick="profileDetails(1)">
+                        <h3 class="user-name">Noah Simonis</h3>
+                        <h5>Betriebsleiter (COO)</h5>
+                    </div>
+                    <div class="profile">
+                        <img src="images/cartoon-gc2871d41c_1920.jpg" alt="Profilbild" onclick="profileDetails(2)">
+                        <h3 class="user-name">Stefanie Müller</h3>
+                        <h5>Kaufmännische Leitung (CFO)</h5>
+                    </div>
+                </div>
+                <div class="profiles">
+                    <div class="profile">
+                        <img src="images/Paul_Siegemund_Team_Farbe.jpg" alt="Profilbild" onclick="profileDetails(3)">
+                        <h3 class="user-name">Paul Siegemund</h3>
+                        <h5>Personalleitung (CHRO)</h5>
+                    </div>
+                    <div class="profile">
+                        <img src="images/cartoon-gc2871d41c_1920.jpg" alt="Profilbild" onclick="profileDetails(4)">
+                        <h3 class="user-name"> Torsten Schneider</h3>
+                        <h5>Marketing-Chef (CMO)</h5>
+                    </div>
+                    <div class="profile">
+                        <img src="images/Lotte_Görgen_Team_Frabe.JPG" alt="Profilbild" onclick="profileDetails(5)">
+                        <h3 class="user-name">Lotte Görgen</h3>
+                        <h5>Assistentin CEO / CFO</h5>
+                    </div>
+                </div>
+                <div class="profiles">
+                    <div class="profile">
+                        <img src="images/Marius_Berens_Team_Farbe.jpg" alt="Profilbild" onclick="profileDetails(6)">
+                        <h3 class="user-name">Marius Berens</h3>
+                        <h5>Projektleitung</h5>
+                    </div>
+                    <div class="profile">
+                        <img src="images/Leon_Kloep_Team_Farbe.jpg" alt="Profilbild" onclick="profileDetails(7)">
+                        <h3 class="user-name">Leon Kloep</h3>
+                        <h5>Systemadministrator</h5>
+                    </div>
+                    <div class="profile">
+                        <img src="images/Janine_Ritz_Team_Frabe.JPG" alt="Profilbild" onclick="profileDetails(8)">
+                        <h3 class="user-name">Janine Ritz</h3>
+                        <h5>Auszubildene</h5>
+                    </div>
+                </div>
+            </section>
+        
+        
+            <section id="profileDetails" class="hideProfile">
+                <div id="PictureAndName">
+                   <img id="profileImg" class="showImage" src="images/cartoon-gc2871d41c_1920.jpg" alt="Profilbild">
+                    <h2 id="Name"></h2>
+                    <h3 id="Status"></h3>
+                </div>
+                <div class="profileDetails">
+                    <h2>Alter</h2>
+                    <p id="Alter"></p>
+                    <h2>Größe</h2>
+                    <p id="Groesse"></p>
+                    <h2>Wohnort</h2>
+                    <p  id="Wohnort"></p>
+                    <h2>Angestellt seit</h2>
+                    <p id="Arbeitszeit"></p>
+                    <button id="profileDetailsBack" onclick="profileDetailsBack()">Zurück</button>
+                </div>
+            </section>
+        
         </div>
-        <div class="profiles">
-            <div class="profile">
-                <img src="images/Lukas_Neuerburg_Team_Farbe.png" alt="Profilbild" onclick="profileDetails(0)">
-                <h3 class="user-name">Lukas Neuerburg</h3>
-                <h5>Geschäftsführung (CEO)</h5>
-            </div>
-            <div class="profile">
-                <img src="images/Noah_Simonis_Team_Farbe.jpg" alt="Profilbild" onclick="profileDetails(1)">
-                <h3 class="user-name">Noah Simonis</h3>
-                <h5>Betriebsleiter (COO)</h5>
-            </div>
-            <div class="profile">
-                <img src="images/Marius_Graus_Team_Farbe.jpg" alt="Profilbild" onclick="profileDetails(2)">
-                <h3 class="user-name">Marius Graus</h3>
-                <h5>Kaufmännische Leitung (CFO)</h5>
-            </div>
+        
+        <div class="mainright"></div>
         </div>
-        <div class="profiles">
-            <div class="profile">
-                <img src="images/Paul_Siegemund_Team_Farbe.jpg" alt="Profilbild" onclick="profileDetails(3)">
-                <h3 class="user-name">Paul Siegemund</h3>
-                <h5>Personalleitung (CHRO)</h5>
-            </div>
-            <div class="profile">
-                <img src="images/cartoon-gc2871d41c_1920.jpg" alt="Profilbild" onclick="profileDetails(4)">
-                <h3 class="user-name"> Torsten Schneider</h3>
-                <h5>Marketing-Chef (CMO)</h5>
-            </div>
-            <div class="profile">
-                <img src="images/Lotte_Görgen_Team_Frabe.JPG" alt="Profilbild" onclick="profileDetails(5)">
-                <h3 class="user-name">Lotte Görgen</h3>
-                <h5>Assistentin CEO / CFO</h5>
-            </div>
-        </div>
-        <div class="profiles">
-            <div class="profile">
-                <img src="images/Marius_Berens_Team_Farbe.jpg" alt="Profilbild" onclick="profileDetails(6)">
-                <h3 class="user-name">Marius Berens</h3>
-                <h5>Projektleitung</h5>
-            </div>
-            <div class="profile">
-                <img src="images/Leon_Kloep_Team_Farbe.jpg" alt="Profilbild" onclick="profileDetails(7)">
-                <h3 class="user-name">Leon Kloep</h3>
-                <h5>Systemadministrator</h5>
-            </div>
-            <div class="profile">
-                <img src="images/Janine_Ritz_Team_Frabe.JPG" alt="Profilbild" onclick="profileDetails(8)">
-                <h3 class="user-name">Janine Ritz</h3>
-                <h5>Auszubildene</h5>
-            </div>
-        </div>
-        </section>
-
-        <!-- <button onclick="profileDetails()">test</button> -->
-
-        <section id="profileDetails" class="hideProfile">
-            <div id="PictureAndName">
-                <img id="profileImg" class="showImage" src="images/cartoon-gc2871d41c_1920.jpg" alt="Profilbild">
-                <h2 id="Name"></h2>
-                <h3 id="Status"></h3>
-            </div>
-            <div class="profileDetails">
-                <h2>Alter</h2>
-                <p id="Alter"></p>
-                <h2>Größe</h2>
-                <p id="Groesse"></p>
-                <h2>Wohnort</h2>
-                <p  id="Wohnort"></p>
-                <h2>Angestellt seit</h2>
-                <p id="Arbeitszeit"></p>
-
-                <button id="profileDetailsBack" onclick="profileDetailsBack()">Zurück</button>
-            </div>
-        </section>
 
 
     <!-- content Ende  -->
