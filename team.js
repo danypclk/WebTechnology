@@ -21,7 +21,7 @@ function showProfileDetails(number){
     //-----------------------------------------------
     // hardcoded data
     
-    let names = ["Lukas Neuerburg" , "Noah Simonis", "Stefanie Müller",
+    let names = ["Lukas Neuerburg" , "Noah Simonis", "Marius Graus",
                  "Paul Siegemund", "Torsten Schneider", "Lotte Görgen",
                  "Marius Berens", "Leon Kloep", "Janine Ritz"
     ];
@@ -29,15 +29,15 @@ function showProfileDetails(number){
                   "Personalleitung (CHRO)", "Marketing-Chef (CMO)", "Assistentin CEO / CFO",
                   "Projektleitung", "Systemadministrator", "Auszubildene"
     ];
-    let alter = ["23", "21", "34",
+    let alter = ["23", "21", "19",
                  "29", "40", "25",
                  "27", "34", "18"
     ];
-    let groesse = ["1.85", "1.79", "1.67",
+    let groesse = ["1.85", "1.79", "1.97",
                    "1.88", "1.75", "1.64",
                    "1.94", "1.85", "1.69"
     ];
-    let wohnort = ["Fliessen", "Dreis", "Waldrach",
+    let wohnort = ["Fliessen", "Dreis", "Oberemmel",
                    "Klausen", "Trierweiler", "Trier",
                    "Dorf", "Lüxem", "Tarforst"
     ];
@@ -46,7 +46,7 @@ function showProfileDetails(number){
                        "22.08.2017", "09.09.2019", "01.09.2021"
     ];
 
-    let image = [ "images/Lukas_Neuerburg_Team_Farbe.png", "images/Noah_Simonis_Team_Farbe.jpg", "images/cartoon-gc2871d41c_1920.jpg",
+    let image = [ "images/Lukas_Neuerburg_Team_Farbe.png", "images/Noah_Simonis_Team_Farbe.jpg", "images/Marius_Graus_Team_Farbe.jpg",
                   "images/Paul_Siegemund_Team_Farbe.jpg", "images/cartoon-gc2871d41c_1920.jpg", "images/Lotte_Görgen_Team_Frabe.JPG",
                   "images/Marius_Berens_Team_Farbe.jpg", "images/Leon_Kloep_Team_Farbe.jpg", "images/Janine_Ritz_Team_Frabe.JPG",
     ];
