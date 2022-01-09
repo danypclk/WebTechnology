@@ -278,6 +278,8 @@ nav ul li ul li a:hover {
     min-width: 300px;
     margin: 1rem 0rem;
 }
+
+/* -------------------------------- Kontakt ---------------------------------- */
 .buttoncontactus {
     height: 30px;
     width: 300px;
@@ -294,6 +296,25 @@ nav ul li ul li a:hover {
     opacity: 0.7;
     transition: all 0.5s ease;
 }
+
+/* ------------------------------- Arbeite bei uns -------------------------- */
+.buttonarbeitebeiuns {
+    height: 30px;
+    width: 300px;
+    margin-left: 10px;
+    margin-top: 1rem;
+    background-color: var(--bg-blue);
+    border-radius: 1rem;
+    border: none;
+    color: var(--bg-white);
+    font-size: 1.5rem;
+}
+
+.buttonarbeitebeiuns:hover {
+    opacity: 0.7;
+    transition: all 0.5s ease;
+}
+
 
 /* Rechner */
 
