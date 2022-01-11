@@ -64,18 +64,16 @@
             <li class="navitem"><a href="#">Karriere</a>
                 <ul>
                     <li class="dropdown"><a href="arbeite_bei_uns.html">Arbeite bei uns</a></li>
-                    <li class="dropdown"><a href="bewerben.html">Bewerben!</a></li>
+                    <li class="dropdown"><a href="#">Bewerben!</a></li>
                 </ul>
             </li>
 
             <li class="navitem"><a href="#">Adminstration</a>
 				<ul>
                     <li class="dropdown"><a href="login.html">Login</a></li>
-                    <li class="dropdown"><a href="register-kunde.html">Registrierung</a></li>
+                    <li class="dropdown"><a href="#">Registrieren</a></li>
                 </ul>
 			</li>
-            
-
         </ul>
 
     </nav>
@@ -83,13 +81,17 @@
 
 	<!--    Content Anfang -->
 
-	<form class="form" method="post" id="form_login" autocomplete="off" action="login.php">
-		<h2>Login</h2>
-		<p type="Username:" id="name_p"><input name="username" id="username"></input></p>
-		<small id="user_error">Username kann nicht leer sein.</small>
-		<p type="Passwort:"><input type="password" name="password" id="password"></input></p>
-		<small id="pass_error">Password kann nicht leer sein.</small>
-		<button id="login_button"><b>Login</b></button>
+	<form class="form" method="post" id="form_kunde_register" autocomplete="off" action="kunde_register.php">
+		<h2>Neuer Konto</h2>
+		<p type="Name:" id="name_p"><input name="username" id="username"></input></p>
+		<small id="short_name_error">Mindestens 5 Buchstaben.</small>
+		<p type="Email:" id="email_p"><input name="email" id="email"></input></p>
+		<small id="email_error">Keine Email angegeben.</small>
+		<p type="Passwort eingeben:"><input type="password" name="password" id="password"></input></p>
+		<small id="pass_short_error">Mindestens 5 Buchstaben.</small>
+		<p type="Nochamel Passwort eingeben:"><input type="password" name="password_1" id="password_1"></input></p>
+		<small id="pass_short_1_error">Mindestens 5 Buchstaben.</small>
+		<button id="login_button"><b>Registrieren</b></button>
 	</form>
 
 	<!--    Content Ende -->
@@ -107,10 +109,9 @@
                 <li><a href="#"><img src="images/facebook.png" alt="Facebook" class="image"></a></li>
                 <li><a href="#"><img src="images/twitter.png" alt="Twitter" class="image"></a></li>
                 <li><a href="#"><img src="images/instagram.png" alt="instagram" class="image"></a></li>
-        </ul>
+			</ul>
         </div>
     </footer>
-	<script src="login.js"></script>
+	<script src="register-kunde.js"></script>
 </body>
 </html>
-	
