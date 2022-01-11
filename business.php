@@ -41,6 +41,7 @@ $total_due = $taxable + $payable;
 $client_file = "register-folder/client-file.txt";
 $client_new_file = fopen($client_file, "r");
 $count = false;
+$count_1 = false;
 
 if(file_exists($client_file))
 {
@@ -64,6 +65,10 @@ if($count != true)
 {
 	echo "<script>alert('Name nicht gefunden!')</script>";
 	echo "<script>window.location.assign('admin-page.html')</script>";
+}
+else
+{
+	$count_1 = true;
 }
 
 // create/append data to invoice text file and generating a new invoice number
@@ -204,6 +209,7 @@ foreach($array_of_clients as $selector_for_client)
 	fclose($client_invoice_selector_c);
 }
 
+
 // create and store pdf invoice
 
 require('fpdf/fpdf.php');
@@ -295,8 +301,11 @@ $pdf->Cell(30 ,5,$total_due,1,1,'R');
 
 $pdf -> Output($pdf_file, 'F');
 
-echo "<script>alert('Mitarbeiter erfolgreich beauftragt!')</script>";
-echo "<script>window.location.assign('admin-page.html')</script>";
+if($count_1 == true)
+{
+	echo "<script>alert('Mitarbeiter erfolgreich beauftragt!')</script>";
+	echo "<script>window.location.assign('admin-page.html')</script>";
+}
 
 /*   Only useful if used with PHPMAILER and extension=openssl.dll
 
