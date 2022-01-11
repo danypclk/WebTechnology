@@ -4,8 +4,9 @@ $password = $_POST['password'];
 
 $file = "register-folder/partner-file.txt";
 $file_1 = "register-folder/employee-file.txt";
-$file_2 = "register-folder/intern-file.txt";
-$file_3 = "register-folder/client-file.txt";
+$file_2 = "register-folder/client-file.txt";
+
+// sees if files exist or are empty and label them accordingly
 
 if(!file_exists("Data/Selector/employee_selector.html"))
 {
@@ -70,6 +71,8 @@ if(filesize("Data/Contact_Us/contact.txt") == 0)
 	fclose($contact_us_iframe);
 }
 
+// sees if files exist , if not it will create them in the right directory
+
 if(file_exists($file))
 {
 	$fn = fopen("register-folder/partner-file.txt","r");
@@ -90,21 +93,14 @@ else
 
 if(file_exists($file_2))
 {
-	$fn2 = fopen("register-folder/intern-file.txt","r");
+	$fn2 = fopen("register-folder/client-file.txt","r");
 }
 else
 {
-	$fn2 = fopen("register-folder/intern-file.txt", "w");
+	$fn2 = fopen("register-folder/client-file.txt", "w");
 }
 
-if(file_exists($file_3))
-{
-	$fn3 = fopen("register-folder/client-file.txt","r");
-}
-else
-{
-	$fn3 = fopen("register-folder/client-file.txt", "w");
-}
+// sees if master key was applied on the login
 
 if($username == 'admin')
 {
@@ -119,6 +115,8 @@ if($username == 'admin')
 		echo "<script>window.location.assign('login.html')</script>";
 	}
 }
+
+// if not tries to search it in the text files inside register-folder directory
 
 else
 {
@@ -156,25 +154,14 @@ else
 			if($password == $Pass)
 			{
 				echo "<script>alert('Erfolgreich eingeloggt')</script>";
-				echo "<script>window.location.assign('admin-page.html')</script>";
-			}
-		}
-	}
-	fclose($fn2);
-
-	while($row = fgets($fn3)) {
-		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
-		if($username == $Name)
-		{
-			if($password == $Pass)
-			{
-				echo "<script>alert('Erfolgreich eingeloggt')</script>";
 				echo "<script>window.location.assign('client-page.html')</script>";
 			}
 		}	
 	}
-	fclose($fn3);
+	fclose($fn2);
 	
+// if it does not find it it will alert the user password or name are wrong	
+
 	echo "<script>alert('Falscher Username oder Passwort')</script>";
 	echo "<script>window.location.assign('login.html')</script>";
 }

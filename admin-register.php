@@ -7,9 +7,9 @@
 	
 	$file_partner = "register-folder/partner-file.txt";
 	$file_employee = "register-folder/employee-file.txt";
-	$file_intern = "register-folder/intern-file.txt";
 	$file_client = "register-folder/client-file.txt";
 	
+// create arrays of all acounts to find duplicates
 	
 		$see_duplicate = fopen($file_partner, "r");
 	
@@ -17,21 +17,20 @@
 		$see_duplicate_1 = fopen($file_employee, "r");
 	
 	
-	
-		$see_duplicate_2 = fopen($file_intern, "r");
-	
+		$see_duplicate_2 = fopen($file_client, "r");
 	
 	
-		$see_duplicate_3 = fopen($file_client, "r");
+	$array = array($see_duplicate ,$see_duplicate_1, $see_duplicate_2, $see_duplicate_2);
 	
-	
-	$array = array($see_duplicate ,$see_duplicate_1, $see_duplicate_2, $see_duplicate_3);
+// see if login is the master key name is the duplicate
 	
 if($name == "admin")
 {
 	echo "<script>alert('Name existiert schon, setzen sie einen anderen.')</script>";
 	echo "<script>window.location.assign('admin-page.html')</script>";
 }
+
+// see if duplicate exists in the registry-folder directory
 
 foreach($array as $v)
 {
@@ -43,14 +42,15 @@ foreach($array as $v)
 			fclose($see_duplicate);
 			fclose($see_duplicate_1);
 			fclose($see_duplicate_2);
-			fclose($see_duplicate_3);
 			echo "<script>alert('Name existiert schon, setzen sie einen anderen.')</script>";
 			echo "<script>window.location.assign('admin-page.html')</script>";
 		}
 	}
 }
 	
-	
+// if there are no duplicates, if statements searches for which position the new login account belongs
+// and registers it in the right file of the register-folder directory and then sends server
+// to selector files so administrators can see new account in the register-list i-frames
 	
 	if($jobtitle == "partner")
 	{
@@ -103,33 +103,6 @@ foreach($array as $v)
 			fclose($myfile);
 			echo "<script>alert('Neuen Benutzer erfolgreich hinzugefügt!')</script>";
 			echo "<script>window.location.assign('admin_services_partner_employee_selector.php')</script>";
-		}
-	}
-	else if($jobtitle == "intern")
-	{
-		if(file_exists($file_intern))
-		{
-			$myfile = fopen($file_intern, "a");
-			fwrite($myfile, $name . ":");
-			fwrite($myfile, $pass . ":");
-			fwrite($myfile, $email . ":");
-			fwrite($myfile, "intern");
-			fwrite($myfile, "\n");
-			fclose($myfile);
-			echo "<script>alert('Neuen Benutzer erfolgreich hinzugefügt!')</script>";
-			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
-		}
-		else
-		{
-			$myfile = fopen($file_intern, "w");
-			fwrite($myfile, $name . ":");
-			fwrite($myfile, $pass . ":");
-			fwrite($myfile, $email . ":");
-			fwrite($myfile, "intern");
-			fwrite($myfile, "\n");
-			fclose($myfile);
-			echo "<script>alert('Neuen Benutzer erfolgreich hinzugefügt!')</script>";
-			echo "<script>window.location.assign('reads_and_explodes_admin.php')</script>";
 		}
 	}
 	else if($jobtitle == "client")
