@@ -97,17 +97,17 @@
 	<section class="register" id="register">
 		<form class="form" method="post" id="form_registry" autocomplete="off" action="admin-register.php">
 			<h2>Registrierung</h2>
-				<p attribute="User ID: "> <input name="username_register" id="username_register"></input></p>
+				<p><label class="lableContactUs">User ID:</label> <input name="username_register" id="username_register"></p>
 					<small id="register_userid_error">Name kann nicht leer sein.</small>
-				<p attribute="Vorname: "> <input name="vorname_register" id="vorname_register"></input></p>
+				<p><label class="lableContactUs">Vorname:</label> <input name="vorname_register" id="vorname_register"></p>
 					<small id="register_vorname_error">Name kann nicht leer sein.</small>
-				<p attribute="Name: "> <input name="name_register" id="name_register"></input></p>
+				<p><label class="lableContactUs">Name:</label> <input name="name_register" id="name_register"></p>
 					<small id="register_name_error">Name kann nicht leer sein.</small>
-				<p attribute="Passwort: "> <input name="password_register" id="password_register"></input></p>
+				<p><label class="lableContactUs">Passwort:</label> <input name="password_register" id="password_register"></p>
 					<small id="register_password_error">Passwort kann nicht leer sein.</small>
-				<p attribute="E-mail: "> <input name="email_register" id="email_register"></input></p>
+				<p><label class="lableContactUs">E-mail:</label> <input name="email_register" id="email_register"></p>
 					<small id="register_email_error">Email kann nicht leer sein.</small>
-				<p attribute="Funktion im Geschäft: "> 
+				<p><label class="lableContactUs">Funktion im Geschäft:</label></p>
 			<br />
 				<select name="business_function" id="business_function">
 					<option value="partner">Administrator</option>
@@ -123,23 +123,23 @@
 	<section class="services" id="services">
 	<form method="post" id="form_services" autocomplete="off" action="business.php">
 				<h2>Kundendaten:</h2>
-				<p attribute="Kundenname:"> <input name="name" id="client_name_services"></p>
+				<p><label class="lableContactUs">Kundenname:</label> <input name="name" id="client_name_services"></p>
 					<small id="client_name_error">Name kann nicht leer sein.</small>
 				<p attribute="Mitarbeiter mit der Aufgabe:"></p>
 				<select name="referrer" id="referrer">
 					
 				</select>
 					<small id="selector_error">Sie müssen ein neuer User mit Employee Position in admin-register wählen</small>
-				<p attribute="Welche Dienste müssen Sie tun?"></p>
-						<p attribute="Reinigung"><input type="radio" name="notiz" value="Reinigung" /></p>
-						<p attribute="Reparatur"><input type="radio" name="notiz" value="Reparatur" /></p>
-						<p attribute="Ersetzung"><input type="radio" name="notiz" value="Ersetzung" /></p>
-						<p attribute="Sonstiges"><input type="radio" name="notiz" value="Sonstiges" /></p>
+				<p><label class="lableContactUs">Welche Dienste müssen Sie tun?</label> </p>
+						<p><label class="lableContactUs">Reinigung</label><input type="radio" name="notiz" value="Reinigung" /></p>
+						<p><label class="lableContactUs">Reparatur</label><input type="radio" name="notiz" value="Reparatur" /></p>
+						<p><label class="lableContactUs">Ersetzung</label><input type="radio" name="notiz" value="Ersetzung" /></p>
+						<p><label class="lableContactUs">Sonstiges</label><input type="radio" name="notiz" value="Sonstiges" /></p>
 							<small id="radio_button_error">Zuweisung muss ausgewählt werden.</small>
 				<input name="id_of_admin_1" id="id_of_admin_1" value="none" />
-				<p attribute="Adresse:"> <input id="client_address_service" name="address"></p>
+				<p><label class="lableContactUs">Adresse:</label>  <input id="client_address_service" name="address"></p>
 					<small id="client_address_error">Addresse kann nicht leer sein..</small>
-				<p attribute="Sonderwünsche des Kunden:"></p>
+				<p><label class="lableContactUs">Sonderwünsche des Kunden:</label> </p>
 					<textarea id="request" rows="5" cols="50" name="request" id="request"></textarea>
 					<button id="services_button">Dienst senden<button>
 		</form>
@@ -185,7 +185,7 @@
 <section class="delete_account" id="delete_account">
 		<form class="form" method="post" id="form_delete" autocomplete="off" action="delete.php">
 			<h2>Konto löschen</h2>
-				<p attribute="Name: "> <input name="name_konto" id="name_konto"></input></p>
+				<p><label class="lableContactUs">Name:</label> <input name="name_konto" id="name_konto"></input></p>
 					<small id="konto_name_error">Name kann nicht leer sein.</small>
 			<button id="delete_button"><b>Löschen</b></button>
 		</form>
