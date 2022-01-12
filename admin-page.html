@@ -50,7 +50,7 @@
                 </defs>
                 </svg></a></p>
         <ul class="navbar">
-            <li class="navitem"><a href="">Willkommen auf der Administrationsseite</a></li>
+            <li class="navitem"><a href="">Willkommen zum Interner Bereich</a></li>
 			<li class="navitem"><a href="index.html">Logout</a></li>
         </ul>
 
@@ -97,7 +97,11 @@
 	<section class="register" id="register">
 		<form class="form" method="post" id="form_registry" autocomplete="off" action="admin-register.php">
 			<h2>Registrierung</h2>
-				<p type="Name: "> <input name="username_register" id="username_register"></input></p>
+				<p type="User ID: "> <input name="username_register" id="username_register"></input></p>
+					<small id="register_userid_error">Name kann nicht leer sein.</small>
+				<p type="Vorname: "> <input name="vorname_register" id="vorname_register"></input></p>
+					<small id="register_vorname_error">Name kann nicht leer sein.</small>
+				<p type="Name: "> <input name="name_register" id="name_register"></input></p>
 					<small id="register_name_error">Name kann nicht leer sein.</small>
 				<p type="Passwort: "> <input name="password_register" id="password_register"></input></p>
 					<small id="register_password_error">Passwort kann nicht leer sein.</small>
@@ -106,9 +110,8 @@
 				<p type="Funktion im Geschäft: "> 
 			<br />
 				<select name="business_function" id="business_function">
-					<option value="partner">Partner</option>
+					<option value="partner">Administrator</option>
 					<option value="employee">Arbeiter</option>
-					<option value="intern">Pratikanten</option>
 					<option value="client">Kunde</option>
 				</select></p>
 			<small id="function_of_busniess_error">Funktion kann nicht leer sein.</small>

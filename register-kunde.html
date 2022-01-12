@@ -5,11 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" media="screen">
-    
+	<link rel="stylesheet" href="style-contact-us.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
 </head>
-
 <body>
 <header>
     <nav >
@@ -49,7 +47,7 @@
         <ul class="navbar">
             <li class="navitem"><a href="#">Produkte</a>
             <ul>
-                <li class="dropdown"><a href="#">Drucksysteme</a></li>
+                <li class="dropdown"><a href="drucksysteme.html">Drucksysteme</a></li>
                 <li class="dropdown"><a href="endgeraete.html">Endgeräte</a></li>
                 <li class="dropdown"><a href="rechner.html">Rechner</a></li>
             </ul>
@@ -73,101 +71,36 @@
             <li class="navitem"><a href="#">Adminstration</a>
 				<ul>
                     <li class="dropdown"><a href="login.html">Login</a></li>
-                    <li class="dropdown"><a href="register-kunde.html">Registrierung</a></li>
+                    <li class="dropdown"><a href="#">Registrieren</a></li>
                 </ul>
 			</li>
-
         </ul>
 
     </nav>
 </header>
 
-<!-- Drucksysteme Content Beginn-->
-<div class="content">
-<div class="mainleft"></div>
+	<!--    Content Anfang -->
 
-<div class="maincenter">
-<section class="section">
-
-    <div class="box1000">
-        <br>
-        <h1 class="h2content">Unsere Drucksysteme</h1>
-        <hr>
-        
-        <h2 class="h2content">Canon</h2>
-        <p class="pcontent">Mit den neuen Drucksystemen von Canon sind Sie bestens für alle Druckaufgaben vorbereiten. <br> Die vielseitige Software bietet Ihnen zahlreiche Funktionen um einen Reibungslosen Ablauf zu gewährleisten! </p>
-    </div>
-
-</section>
-
-<section class="section">
-<div class="box500"><img class="images" src="images/img1.png" alt="Drucker"></div>
-
-<div class="box500">
-    <br>
-    <h2 class="h2content">Dokumentensicherheit</h2>
-    <p class="pcontent">Indem Sie festlegen, welche Funktionen der jeweilige Mitarbeiter nutzen darf, verhindern Sie die Weitergabe vertraulicher Informationen.</p>
-<h2 class="h2content">Besseres Nutzererlebnis</h2>
-<p class="pcontent">Der große Touchscreen ist an die jeweiligen Nutzerbedürfnisse anpassbar – die Basis für intuitives Arbeiten.</p>
-<h2 class="h2content">Platzsparend</h2>
-<p class="pcontent">Dank ihrer kompakten Bauweise sind diese Drucksysteme ideal für kleine Büros – ob auf oder neben dem Schreibtisch.</p>
-</div>
-</section>
-
-<section class="section">
-<div class="box500">
-    <br>
-    <h2 class="h2content">Sicherer Druck</h2>
-    <p class="pcontent">Ermöglichen Sie auch außerhalb Ihres Netzwerks das Drucken, und das ohne Abstriche bei der Datensicherheit.</p>
-    <h2 class="h2content">Genau auf ihre Bedürfnisse abgestimmt!</h2>
-    <p class="pcontent">Unsere Drucksysteme erhalten Sie in verschiednen Leistungsstufen, von 20 bis zu 60 Seiten pro Minute. So können wir Ihnen für jeden Einsatzbereich ein passenden Drucker anbieten! </p>
-    <h2 class="h2content">Energieeffizienz</h2>
-    <p class="pcontent">Dank neuster Technik arbeiten die Geräte noch Energieeffizienter. In den Ruhephasen oder über Nacht wechseln Sie in einen optimierten Energiesparmodus.</p>
-    <button class="buttonrechnerlink" onclick="window.location.href='rechner.html';">Stromverbrauch berechnen</button>
-</div>
-
-<div class="box500"><img class="images" src="images/img2.png" alt="Drucker"></div>
-
-</section>
-
-<section class="section">
-
-<div class="box1000">
-    <!-- 
-    <h2 class="h2content">Jetzt Angebot anfragen!</h2>
-   
-       <p class="pcontent">Falls wir mit unserer Drucklösung Ihre Anforderungen erfüllen können, zögern Sie nicht uns zu Kontaktieren um ein kostenloses und individuelles Angebot zu erhalten!</p> 
-
-
-    <button class="buttonrechnerlink" onclick="window.location.href='contact-us.html';">Kontaktieren Sie uns!</button>
-    -->
-    <!-- Kontaktformular direkt eingefügt - Start-->
-    <link rel="stylesheet" href="style-contact-us.css" media="screen">
-    <form class="form" method="post" id="form_contact" autocomplete="off" action="contact-us.php">
-		<h2 id="form_title">KONTAKTIERE UNS</h2>
-			<p type="Name:" ><input placeholder="Name" id="contact_name" name="name"></input></p>
-			<small id="contact_name_error">Bitte Name eingeben</small>
-			<p type="E-mail:"><input placeholder="Ihre E-Mail Adresse" id="contact_email" name="email"></input></p>
-			<small id="contact_email_error">Bitte E-Mail eingeben</small>
-			<p type="Nachricht:"><input placeholder="Ihre Nachricht an uns" id="contact_message" name="message"></input></p>
-			<small id="contact_message_error">Bitte Nachricht eingeben</small>
-		<button id="contact_button"><b>Nachricht absenden!</b></button>
-		<script src="contact-us.js"></script>
+	<form class="form" method="post" id="form_kunde_register" autocomplete="off" action="kunde_register.php">
+		<h2>Neuer Konto</h2>
+		<p type="User ID:" id="userid_p"><input name="username" id="username"></input></p>
+		<small id="short_name_error">Mindestens 5 Buchstaben.</small>
+		<p type="Vorname:" id="vorname_p"><input name="vorname" id="vorname"></input></p>
+		<small id="realname_error">Kann nicht leer sein.</small>
+		<p type="Name:" id="name_p"><input name="realname" id="realname"></input></p>
+		<small id="vorname_error">Kann nicht leer sein.</small>
+		<p type="Email:" id="email_p"><input name="email" id="email"></input></p>
+		<small id="email_error">Keine Email angegeben.</small>
+		<p type="Passwort eingeben:"><input type="password" name="password" id="password"></input></p>
+		<small id="pass_short_error">Mindestens 5 Buchstaben.</small>
+		<p type="Nochamel Passwort eingeben:"><input type="password" name="password_1" id="password_1"></input></p>
+		<small id="pass_short_1_error">Mindestens 5 Buchstaben.</small>
+		<button id="login_button"><b>Registrieren</b></button>
 	</form>
 
-    <!-- Kontaktformular Ende-->
-</div>
-
-</section>
-
-</div>
-
-<div class="mainright"></div>
-</div>
-
-    <!-- content Ende  -->
-
-    <footer>
+	<!--    Content Ende -->
+	
+	<footer>
         <div class="foot">
             <ul class="footer-nav">
                     <li><a href="index.html">Home</a></li>
@@ -180,8 +113,9 @@
                 <li><a href="#"><img src="images/facebook.png" alt="Facebook" class="image"></a></li>
                 <li><a href="#"><img src="images/twitter.png" alt="Twitter" class="image"></a></li>
                 <li><a href="#"><img src="images/instagram.png" alt="instagram" class="image"></a></li>
-        </ul>
+			</ul>
         </div>
     </footer>
+	<script src="register-kunde.js"></script>
 </body>
 </html>

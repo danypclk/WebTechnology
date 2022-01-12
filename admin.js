@@ -45,9 +45,11 @@ admin_registry.addEventListener('click', (e) => {
 	displayFunctionregister();
 });
 
+// to display Person hinzufügen
+
 function displayFunctionregister()
 {
-	const file_list = ["register-folder/partner-file.txt", "register-folder/employee-file.txt", "register-folder/intern-file.txt", "register-folder/client-file.txt"]
+	const file_list = ["register-folder/partner-file.txt", "register-folder/employee-file.txt", "register-folder/client-file.txt"]
 	var tracker = 0;
 	
 	for(var i in file_list)
@@ -90,6 +92,8 @@ admin_order_list.addEventListener('click', (e) => {
 	
 	displayFunctionorder();
 });
+
+// to display Arbeitsaufträge
 
 function displayFunctionorder()
 {
@@ -137,9 +141,11 @@ admin_service.addEventListener('click', (e) => {
 	displayFunctionservices();
 });
 
+// to display Dienstleistung
+
 function displayFunctionservices()
 {
-	const file_list = ["register-folder/partner-file.txt", "register-folder/employee-file.txt", "register-folder/intern-file.txt", "register-folder/client-file.txt"]
+	const file_list = ["register-folder/partner-file.txt", "register-folder/employee-file.txt", "register-folder/client-file.txt"]
 	var tracker = 0;
 	
 	for(var i in file_list)
@@ -185,6 +191,8 @@ admin_registerlist.addEventListener('click', (e) => {
 	displayFunctionregister_list();
 });
 
+// to display Register Liste
+
 function displayFunctionregister_list()
 {
 	const filename = "iframe-folder/register_list.html";
@@ -219,6 +227,8 @@ admin_contactlist.addEventListener('click', (e) => {
 	
 	displayFunctioncontact_list();
 });
+
+// to display Message list
 
 function displayFunctioncontact_list()
 {
@@ -255,6 +265,8 @@ admin_feedback.addEventListener('click', (e) => {
 	displayFunctionfeedback();
 });
 
+// to display Feedback list
+
 function displayFunctionfeedback()
 {
 	const filename = "iframe-folder/feedback.html";
@@ -290,6 +302,8 @@ admin_rechnung_download.addEventListener('click', (e) => {
 	displayFunctioninvoice_list();
 });
 
+// to display Invoice form
+
 function displayFunctioninvoice_list()
 {
 	$( "#rechnungen_liste_admin" ).load( "Data/Selector/client_invoice.html" );
@@ -311,6 +325,8 @@ admin_delete_account.addEventListener('click', (e) => {
 	displayFunctiondelete_list();
 });
 
+// to display delete account
+
 function displayFunctiondelete_list()
 {
 	document.getElementById("register").style.display = "none";
@@ -331,6 +347,8 @@ admin_reset_this.addEventListener('click', (e) => {
 	displayFunctionreset();
 });
 
+// to display reset form
+
 function displayFunctionreset()
 {
 	document.getElementById("register").style.display = "none";
@@ -350,6 +368,8 @@ admin_delete_this.addEventListener('click', (e) => {
 	
 	displayFunctiondelete_this();
 });
+
+// to display reset "all" form
 
 function displayFunctiondelete_this()
 {
@@ -443,7 +463,7 @@ function myfunctionToggle_services(y)
 	document.getElementById("register").style.display = "none";
 	document.getElementById("services").style.display = "none";
 	document.getElementById("order_list").style.display = "none";
-	document.getElementById("register_list").style.disftzfplay = "none";
+	document.getElementById("register_list").style.display = "none";
 	document.getElementById("client_messages_list").style.display = "none";
 	document.getElementById("client_feedback").style.display = "none";
 	document.getElementById("delete_account").style.display = "none";
@@ -508,7 +528,7 @@ function myfunctionToggle_delete_reset(z)
 	document.getElementById("register").style.display = "none";
 	document.getElementById("services").style.display = "none";
 	document.getElementById("order_list").style.display = "none";
-	document.getElementById("register_list").style.disftzfplay = "none";
+	document.getElementById("register_list").style.display = "none";
 	document.getElementById("client_messages_list").style.display = "none";
 	document.getElementById("client_feedback").style.display = "none";
 	document.getElementById("delete_account").style.display = "block";
