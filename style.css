@@ -567,6 +567,16 @@ nav ul li ul li a:hover {
 
 }
 
+/*  form */
+
+.form p:before, .services p:before
+{ 
+	content: attr(attribute); 
+	display: block;
+	margin: 28px 0 0;
+	font-size: 14px;
+	color: #877277;
+}
 
 /* Bewerbung */
 #bewerbungListe {
