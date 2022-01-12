@@ -59,14 +59,24 @@ else
 
 	if(file_exists($file_1))
 	{
-		$fn = fopen("iframe-folder/register_list.html", "w");
-		fwrite($fn,"<h2>Administrator</h2>");
-		fwrite($fn,"<h2>Arbeiter</h2>");
-		fwrite($fn,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+		if(filesize($file_1) != 0)
+		{
+			$fn = fopen("iframe-folder/register_list.html","a");
+			fwrite($fn,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+		}
+		else
+		{
+			$fn = fopen("iframe-folder/register_list.html", "w");
+			fwrite($fn,"<h2>Administrator</h2>");
+			fwrite($fn,"<h2>Arbeiter</h2>");
+			fwrite($fn,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+		}
 	}	
 	else
 	{
-		$fn = fopen("iframe-folder/register_list.html","a");
+		$fn = fopen("iframe-folder/register_list.html", "w");
+		fwrite($fn,"<h2>Administrator</h2>");
+		fwrite($fn,"<h2>Arbeiter</h2>");
 		fwrite($fn,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 	}
 	fclose($fn);
