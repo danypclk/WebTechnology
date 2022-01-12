@@ -7,12 +7,18 @@ $file = "register-folder/client-file.txt";
 
 $count = false;
 
-// sees if iframe register-list exists
+// sees if iframe register-list and text file exist
 
 if(!file_exists("iframe-folder/register_list.html"))
 {
 	$register_list_iframe = fopen("iframe-folder/register_list.html", "w");
 	fclose($register_list_iframe);
+}
+
+if(!file_exists("register-folder/client-file.txt"))
+{
+	$client_file = fopen("register-folder/client-file.txt", "w");
+	fclose($client_file);
 }
 
 // if not tries to search it in the text files inside register-folder directory
@@ -26,7 +32,7 @@ else
 	$file_2 = fopen("register-folder/client-file.txt", "r");
 	while(($row = fgets($file_2)) !== false) 
 	{
-		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
+		list( $Name, $Vorname, $Real_name, $Pass, $Email, $Position ) = explode( ":", $row );
 		if($username == $Name)
 		{
 			$count = true;
@@ -59,15 +65,27 @@ else
 
 	if(file_exists($file_1))
 	{
-		$fn = fopen("iframe-folder/register_list.html", "w");
-		fwrite($fn,"<h2>Administrator</h2>");
-		fwrite($fn,"<h2>Arbeiter</h2>");
-		fwrite($fn,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+		if(filesize($file_1) != 0)
+		{
+			$fn = fopen("iframe-folder/register_list.html","a");
+			fwrite($fn,"<p>Name: ". $Name . ", Vorname: " . $Vorname . ", Nachname: " . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+		}
+		else
+		{
+			$fn = fopen("iframe-folder/register_list.html", "w");
+			fwrite($fn,"<h2>Administrator</h2>");
+			fwrite($fn,"<h2>Arbeiter</h2>");
+			fwrite($fn,"<h2>Kunde</h2>");
+			fwrite($fn,"<p>Name: ". $Name . ", Vorname: " . $Vorname . ", Nachname: " . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+		}
 	}	
 	else
 	{
-		$fn = fopen("iframe-folder/register_list.html","a");
-		fwrite($fn,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+		$fn = fopen("iframe-folder/register_list.html", "w");
+		fwrite($fn,"<h2>Administrator</h2>");
+		fwrite($fn,"<h2>Arbeiter</h2>");
+		fwrite($fn,"<h2>Kunde</h2>");
+		fwrite($fn,"<p>Name: ". $Name . ", Vorname: " . $Vorname . ", Nachname: " . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 	}
 	fclose($fn);
 	echo "<script>alert('Erfolgreich registriert')</script>";

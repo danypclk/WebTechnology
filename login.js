@@ -2,15 +2,15 @@ const form = document.getElementById('form_login');
 const username = document.getElementById('username');
 const pass_word = document.getElementById('password');
 
-form.addEventListener('submit', (e) => {
-	e.preventDefault();
+form.addEventListener('submit', (e) => { // Event wird ausgeführt wenn das Formular abgeschickt wird ???
+	e.preventDefault(); 
 	
 	checkInputs();
 });
 
 function checkInputs() 
 {
-	const usernameValue = username.value.trim();
+	const usernameValue = username.value.trim(); // trim entfernt whitescpace rechts und links
 	const pass_wordValue = pass_word.value.trim();
 	
 	if(usernameValue === '')
