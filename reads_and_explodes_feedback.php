@@ -23,7 +23,7 @@ $feedback_html_location_worker = "iframe-folder/feedback_worker.html";
 	while($row = fgets($file_feedback)) {
 		list( $Date, $Name, $Feedback, $Person, $Position ) = explode( ":", $row );
 		$position = trim($Position);
-		if($position == 'Partner')
+		if($position == 'Administrator')
 		{
 			$position = 'Admin';
 		}
