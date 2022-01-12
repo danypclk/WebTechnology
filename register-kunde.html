@@ -85,24 +85,24 @@
 
     <form class="form" method="post" id="form_kunde_register" autocomplete="off" action="kunde_register.php">
         <h2>Neuer Konto</h2>
-        <p attribute="User ID:" id="userid_p"><input name="username" id="username"></input>
-        </p>
-        <small id="short_name_error">Mindestens 5 Buchstaben.</small>
-        <p attribute="Vorname:" id="vorname_p"><input name="vorname" id="vorname"></input>
-        </p>
-        <small id="realname_error">Kann nicht leer sein.</small>
-        <p attribute="Name:" id="name_p"><input name="realname" id="realname"></input>
-        </p>
-        <small id="vorname_error">Kann nicht leer sein.</small>
-        <p attribute="Email:" id="email_p"><input name="email" id="email"></input>
-        </p>
-        <small id="email_error">Keine Email angegeben.</small>
-        <p attribute="Passwort eingeben:"><input type="password" name="password" id="password"></input>
-        </p>
-        <small id="pass_short_error">Mindestens 5 Buchstaben.</small>
-        <p attribute="Nochamel Passwort eingeben:"><input type="password" name="password_1" id="password_1"></input>
-        </p>
-        <small id="pass_short_1_error">Mindestens 5 Buchstaben.</small>
+        <label class="lableContactUs">Benutzername: </label>
+        <input name="username" id="username"></input>
+        <small id="short_name_error">Mindestens 5 Buchstaben.</small><br><br>
+        <label class="lableContactUs">Vorname: </label>
+        <input name="vorname" id="vorname"></input>
+        <small id="realname_error">Kann nicht leer sein.</small><br><br>
+        <label class="lableContactUs">Nachname: </label>
+        <input name="realname" id="realname"></input>
+        <small id="vorname_error">Kann nicht leer sein.</small><br><br>
+        <label class="lableContactUs">E-Mail: </label>
+        <input name="email" id="email"></input>
+        <small id="email_error">Keine Email angegeben.</small><br><br>
+        <label class="lableContactUs">Passwort: </label>
+        <input type="password" name="password" id="password"></input>
+        <small id="pass_short_error">Mindestens 5 Buchstaben.</small><br><br>
+        <label class="lableContactUs">Passwort Wiederholen: </label>
+        <input type="password" name="password_1" id="password_1"></input>
+        <small id="pass_short_1_error">Mindestens 5 Buchstaben.</small><br><br>
         <button id="login_button"><b>Registrieren</b></button>
     </form>
 

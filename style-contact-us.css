@@ -352,6 +352,14 @@ nav ul li ul li a:hover {
 	margin: 25px 0 0;
 }
 
+
+.lableContactUs {
+	content: attr(attribute); 
+	display: block;
+	font-size: 14px;
+	color: #877277;
+}
+
 /* feedback textarea */
 
 #client_feedback_message
