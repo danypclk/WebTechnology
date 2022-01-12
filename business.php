@@ -9,6 +9,8 @@ $task_1 = $_POST['notiz'];
 $address_1 = $_POST['address'];
 $request_1 = $_POST['request'];
 
+$id_username = $_POST['id_of_admin_1'];
+
 $date = date("d/m/Y");
 
 // what to pay for each task and converting it to taxes
@@ -68,13 +70,10 @@ if($count != true)
 }
 else
 {
-	$count_1 = true;
-}
+	// create/append data to invoice text file and generating a new invoice number
 
-// create/append data to invoice text file and generating a new invoice number
-
-$invoice_file = "Data/invoices/invoices.txt";
-$invoice_number = '0';
+	$invoice_file = "Data/invoices/invoices.txt";
+	$invoice_number = '0';
 
 if(file_exists($invoice_file))
 {
@@ -209,6 +208,37 @@ foreach($array_of_clients as $selector_for_client)
 	fclose($client_invoice_selector_c);
 }
 
+// find worker name and administrator
+
+	$worker_name = "";
+	$worker_file_find = fopen("register-folder/employee-file.txt", "r");
+	while($row = fgets($worker_file_find)) 
+	{
+		list( $user_worker, $Vorname_worker, $Realname_worker, $Pass_worker, $email_worker, $Position_worker) = explode( ":", $row );
+		$user_trimed = trim($user_worker);
+		if($worker_1 == $user_trimed)
+		{
+			$worker_name = $Vorname_worker . " " . $Realname_worker;
+		}
+	}
+
+	if($id_username == 'admin')
+	{
+		$admin_name = 'admin';
+	}
+	else
+	{
+		$admin_file_find = fopen("register-folder/partner-file.txt", "r");
+		while($row = fgets($admin_file_find)) 
+		{
+			list( $user_admin, $Vorname_admin, $Realname_admin, $Pass_admin, $email_admin, $Position_admin) = explode( ":", $row );
+			$user_trimed = trim($user_worker);
+			if($id_username == $user_trimed)
+			{
+				$admin_name = $Vorname_admin . " " . $Realname_admin;
+			}
+		}
+	}
 
 // create and store pdf invoice
 
@@ -236,7 +266,7 @@ $pdf->Cell(130 ,5,'[Trier, Deutschland]',0,0);
 $pdf->Cell(25 ,5,'Datum',0,0);
 $pdf->Cell(34 ,5,'[' . $date . ']',0,1);
 
-$pdf->Cell(130 ,5,'E-mail [' . $email_1 . ']',0,0);
+$pdf->Cell(130 ,5,'E-mail [example@gmail.com]',0,0);
 $pdf->Cell(25 ,5,'Rechnung',0,0);
 $pdf->Cell(34 ,5,'[#' . $invoice_number . ']',0,1);
 
@@ -248,17 +278,24 @@ $pdf->Cell(34 ,5,'[' . $name_1 . ']',0,1);
 $pdf->Cell(189 ,10,'',0,1);
 
 //billing address
-$pdf->Cell(100 ,5,'Bezahlen an',0,1);
+$pdf->Cell(100 ,5,'Bezahlen an:',0,1);
 
 
 $pdf->Cell(10 ,5,'',0,0);
-$pdf->Cell(90 ,5,'[Andreas Schmitt]',0,1);
+$pdf->Cell(90 ,5,'[Lukas Neuerburg (CEO, TRUE IT) und Noah Simons (COO, TRUE IT)]',0,1);
 
 $pdf->Cell(10 ,5,'',0,0);
 $pdf->Cell(90 ,5,'[True IT GmbH]',0,1);
 
 $pdf->Cell(10 ,5,'',0,0);
-$pdf->Cell(90 ,5,'[andreas_schmit@example.com]',0,1);
+$pdf->Cell(90 ,5,'[example_1@gmail.com]',0,1);
+
+//dummy empty cell as a vertical spacer
+$pdf->Cell(189 ,10,'',0,1);
+
+// Tasked by amdin-id and worker tasked
+$pdf->Cell(189 ,10,'Service-call angewiesen bei ' . $admin_name,0,1);
+$pdf->Cell(189 ,10,'Arbeiter die der Aufgabe zugewiesen war, ID: ' . $worker_1 . ', Name : ' . $worker_name,0,1);
 
 //dummy empty cell as a vertical spacer
 $pdf->Cell(189 ,10,'',0,1);
@@ -301,11 +338,11 @@ $pdf->Cell(30 ,5,$total_due,1,1,'R');
 
 $pdf -> Output($pdf_file, 'F');
 
-if($count_1 == true)
-{
-	echo "<script>alert('Mitarbeiter erfolgreich beauftragt!')</script>";
-	echo "<script>window.location.assign('admin-page.html')</script>";
+echo "<script>alert('Mitarbeiter erfolgreich beauftragt!')</script>";
+echo "<script>window.location.assign('admin-page.html')</script>";
+
 }
+
 
 /*   Only useful if used with PHPMAILER and extension=openssl.dll
 
