@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <title>True IT GmbH</title>
     <meta charset="UTF-8">
@@ -8,15 +9,16 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-	<script src="jquery.js"></script>
-	<link rel="stylesheet" href="style-contact-us.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="style-contact-us.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<header>
-    <nav >
-        
+    <header>
+        <nav>
+
             <p class="pnav"><a href="./index.html"><svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="logo">
                 <g id="small" filter="url(#filter0_i_2_3)">
@@ -49,40 +51,41 @@
                 </filter>
                 </defs>
                 </svg></a></p>
-        <ul class="navbar">
-            <li class="navitem"><a href="">Willkommen auf der Mitarbeiterseite</a></li>
-			<li class="navitem"><a href="index.html">Logout</a></li>
+            <ul class="navbar">
+                <li class="navitem"><a href="">Willkommen auf der Mitarbeiterseite</a></li>
+                <li class="navitem"><a href="index.html">Logout</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!--    Content Anfang -->
+
+
+    <!--    Sidebar -->
+
+    <section class="sidebar_menu">
+        <ul>
+            <li class="sidebar_list" id="employee_orders"><i class="fa fa-calendar-check-o"></i><span>Serviceruf</span></li>
+            <li class="sidebar_list" id="employee_feedback"><i class="fa fa-bell"></i><span>Feedback</span></li>
         </ul>
+    </section>
 
-    </nav>
-</header>
+    <!--  Orders -->
+    <div class="iframe" id="iframe">
+        <section class="order_list" id="order_list">
+            <iframe src="iframe-folder/worker_list.html" seamless></iframe>
+        </section>
+    </div>
 
-	<!--    Content Anfang -->
-	
-	
-	<!--    Sidebar -->
-
-<section class="sidebar_menu">
-      <ul>
-        <li class="sidebar_list"  id="employee_orders"><i class="fa fa-calendar-check-o"></i><span>Serviceruf</span></li>
-        <li class="sidebar_list" id="employee_feedback"><i class="fa fa-bell"></i><span>Feedback</span></li>
-      </ul>
-</section>
-
-	<!--  Orders -->
-<div class="iframe" id="iframe">
-	<section class="order_list" id="order_list">
-		<iframe src="iframe-folder/worker_list.html" seamless></iframe>
-	</section>
-</div>
-
-	<!--  Feedback -->
-<div class="iframe" id="iframe">
-	<section class="feedback_list" id="feedback_list">
-		<iframe src="iframe-folder/feedback_worker.html" seamless></iframe>
-	</section>
-</div>
-	<!--    Content Ende -->
-	<script src="employee.js"></script>
+    <!--  Feedback -->
+    <div class="iframe" id="iframe">
+        <section class="feedback_list" id="feedback_list">
+            <iframe src="iframe-folder/feedback_worker.html" seamless></iframe>
+        </section>
+    </div>
+    <!--    Content Ende -->
+    <script src="employee.js"></script>
 </body>
+
 </html>
