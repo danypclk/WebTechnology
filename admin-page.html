@@ -97,7 +97,11 @@
 	<section class="register" id="register">
 		<form class="form" method="post" id="form_registry" autocomplete="off" action="admin-register.php">
 			<h2>Registrierung</h2>
-				<p type="Name: "> <input name="username_register" id="username_register"></input></p>
+				<p type="User ID: "> <input name="username_register" id="username_register"></input></p>
+					<small id="register_userid_error">Name kann nicht leer sein.</small>
+				<p type="Vorname: "> <input name="vorname_register" id="vorname_register"></input></p>
+					<small id="register_vorname_error">Name kann nicht leer sein.</small>
+				<p type="Name: "> <input name="name_register" id="name_register"></input></p>
 					<small id="register_name_error">Name kann nicht leer sein.</small>
 				<p type="Passwort: "> <input name="password_register" id="password_register"></input></p>
 					<small id="register_password_error">Passwort kann nicht leer sein.</small>

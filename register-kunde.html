@@ -83,8 +83,12 @@
 
 	<form class="form" method="post" id="form_kunde_register" autocomplete="off" action="kunde_register.php">
 		<h2>Neuer Konto</h2>
-		<p type="Name:" id="name_p"><input name="username" id="username"></input></p>
+		<p type="User ID:" id="userid_p"><input name="username" id="username"></input></p>
 		<small id="short_name_error">Mindestens 5 Buchstaben.</small>
+		<p type="Vorname:" id="vorname_p"><input name="vorname" id="vorname"></input></p>
+		<small id="realname_error">Kann nicht leer sein.</small>
+		<p type="Name:" id="name_p"><input name="realname" id="realname"></input></p>
+		<small id="vorname_error">Kann nicht leer sein.</small>
 		<p type="Email:" id="email_p"><input name="email" id="email"></input></p>
 		<small id="email_error">Keine Email angegeben.</small>
 		<p type="Passwort eingeben:"><input type="password" name="password" id="password"></input></p>

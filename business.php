@@ -47,7 +47,7 @@ if(file_exists($client_file))
 {
 	while($row = fgets($client_new_file)) 
 	{
-		list( $Name_client, $Pass_client, $email_client, $Position_client) = explode( ":", $row );
+		list( $Name_client, $Vorname, $Realname, $Pass_client, $email_client, $Position_client) = explode( ":", $row );
 		$client_trimed = trim($Name_client);
 		if($client_trimed == $name_1)
 		{

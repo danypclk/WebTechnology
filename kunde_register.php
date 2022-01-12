@@ -32,7 +32,7 @@ else
 	$file_2 = fopen("register-folder/client-file.txt", "r");
 	while(($row = fgets($file_2)) !== false) 
 	{
-		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
+		list( $Name, $Vorname, $Real_name, $Pass, $Email, $Position ) = explode( ":", $row );
 		if($username == $Name)
 		{
 			$count = true;
@@ -68,7 +68,7 @@ else
 		if(filesize($file_1) != 0)
 		{
 			$fn = fopen("iframe-folder/register_list.html","a");
-			fwrite($fn,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+			fwrite($fn,"<p>Name: ". $Name . ", Vorname: " . $Vorname . ", Nachname: " . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 		}
 		else
 		{
@@ -76,7 +76,7 @@ else
 			fwrite($fn,"<h2>Administrator</h2>");
 			fwrite($fn,"<h2>Arbeiter</h2>");
 			fwrite($fn,"<h2>Kunde</h2>");
-			fwrite($fn,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+			fwrite($fn,"<p>Name: ". $Name . ", Vorname: " . $Vorname . ", Nachname: " . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 		}
 	}	
 	else
@@ -85,7 +85,7 @@ else
 		fwrite($fn,"<h2>Administrator</h2>");
 		fwrite($fn,"<h2>Arbeiter</h2>");
 		fwrite($fn,"<h2>Kunde</h2>");
-		fwrite($fn,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+		fwrite($fn,"<p>Name: ". $Name . ", Vorname: " . $Vorname . ", Nachname: " . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 	}
 	fclose($fn);
 	echo "<script>alert('Erfolgreich registriert')</script>";

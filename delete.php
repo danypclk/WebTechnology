@@ -20,7 +20,7 @@ foreach($array as $v)
 		$file = fopen($v, "r+");
 		while($row = fgets($file)) 
 		{
-			list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
+			list( $Name, $Vorname, $Realname, $Pass, $Email, $Position ) = explode( ":", $row );
 			if($name == $Name)
 			{
 				$position = trim($Position);

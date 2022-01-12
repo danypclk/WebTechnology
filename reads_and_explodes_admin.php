@@ -58,20 +58,20 @@ if($empty == false)
 	$register_list = fopen($register_file_name, "w");
 	fwrite($register_list,"<h2>Administrator</h2>");
 	while($row = fgets($fn)) {
-		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
-		fwrite($register_list,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+		list( $Name, $Vorname, $Real_name, $Pass, $Email, $Position ) = explode( ":", $row );
+		fwrite($register_list,"<p>User ID: ". $Name . ", Vorname: " . $Vorname . ", Nachname: " . $Real_name .  ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 	}
 	fclose($fn);
 	fwrite($register_list,"<h2>Arbeiter</h2>");
 	while($row = fgets($fn1)) {
-		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
-		fwrite($register_list,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+		list( $Name, $Vorname, $Real_name, $Pass, $Email, $Position ) = explode( ":", $row );
+		fwrite($register_list,"<p>Name: ". $Name . ", Vorname: " . $Vorname . ", Nachname: " . $Real_name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 	}
 	fclose($fn1);
 	fwrite($register_list,"<h2>Kunden</h2>");
 	while($row = fgets($fn2)) {
-		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
-		fwrite($register_list,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
+		list( $Name, $Vorname, $Real_name, $Pass, $Email, $Position ) = explode( ":", $row );
+		fwrite($register_list,"<p>Name: ". $Name . ", Vorname: " . $Vorname . ", Nachname: " . $Real_name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 	}
 	fclose($fn2);
 }

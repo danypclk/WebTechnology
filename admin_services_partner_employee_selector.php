@@ -10,14 +10,14 @@ $file_partner_open = fopen($file_partner, "r");
 $file_employee_open = fopen($file_employee, "r");
 while($row = fgets($file_partner_open))
 {
-	list($Name, $Pass, $Email ) = explode( ":", $row );
+	list($Name, $Vorname, $Realname, $Pass, $Email, $Position ) = explode( ":", $row );
 	array_push($partners, $Name);
 }
 fclose($file_partner_open);
 
 while($row = fgets($file_employee_open))
 {
-	list($Name, $Pass, $Email ) = explode( ":", $row );
+	list($Name, $Vorname, $Realname, $Pass, $Email, $Position ) = explode( ":", $row );
 	array_push($employees, $Name);
 }
 fclose($file_employee_open);

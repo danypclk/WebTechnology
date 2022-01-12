@@ -215,7 +215,7 @@ nav ul li ul li a:hover {
 
 #form_kunde_register
 {
-	height: 610px;
+	height: 800px;
 }
 
 #form_contact
@@ -319,7 +319,8 @@ nav ul li ul li a:hover {
 .services #client_name_error, .services #client_email_error, .services #client_address_error, .services #radio_button_error,
 .services #selector_error, .form #konto_name_error, .form #feedback_message_error_d, 
 .form #partner_employee_feedback_error, .form #rechnungen_liste_error_admin, .form #rechnungen_liste_error, .form #reset_error_admin,
-.form #short_name_error, .form #pass_short_error, .form #pass_short_1_error, .form #email_error
+.form #short_name_error, .form #pass_short_error, .form #pass_short_1_error, .form #email_error,
+.form #register_userid_error, .form #register_vorname_error, .form #vorname_error, .form #realname_error
 {
 	color: red;
 	font-size: 15px;
