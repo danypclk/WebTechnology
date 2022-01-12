@@ -2,8 +2,6 @@
 
 // data to work with
 
-
-
 $name_1 = $_POST['name'];
 $email_1 = $_POST['email'];
 $worker_1 = $_POST['referrer'];
@@ -12,7 +10,6 @@ $address_1 = $_POST['address'];
 $request_1 = $_POST['request'];
 
 $date = date("d/m/Y");
-
 
 // what to pay for each task and converting it to taxes
 
@@ -44,6 +41,7 @@ $total_due = $taxable + $payable;
 $client_file = "register-folder/client-file.txt";
 $client_new_file = fopen($client_file, "r");
 $count = false;
+$count_1 = false;
 
 if(file_exists($client_file))
 {
@@ -68,7 +66,10 @@ if($count != true)
 	echo "<script>alert('Name nicht gefunden!')</script>";
 	echo "<script>window.location.assign('admin-page.html')</script>";
 }
-
+else
+{
+	$count_1 = true;
+}
 
 // create/append data to invoice text file and generating a new invoice number
 
@@ -140,7 +141,7 @@ $workers_new_file = fopen($worker_file, "r");
 $worker_file_name = "iframe-folder/worker_list.html";
 
 		$worker_order_list = fopen($worker_file_name, "w");
-		fwrite($worker_order_list,"<h2>Orders:</h2>");
+		fwrite($worker_order_list,"<h2>Arbeitsaufträge:</h2>");
 		while($row = fgets($workers_new_file)) 
 		{
 			list( $Name, $Email, $Date, $Task, $Address, $Request, $worker) = explode( ":", $row );
@@ -207,6 +208,7 @@ foreach($array_of_clients as $selector_for_client)
 	}
 	fclose($client_invoice_selector_c);
 }
+
 
 // create and store pdf invoice
 
@@ -299,8 +301,11 @@ $pdf->Cell(30 ,5,$total_due,1,1,'R');
 
 $pdf -> Output($pdf_file, 'F');
 
-echo "<script>alert('Mitarbeiter erfolgreich beauftragt!')</script>";
-echo "<script>window.location.assign('admin-page.html')</script>";
+if($count_1 == true)
+{
+	echo "<script>alert('Mitarbeiter erfolgreich beauftragt!')</script>";
+	echo "<script>window.location.assign('admin-page.html')</script>";
+}
 
 /*   Only useful if used with PHPMAILER and extension=openssl.dll
 
