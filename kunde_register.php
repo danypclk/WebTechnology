@@ -7,12 +7,18 @@ $file = "register-folder/client-file.txt";
 
 $count = false;
 
-// sees if iframe register-list exists
+// sees if iframe register-list and text file exist
 
 if(!file_exists("iframe-folder/register_list.html"))
 {
 	$register_list_iframe = fopen("iframe-folder/register_list.html", "w");
 	fclose($register_list_iframe);
+}
+
+if(!file_exists("register-folder/client-file.txt"))
+{
+	$client_file = fopen("register-folder/client-file.txt", "w");
+	fclose($client_file);
 }
 
 // if not tries to search it in the text files inside register-folder directory
@@ -69,6 +75,7 @@ else
 			$fn = fopen("iframe-folder/register_list.html", "w");
 			fwrite($fn,"<h2>Administrator</h2>");
 			fwrite($fn,"<h2>Arbeiter</h2>");
+			fwrite($fn,"<h2>Kunde</h2>");
 			fwrite($fn,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 		}
 	}	
@@ -77,6 +84,7 @@ else
 		$fn = fopen("iframe-folder/register_list.html", "w");
 		fwrite($fn,"<h2>Administrator</h2>");
 		fwrite($fn,"<h2>Arbeiter</h2>");
+		fwrite($fn,"<h2>Kunde</h2>");
 		fwrite($fn,"<p>Name: ". $Name . ", Passwort: " . $Pass . ", Email: " . $Email . ", Position: " . $Position . "</p>");
 	}
 	fclose($fn);
