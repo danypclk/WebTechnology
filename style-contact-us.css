@@ -289,7 +289,7 @@ nav ul li ul li a:hover {
 
 .form p:before, .services p:before
 { 
-	content: attr(type); 
+	content: attr(attribute); 
 	display: block;
 	margin: 28px 0 0;
 	font-size: 14px;
