@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <title>True IT GmbH</title>
     <meta charset="UTF-8">
@@ -9,16 +8,15 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <script src="jquery.js"></script>
-    <link rel="stylesheet" href="style-contact-us.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="jquery.js"></script>
+	<link rel="stylesheet" href="style-contact-us.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header>
-        <nav>
-
+<header>
+    <nav >
+        
             <p class="pnav"><a href="./index.html"><svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="logo">
                 <g id="small" filter="url(#filter0_i_2_3)">
@@ -51,60 +49,59 @@
                 </filter>
                 </defs>
                 </svg></a></p>
-            <ul class="navbar">
-                <li class="navitem"><a href="">Willkommen auf der Kundenseite</a></li>
-                <li class="navitem"><a href="index.html">Logout</a></li>
-            </ul>
-
-        </nav>
-    </header>
-
-    <!--    Content Anfang -->
-
-
-    <!--    Sidebar -->
-    <section class="sidebar_menu">
-        <ul>
-            <li class="sidebar_list" id="client_feedback"><i class="fa fa-bell"></i><span>Feedback</span></li>
-            <li class="sidebar_list" id="client_rechnung"><i class="fa fa-balance-scale"></i><span>Rechnungen</span></li>
+        <ul class="navbar">
+            <li class="navitem"><a href="">Willkommen auf der Kundenseite</a></li>
+			<li class="navitem"><a href="index.html">Logout</a></li>
         </ul>
-    </section>
 
-    <!--  Feedback -->
+    </nav>
+</header>
 
-    <section class="feedback" id="feedback">
-        <form class="form" method="post" id="form_feedback" autocomplete="off" action="feedback.php">
-            <h2>Feedback</h2>
-            <p type="Ihren Feedback: "><input name="name_of_client" id="name_of_client" value="none" /> <textarea rows="6" cols="36" name="client_feedback_message" id="client_feedback_message"></textarea></p>
-            <small id="feedback_message_error_d">Feedback Naricht kann nicht leer sein.</small>
-            <p type="Partner oder Arbeiter, der für Sie gearbeitet hat: ">
-                <select name="business_list" id="business_list">
+	<!--    Content Anfang -->
+	
+	
+	<!--    Sidebar -->
+<section class="sidebar_menu">
+      <ul>
+        <li class="sidebar_list" id="client_feedback"><i class="fa fa-bell"></i><span>Feedback</span></li>
+		<li class="sidebar_list" id="client_rechnung"><i class="fa fa-balance-scale"></i><span>Rechnungen</span></li>
+      </ul>
+</section>
+
+	<!--  Feedback -->
+	
+	<section class="feedback" id="feedback">
+		<form class="form" method="post" id="form_feedback" autocomplete="off" action="feedback.php">
+			<h2>Feedback</h2>
+				<p type="Ihren Feedback: "><input name="name_of_client" id="name_of_client" value="none" /> <textarea rows="6" cols="36" name="client_feedback_message" id="client_feedback_message"></textarea></p>
+					<small id="feedback_message_error_d">Feedback Naricht kann nicht leer sein.</small>
+				<p type="Partner oder Arbeiter, der für Sie gearbeitet hat: ">
+				<select name="business_list" id="business_list">
 					
 				</select></p>
-            <small id="partner_employee_feedback_error">Kein Partner oder Arbeiter im Register!</small>
-            <button id="submit_button"><b>Senden</b></button>
-        </form>
-    </section>
+					<small id="partner_employee_feedback_error">Kein Partner oder Arbeiter im Register!</small>
+			<button id="submit_button"><b>Senden</b></button>
+		</form>
+	</section>
 
-    <!--  Rechnung -->
+	<!--  Rechnung -->
 
-    <section class="rechnungen_download" id="rechnungen_download">
-        <form class="form" method="post" id="form_rechnung" autocomplete="off" action="client_rechnung_download.php">
-            <h2>Rechnungen Liste</h2>
-            <br />
-            <select name="rechnungen_liste" id="rechnungen_liste">
+<section class="rechnungen_download" id="rechnungen_download">
+		<form class="form" method="post" id="form_rechnung" autocomplete="off" action="client_rechnung_download.php">
+			<h2>Rechnungen Liste</h2>
+				<br />
+				<select name="rechnungen_liste" id="rechnungen_liste">
 					
 				</select></p>
-            <p id="text_this"></p>
-            <small id="rechnungen_liste_error">Keine Rechnungen im Ordner!</small>
-            <button id="submit_button"><b>Download</b></button>
-        </form>
-    </section>
+				<p id="text_this"></p>
+					<small id="rechnungen_liste_error">Keine Rechnungen im Ordner!</small>
+			<button id="submit_button"><b>Download</b></button>
+		</form>
+</section>
 
-    <!--    Content Ende -->
-    <script src="client_rechnung.js"></script>
-    <script src="client_feedback.js"></script>
-    <script src="client.js"></script>
+	<!--    Content Ende -->
+	<script src="client_rechnung.js"></script>
+	<script src="client_feedback.js"></script>
+	<script src="client.js"></script>
 </body>
-
 </html>

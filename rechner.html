@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <title>True IT GmbH</title>
     <meta charset="UTF-8">
@@ -12,9 +11,9 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-
+<header>
+    <nav >
+        
             <p class="pnav"><a href="./index.html"><svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="logo">
                 <g id="small" filter="url(#filter0_i_2_3)">
@@ -47,148 +46,142 @@
                 </filter>
                 </defs>
                 </svg></a></p>
-            <ul class="navbar">
-                <li class="navitem"><a href="#">Produkte</a>
-                    <ul>
-                        <li class="dropdown"><a href="drucksysteme.html">Drucksysteme</a></li>
-                        <li class="dropdown"><a href="endgeraete.html">Endgeräte</a></li>
-                        <li class="dropdown"><a href="rechner.html">Rechner</a></li>
-                    </ul>
-                </li>
-
-                <li class="navitem"><a href="#">Über uns</a>
-                    <ul>
-                        <li class="dropdown"><a href="team.html">Team</a></li>
-                        <li class="dropdown"><a href="kontakt.html">Kontakt</a></li>
-                        <li class="dropdown"><a href="impressum.html">Impressum</a></li>
-                    </ul>
-                </li>
-
-                <li class="navitem"><a href="#">Karriere</a>
-                    <ul>
-                        <li class="dropdown"><a href="arbeite_bei_uns.html">Arbeite bei uns</a></li>
-                        <li class="dropdown"><a href="#">Bewerben!</a></li>
-                    </ul>
-                </li>
-
-                <li class="navitem"><a href="login.html">Adminstration</a></li>
-
-
+        <ul class="navbar">
+            <li class="navitem"><a href="#">Produkte</a>
+            <ul>
+                <li class="dropdown"><a href="drucksysteme.html">Drucksysteme</a></li>
+                <li class="dropdown"><a href="endgeraete.html">Endgeräte</a></li>
+                <li class="dropdown"><a href="rechner.html">Rechner</a></li>
             </ul>
+        </li>
+        
+            <li class="navitem"><a href="#">Über uns</a>
+                <ul>
+                    <li class="dropdown"><a href="team.html">Team</a></li>
+                    <li class="dropdown"><a href="kontakt.html">Kontakt</a></li>
+                    <li class="dropdown"><a href="impressum.html">Impressum</a></li>
+                </ul>
+            </li>
 
-        </nav>
-    </header>
+            <li class="navitem"><a href="#">Karriere</a>
+                <ul>
+                    <li class="dropdown"><a href="arbeite_bei_uns.html">Arbeite bei uns</a></li>
+                    <li class="dropdown"><a href="#">Bewerben!</a></li>
+                </ul>
+            </li>
 
-    <li class="navitem"><a href="#">Adminstration</a>
-        <ul>
-            <li class="dropdown"><a href="login.html">Login</a></li>
-            <li class="dropdown"><a href="register-kunde.html">Registrierung</a></li>
+            <li class="navitem"><a href="#">Adminstration</a>
+				<ul>
+                    <li class="dropdown"><a href="login.html">Login</a></li>
+                    <li class="dropdown"><a href="register-kunde.html">Registrierung</a></li>
+                </ul>
+			</li>
+
         </ul>
-    </li>
 
-    <div class="maincenter" style="display: flex; flex-wrap: wrap;">
-        <div class="box500">
-            <section class="section">
+    </nav>
+</header>
 
-                <!-- SCRIPT ANFANG -->
-                <h1 class="h1dynamic">Stromkostenrechner</h1>
-                <br>
-                <div class="box1000">
+<!-- Rechner Content Beginn-->
+<div class="content">
+<div class="mainleft"></div>
 
-                    <!-- Drei Input Felder um Werte anzugeben. Werden über ID in js identifiziert (getElementByID)-->
-                    <p class="prechner">Strompreis:</p>
-                    <input type="number" name="strompreis" id="strompreis" class="inputrechner" placeholder="30 Cent/KWH" min="1">
-                    <p class="prechner">Betriebszeit:</p>
-                    <input type="number" name="betriebzeit" id="betriebszeit" class="inputrechner" placeholder="300 Stunden" min="1">
-                    <p class="prechner">Stromverbrauch:</p>
-                    <input type="number" name="watt" id="watt" class="inputrechner" placeholder="900 Watt" min="1">
+<div class="maincenter" style="display: flex; flex-wrap: wrap;">
+    <div class="box500">
+<section class="section">
 
-                    <!-- Button - startet die Funktion berechnen() in rechner.js-->
-                    <button class="buttonrechner" id="mybutton" onclick="berechnen()">Berechnen</button>
-                    <button class="buttonreset" onclick="reset()">Reset</button>
+<!-- SCRIPT ANFANG -->  
+<h1 class="h1dynamic">Stromkostenrechner</h1>
+<br>
+<div class="box1000">
 
+<!-- Drei Input Felder um Werte anzugeben. Werden über ID in js identifiziert (getElementByID)-->
+<p class="prechner">Strompreis:</p>
+<input type="number" name="strompreis" id="strompreis" class="inputrechner" placeholder="30 Cent/KWH" min="1">
+<p class="prechner">Betriebszeit:</p>
+<input type="number" name="betriebzeit" id="betriebszeit" class="inputrechner" placeholder="300 Stunden" min="1">
+<p class="prechner">Stromverbrauch:</p>
+<input type="number" name="watt" id="watt" class="inputrechner" placeholder="900 Watt" min="1">
 
-                    <!-- Ergebnis Feld -->
-                    <p class="prechner">Stromkosten = </p>
-                    <div class="divergebnis" id="ergebnis"></div>
-                    <br>
-                    <br><br>
-                    <br>
-                    <br><br>
-                    <br>
-
-                </div>
-        </div>
-
-        <div class="box500">
-            <br><br>
-            <br>
-            <br><br>
-            <br>
-            <table class="tg" style="table-layout: fixed; width: 320px">
-                <colgroup>
-                    <col style="width: 160px">
-                    <col style="width: 160px">
-                </colgroup>
-                <thead>
-                    <tr>
-                        <th class="tg-zv4m" colspan="2">Stromverbrauch unserer Drucksysteme</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="tg-hvao">Druckleistung <br>(Seiten pro Minute)</td>
-                        <td class="tg-hvao">Stromverbrauch<br>(Watt)</td>
-                    </tr>
-                    <tr>
-                        <td class="tg-zv4m">20</td>
-                        <td class="tg-zv4m">ca. 300 Watt</td>
-                    </tr>
-                    <tr>
-                        <td class="tg-zv4m">40</td>
-                        <td class="tg-zv4m">ca. 600 Watt</td>
-                    </tr>
-                    <tr>
-                        <td class="tg-zv4m">60</td>
-                        <td class="tg-zv4m">ca. 900 Watt</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<!-- Button - startet die Funktion berechnen() in rechner.js-->
+<button class="buttonrechner" id="mybutton" onclick="berechnen()">Berechnen</button>
+<button class="buttonreset" onclick="reset()">Reset</button>
 
 
+<!-- Ergebnis Feld -->
+<p class="prechner">Stromkosten = </p>
+<div class="divergebnis" id="ergebnis"></div>
+<br>
+<br><br>
+<br>
+<br><br>
+<br>
 
-        </section>
+</div> 
+</div>
 
-    </div>
+<div class="box500">
+    <br><br>
+<br>
+<br><br>
+<br>
+    <table class="tg" style="table-layout: fixed; width: 320px">
+        <colgroup>
+        <col style="width: 160px">
+        <col style="width: 160px">
+        </colgroup>
+        <thead>
+          <tr>
+            <th class="tg-zv4m" colspan="2">Stromverbrauch unserer Drucksysteme</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-hvao">Druckleistung <br>(Seiten pro Minute)</td>
+            <td class="tg-hvao">Stromverbrauch<br>(Watt)</td>
+          </tr>
+          <tr>
+            <td class="tg-zv4m">20</td>
+            <td class="tg-zv4m">ca. 300 Watt</td>
+          </tr>
+          <tr>
+            <td class="tg-zv4m">40</td>
+            <td class="tg-zv4m">ca. 600 Watt</td>
+          </tr>
+          <tr>
+            <td class="tg-zv4m">60</td>
+            <td class="tg-zv4m">ca. 900 Watt</td>
+          </tr>
+        </tbody>
+        </table>
+</div>
 
-    <div class="mainright"></div>
-    </div>
+
+
+</section>
+
+</div>
+
+<div class="mainright"></div>
+</div>
 
     <!-- content Ende  -->
 
     <footer>
         <div class="foot">
             <ul class="footer-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="team.html">Über uns</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="endgeraete.html">Produkte</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Über uns</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Produkte</a></li>
             </ul>
             <br />
             <ul class="footer-social">
-                <li>
-                    <a href="#"><img src="images/facebook.png" alt="Facebook" class="image"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="images/twitter.png" alt="Twitter" class="image"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="images/instagram.png" alt="instagram" class="image"></a>
-                </li>
-            </ul>
+                <li><a href="#"><img src="images/facebook.png" alt="Facebook" class="image"></a></li>
+                <li><a href="#"><img src="images/twitter.png" alt="Twitter" class="image"></a></li>
+                <li><a href="#"><img src="images/instagram.png" alt="instagram" class="image"></a></li>
+        </ul>
         </div>
     </footer>
 </body>
-
 </html>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <title>True IT GmbH</title>
     <meta charset="UTF-8">
@@ -10,15 +9,14 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <script src="jquery.js"></script>
-    <link rel="stylesheet" href="style-contact-us.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="style-contact-us.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header>
-        <nav>
-
+<header>
+    <nav >
+        
             <p class="pnav"><a href="./index.html"><svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="logo">
                 <g id="small" filter="url(#filter0_i_2_3)">
@@ -51,104 +49,99 @@
                 </filter>
                 </defs>
                 </svg></a></p>
-            <ul class="navbar">
-                <li class="navitem"><a href="">Willkommen zum Interner Bereich</a></li>
-                <li class="navitem"><a href="index.html">Logout</a></li>
-            </ul>
-
-        </nav>
-    </header>
-
-    <!--    Content Anfang -->
-
-
-    <!--    Sidebar -->
-
-    <section class="sidebar_menu">
-        <ul>
-            <li class="sidebar_list" id="admin_register"><i class="fa fa-id-card-o"></i><span>Person hinzufügen</span></li>
-            <li class="sidebar_list" id="admin_services"><i class="fa fa-wrench"></i><span>Dienstleistung</span></li>
-            <li class="sidebar_list" id="admin_register_list"><i class="fa fa-address-book"></i><span>Register</span></li>
-            <div class="dropdown">
-                <li class="sidebar_list" id="admin_mitteilung"><i class="fa fa-envelope"></i><span>Mitteilungen</span><i class="fa fa-caret-down" id="arrow_down"></i></li>
-                <div class="dropdown-content">
-                    <a href="#" id="narichten">Narichten</a>
-                    <a href="#" id="kunden_feedback">Feedback</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <li class="sidebar_list" id="admin_orders_and_pdfs"><i class="fa fa-bell"></i><span>Kundenservice</span><i class="fa fa-caret-down" id="arrow_down_1"></i></li>
-                <div class="dropdown-content">
-                    <a href="#" id="aufgabe">Aufgaben Liste</a>
-                    <a href="#" id="rechnung">Rechnungen</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <li class="sidebar_list" id="admin_delete"><i class="fa fa-user-times"></i><span>Löschen/speichern</span><i class="fa fa-caret-down" id="arrow_down_2"></i></li>
-                <div class="dropdown-content">
-                    <a href="#" id="delete_conto">Lösche Konto</a>
-                    <a href="#" id="reset_all_files">Iframes zurücksetzen</a>
-                    <a href="#" id="delete_all_files">Alles zurücksetzen</a>
-                </div>
-            </div>
+        <ul class="navbar">
+            <li class="navitem"><a href="">Willkommen zum Interner Bereich</a></li>
+			<li class="navitem"><a href="index.html">Logout</a></li>
         </ul>
-    </section>
 
-    <!--   Admin Register -->
+    </nav>
+</header>
 
-    <section class="register" id="register">
-        <form class="form" method="post" id="form_registry" autocomplete="off" action="admin-register.php">
-            <h2>Registrierung</h2>
-            <p type="User ID: "> <input name="username_register" id="username_register"></input>
-            </p>
-            <small id="register_userid_error">Name kann nicht leer sein.</small>
-            <p type="Vorname: "> <input name="vorname_register" id="vorname_register"></input>
-            </p>
-            <small id="register_vorname_error">Name kann nicht leer sein.</small>
-            <p type="Name: "> <input name="name_register" id="name_register"></input>
-            </p>
-            <small id="register_name_error">Name kann nicht leer sein.</small>
-            <p type="Passwort: "> <input name="password_register" id="password_register"></input>
-            </p>
-            <small id="register_password_error">Passwort kann nicht leer sein.</small>
-            <p type="E-mail: "> <input name="email_register" id="email_register"></input>
-            </p>
-            <small id="register_email_error">Email kann nicht leer sein.</small>
-            <p type="Funktion im Geschäft: ">
-                <br />
-                <select name="business_function" id="business_function">
+	<!--    Content Anfang -->
+	
+	
+	<!--    Sidebar -->
+
+<section class="sidebar_menu">
+      <ul>
+        <li class="sidebar_list"  id="admin_register"><i class="fa fa-id-card-o"></i><span>Person hinzufügen</span></li>
+        <li class="sidebar_list" id="admin_services"><i class="fa fa-wrench"></i><span>Dienstleistung</span></li>
+        <li class="sidebar_list" id="admin_register_list"><i class="fa fa-address-book"></i><span>Register</span></li>
+		<div class="dropdown">
+        <li class="sidebar_list" id="admin_mitteilung"><i class="fa fa-envelope"></i><span>Mitteilungen</span><i class="fa fa-caret-down" id="arrow_down"></i></li>
+			<div class="dropdown-content">
+				<a href="#" id="narichten">Narichten</a>
+				<a href="#" id="kunden_feedback">Feedback</a>
+			</div>
+		</div>
+		<div class="dropdown">
+		<li class="sidebar_list" id="admin_orders_and_pdfs"><i class="fa fa-bell"></i><span>Kundenservice</span><i class="fa fa-caret-down" id="arrow_down_1"></i></li>
+				<div class="dropdown-content">
+				<a href="#" id="aufgabe">Aufgaben Liste</a>
+				<a href="#" id="rechnung">Rechnungen</a>
+			</div>
+		</div>
+		<div class="dropdown">
+		<li class="sidebar_list" id="admin_delete"><i class="fa fa-user-times"></i><span>Löschen/speichern</span><i class="fa fa-caret-down" id="arrow_down_2"></i></li>
+			<div class="dropdown-content">
+				<a href="#" id="delete_conto">Lösche Konto</a>
+				<a href="#" id="reset_all_files">Iframes zurücksetzen</a>
+				<a href="#" id="delete_all_files">Alles zurücksetzen</a>
+			</div>
+		</div>
+      </ul>
+</section>
+
+		<!--   Admin Register -->
+
+	<section class="register" id="register">
+		<form class="form" method="post" id="form_registry" autocomplete="off" action="admin-register.php">
+			<h2>Registrierung</h2>
+				<p type="User ID: "> <input name="username_register" id="username_register"></input></p>
+					<small id="register_userid_error">Name kann nicht leer sein.</small>
+				<p type="Vorname: "> <input name="vorname_register" id="vorname_register"></input></p>
+					<small id="register_vorname_error">Name kann nicht leer sein.</small>
+				<p type="Name: "> <input name="name_register" id="name_register"></input></p>
+					<small id="register_name_error">Name kann nicht leer sein.</small>
+				<p type="Passwort: "> <input name="password_register" id="password_register"></input></p>
+					<small id="register_password_error">Passwort kann nicht leer sein.</small>
+				<p type="E-mail: "> <input name="email_register" id="email_register"></input></p>
+					<small id="register_email_error">Email kann nicht leer sein.</small>
+				<p type="Funktion im Geschäft: "> 
+			<br />
+				<select name="business_function" id="business_function">
 					<option value="partner">Administrator</option>
 					<option value="employee">Arbeiter</option>
 					<option value="client">Kunde</option>
 				</select></p>
-            <small id="function_of_busniess_error">Funktion kann nicht leer sein.</small>
-            <button id="register_button"><b>Registrieren</b></button>
-        </form>
-    </section>
-
-    <!--  services  -->
-    <section class="services" id="services">
-        <form method="post" id="form_services" autocomplete="off" action="business.php">
-            <h2>Kundendaten:</h2>
-            <p type="Kundenname:"> <input name="name" id="client_name_services"></p>
-            <small id="client_name_error">Name kann nicht leer sein.</small>
-            <p type="Mitarbeiter mit der Aufgabe:"></p>
-            <select name="referrer" id="referrer">
+			<small id="function_of_busniess_error">Funktion kann nicht leer sein.</small>
+			<button id="register_button"><b>Registrieren</b></button>
+		</form>
+	</section>
+	
+		<!--  services  -->
+	<section class="services" id="services">
+	<form method="post" id="form_services" autocomplete="off" action="business.php">
+				<h2>Kundendaten:</h2>
+				<p type="Kundenname:"> <input name="name" id="client_name_services"></p>
+					<small id="client_name_error">Name kann nicht leer sein.</small>
+				<p type="Mitarbeiter mit der Aufgabe:"></p>
+				<select name="referrer" id="referrer">
 					
 				</select>
-            <small id="selector_error">Sie müssen ein neuer User mit Employee Position in admin-register wählen</small>
-            <p type="Welche Dienste müssen Sie tun?"></p>
-            <p type="Reinigung"><input type="radio" name="notiz" value="Reinigung" /></p>
-            <p type="Reparatur"><input type="radio" name="notiz" value="Reparatur" /></p>
-            <p type="Ersetzung"><input type="radio" name="notiz" value="Ersetzung" /></p>
-            <p type="Sonstiges"><input type="radio" name="notiz" value="Sonstiges" /></p>
-            <small id="radio_button_error">Zuweisung muss ausgewählt werden.</small>
-            <input name="id_of_admin_1" id="id_of_admin_1" value="none" />
-            <p type="Adresse:"> <input id="client_address_service" name="address"></p>
-            <small id="client_address_error">Addresse kann nicht leer sein..</small>
-            <p type="Sonderwünsche des Kunden:"></p>
-            <textarea id="request" rows="5" cols="50" name="request" id="request"></textarea>
-            <button id="services_button">Dienst senden<button>
+					<small id="selector_error">Sie müssen ein neuer User mit Employee Position in admin-register wählen</small>
+				<p type="Welche Dienste müssen Sie tun?"></p>
+						<p type="Reinigung"><input type="radio" name="notiz" value="Reinigung" /></p>
+						<p type="Reparatur"><input type="radio" name="notiz" value="Reparatur" /></p>
+						<p type="Ersetzung"><input type="radio" name="notiz" value="Ersetzung" /></p>
+						<p type="Sonstiges"><input type="radio" name="notiz" value="Sonstiges" /></p>
+							<small id="radio_button_error">Zuweisung muss ausgewählt werden.</small>
+				<input name="id_of_admin_1" id="id_of_admin_1" value="none" />
+				<p type="Adresse:"> <input id="client_address_service" name="address"></p>
+					<small id="client_address_error">Addresse kann nicht leer sein..</small>
+				<p type="Sonderwünsche des Kunden:"></p>
+					<textarea id="request" rows="5" cols="50" name="request" id="request"></textarea>
+					<button id="services_button">Dienst senden<button>
 		</form>
   </section>
   <!--  List of people on the webpage  -->
@@ -186,44 +179,43 @@
 				<p id="text_this"></p>
 					<small id="rechnungen_liste_error_admin">Keine Rechnungen im Ordner!</small>
 			<button id="submit_button"><b>Download</b></button>
-        </form>
-    </section>
-    <!--  delete form  -->
-    <section class="delete_account" id="delete_account">
-        <form class="form" method="post" id="form_delete" autocomplete="off" action="delete.php">
-            <h2>Konto löschen</h2>
-            <p type="Name: "> <input name="name_konto" id="name_konto"></input>
-            </p>
-            <small id="konto_name_error">Name kann nicht leer sein.</small>
-            <button id="delete_button"><b>Löschen</b></button>
-        </form>
-    </section>
-    <!--  reset form  -->
-    <section class="admin_reset" id="admin_reset">
-        <form class="form" method="post" id="form_admin_reset" autocomplete="off" action="reset_files.php">
-            <h2>Reset-Formular</h2>
-            <br />
-            <small id="reset_error_admin">Keine Reset-Dateien im Ordner!</small>
-            <input name="id_of_admin" id="id_of_admin" value="none" />
-            <button id="submit_button"><b>Reset</b></button>
-        </form>
-    </section>
-    <!--  delete and reconfigure all form  -->
-    <section class="admin_delete_all" id="admin_delete_all">
-        <form class="form" method="post" id="form_admin_delete_all" autocomplete="off" action="delete_reconfigure_files.php">
-            <h2>Alles zurücksetzen</h2>
-            <br />
-            <small id="reset_error_admin">Keine Reset-Dateien im Ordner!</small>
-            <input name="id_of_admin_delete" id="id_of_admin_delete" value="none" />
-            <button id="submit_button"><b>Initiieren</b></button>
-        </form>
-    </section>
-    <!--    Content Ende -->
-    <script src="admin_rechnung.js"></script>
-    <script src="admin-delete.js"></script>
-    <script src="admin.js"></script>
-    <script src="admin-services.js"></script>
-    <script src="admin-register.js"></script>
+		</form>
+</section>
+  <!--  delete form  -->
+<section class="delete_account" id="delete_account">
+		<form class="form" method="post" id="form_delete" autocomplete="off" action="delete.php">
+			<h2>Konto löschen</h2>
+				<p type="Name: "> <input name="name_konto" id="name_konto"></input></p>
+					<small id="konto_name_error">Name kann nicht leer sein.</small>
+			<button id="delete_button"><b>Löschen</b></button>
+		</form>
+</section>
+  <!--  reset form  -->
+<section class="admin_reset" id="admin_reset">
+		<form class="form" method="post" id="form_admin_reset" autocomplete="off" action="reset_files.php">
+			<h2>Reset-Formular</h2>
+				<br />
+					<small id="reset_error_admin">Keine Reset-Dateien im Ordner!</small>
+					<input name="id_of_admin" id="id_of_admin" value="none" />
+			<button id="submit_button"><b>Reset</b></button>
+		</form>
+</section>
+  <!--  delete and reconfigure all form  -->
+<section class="admin_delete_all" id="admin_delete_all">
+		<form class="form" method="post" id="form_admin_delete_all" autocomplete="off" action="delete_reconfigure_files.php">
+			<h2>Alles zurücksetzen</h2>
+				<br />
+					<small id="reset_error_admin">Keine Reset-Dateien im Ordner!</small>
+					<input name="id_of_admin_delete" id="id_of_admin_delete" value="none" />
+			<button id="submit_button"><b>Initiieren</b></button>
+		</form>
+</section>
+	<!--    Content Ende -->
+	<script src="admin_rechnung.js"></script>
+	<script src="admin-delete.js"></script>
+	<script src="admin.js"></script>
+	<script src="admin-services.js"></script>
+	<script src="admin-register.js"></script>
 </body>
-
 </html>
+	
