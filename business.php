@@ -3,7 +3,6 @@
 // data to work with
 
 $name_1 = $_POST['name'];
-$email_1 = $_POST['email'];
 $worker_1 = $_POST['referrer'];
 $task_1 = $_POST['notiz'];
 $address_1 = $_POST['address'];
@@ -12,6 +11,22 @@ $request_1 = $_POST['request'];
 $id_username = $_POST['id_of_admin_1'];
 
 $date = date("d/m/Y");
+
+// search for clients email
+
+$email_1 = "";
+$client_file = "register-folder/client-file.txt";
+$client_find_email = fopen($client_file, "r");
+while($row = fgets($client_find_email)) 
+{
+	list( $Name_client, $Vorname, $Realname, $Pass_client, $email_client, $Position_client) = explode( ":", $row );
+	$client_trimed = trim($Name_client);
+	if($client_trimed == $name_1)
+	{
+		$email_1 = $email_client;
+	}
+}
+fclose($client_find_email);
 
 // what to pay for each task and converting it to taxes
 
