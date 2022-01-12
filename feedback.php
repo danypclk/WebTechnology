@@ -19,7 +19,7 @@ while($row = fgets($file_partner_open))
 		if($Vorname_find == $Vorname_admin && $Realname_find == $Realname_admin)
 		{
 			$$busniess_assosiation_name = $Name_admin;
-			$position = "Partner";
+			$position = "Administrator";
 			break;
 		}
 	}
