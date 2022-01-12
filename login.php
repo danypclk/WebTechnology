@@ -122,7 +122,7 @@ else
 {
 		
 	while($row = fgets($fn)) {
-		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
+		list( $Name, $Vorname, $Realname, $Pass, $Email, $Position ) = explode( ":", $row );
 		if($username == $Name)
 		{
 			if($password == $Pass)
@@ -135,7 +135,7 @@ else
 	fclose($fn);
 
 	while($row = fgets($fn1)) {
-		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
+		list( $Name, $Vorname, $Realname, $Pass, $Email, $Position ) = explode( ":", $row );
 		if($username == $Name)
 		{
 			if($password == $Pass)
@@ -148,7 +148,7 @@ else
 	fclose($fn1);
 
 	while($row = fgets($fn2)) {
-		list( $Name, $Pass, $Email, $Position ) = explode( ":", $row );
+		list( $Name, $Vorname, $Realname, $Pass, $Email, $Position ) = explode( ":", $row );
 		if($username == $Name)
 		{
 			if($password == $Pass)

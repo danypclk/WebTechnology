@@ -579,6 +579,8 @@ function myfunctionToggle_delete_reset(z)
 
 document.getElementById("id_of_admin").setAttribute('value', id_name);
 document.getElementById("id_of_admin_delete").setAttribute('value', id_name);
+document.getElementById("id_of_admin_1").setAttribute('value', id_name);
+
 
 // to make sure sidebar keeps track where navbar is to make itself larger or shorter
 
