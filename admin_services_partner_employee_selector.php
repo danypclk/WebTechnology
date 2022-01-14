@@ -19,12 +19,12 @@ fclose($file_partner_open);
 while($row = fgets($file_employee_open))
 {
 	list($Name, $Vorname, $Realname, $Pass, $Email, $Position ) = explode( ":", $row );
-	array_push($employees, $Name);
+	array_push($employees, $Vorname . " " . $Realname);
 }
 fclose($file_employee_open);
 
 $file = fopen($partner_employee_selector, "w");
-fwrite($file, "\n<option value=\"disabled\">--Partner--</option>");
+fwrite($file, "\n<option value=\"disabled\">--Administrator--</option>");
 foreach($partners as $partner)
 {
 	fwrite($file, "\n<option value=\"" . $partner . "\">" . $partner . "</option>");

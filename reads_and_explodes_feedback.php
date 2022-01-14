@@ -33,17 +33,17 @@ $feedback_html_location_worker = "iframe-folder/feedback_worker.html";
 		fwrite($feedback_file_html,"<p>Feedback: " . $Feedback . "</p>");
 		fwrite($feedback_file_html,"<hr />");
 		fwrite($feedback_file_html,"<br />");
-			if($position == 'Arbeiter')
-			{
-				$feedback_file_html_worker = fopen($feedback_html_location_worker, "a");
-				fwrite($feedback_file_html_worker,"<p>Datum: " . $Date . "</p>");
-				fwrite($feedback_file_html_worker,"<p>Kunde: " . $Name . "</p>");
-				fwrite($feedback_file_html_worker,"<p>Feedback zu " . $Position . " " . $Person . "</p>");
-				fwrite($feedback_file_html_worker,"<p>Feedback: " . $Feedback . "</p>");
-				fwrite($feedback_file_html_worker,"<hr />");
-				fwrite($feedback_file_html_worker,"<br />");
-				fclose($feedback_file_html_worker);
-			}
+		if($position == 'Arbeiter')
+		{
+			$feedback_file_html_worker = fopen($feedback_html_location_worker, "a");
+			fwrite($feedback_file_html_worker,"<p>Datum: " . $Date . "</p>");
+			fwrite($feedback_file_html_worker,"<p>Kunde: " . $Name . "</p>");
+			fwrite($feedback_file_html_worker,"<p>Feedback zu " . $position . " " . $Person . "</p>");
+			fwrite($feedback_file_html_worker,"<p>Feedback: " . $Feedback . "</p>");
+			fwrite($feedback_file_html_worker,"<hr />");
+			fwrite($feedback_file_html_worker,"<br />");
+			fclose($feedback_file_html_worker);
+		}
 	}
 	fclose($feedback_file_html);
 	fclose($file_feedback);
