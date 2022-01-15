@@ -28,11 +28,15 @@ while($row = fgets($file_partner_open))
 while($row = fgets($file_employee_open))
 {
 	list( $Name_worker, $Vorname_worker, $Realname_worker, $Pass_worker, $Email_worker, $Position_worker ) = explode( ":", $row );
-	if($Vorname_find == $Vorname_worker && $Realname_find == $Realname_worker)
+	if(strpos($busniess_assosiation_name, ' ') == true)
 	{
-		$$busniess_assosiation_name = $Name_admin;
-		$position = "Arbeiter";
-		break;
+		list( $Vorname_find, $Realname_find ) = explode( " ", $busniess_assosiation_name);
+		if($Vorname_find == $Vorname_worker && $Realname_find == $Realname_worker)
+		{
+			$$busniess_assosiation_name = $Name_admin;
+			$position = "Arbeiter";
+			break;
+		}
 	}	
 }
 
