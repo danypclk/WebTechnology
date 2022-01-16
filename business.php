@@ -223,38 +223,6 @@ foreach($array_of_clients as $selector_for_client)
 	fclose($client_invoice_selector_c);
 }
 
-// find worker name and administrator
-
-	$worker_name = "";
-	$worker_file_find = fopen("register-folder/employee-file.txt", "r");
-	while($row = fgets($worker_file_find)) 
-	{
-		list( $user_worker, $Vorname_worker, $Realname_worker, $Pass_worker, $email_worker, $Position_worker) = explode( ":", $row );
-		$user_trimed = trim($user_worker);
-		if($worker_1 == $user_trimed)
-		{
-			$worker_name = $Vorname_worker . " " . $Realname_worker;
-		}
-	}
-
-	if($id_username == 'admin')
-	{
-		$admin_name = 'admin';
-	}
-	else
-	{
-		$admin_file_find = fopen("register-folder/partner-file.txt", "r");
-		while($row = fgets($admin_file_find)) 
-		{
-			list( $user_admin, $Vorname_admin, $Realname_admin, $Pass_admin, $email_admin, $Position_admin) = explode( ":", $row );
-			$user_trimed = trim($user_worker);
-			if($id_username == $user_trimed)
-			{
-				$admin_name = $Vorname_admin . " " . $Realname_admin;
-			}
-		}
-	}
-
 // create and store pdf invoice
 
 require('fpdf/fpdf.php');
@@ -309,8 +277,8 @@ $pdf->Cell(90 ,5,'[example_1@gmail.com]',0,1);
 $pdf->Cell(189 ,10,'',0,1);
 
 // Tasked by amdin-id and worker tasked
-$pdf->Cell(189 ,10,'Service-call angewiesen bei ' . $admin_name,0,1);
-$pdf->Cell(189 ,10,'Arbeiter die der Aufgabe zugewiesen war, ID: ' . $worker_1 . ', Name : ' . $worker_name,0,1);
+$pdf->Cell(189 ,10,'Service-call angewiesen bei ' . $id_username,0,1);
+$pdf->Cell(189 ,10,'Arbeiter die der Aufgabe zugewiesen war ' . $worker_1,0,1);
 
 //dummy empty cell as a vertical spacer
 $pdf->Cell(189 ,10,'',0,1);
